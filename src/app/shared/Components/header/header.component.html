@@ -1,0 +1,202 @@
+<div class="" style="z-index: 1">
+  <nav
+    class="fixed top-0 z-50 md:w-screen w-full bg-[#0175A2] border-gray-200 h-12"
+  >
+    <div class="px-3 py-1 lg:px-5 lg:pl-3 h-full">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center justify-start">
+          <button
+            data-drawer-target="logo-sidebar"
+            (click)="click()"
+            data-drawer-toggle="logo-sidebar"
+            aria-controls="logo-sidebar"
+            type="button"
+            class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+          >
+            <span class="sr-only">Open sidebar</span>
+            <svg
+              class="w-6 h-6"
+              aria-hidden="true"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                clip-rule="evenodd"
+                fill-rule="evenodd"
+                d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"
+              ></path>
+            </svg>
+          </button>
+
+          <!-- <div class="flex space-x-2 ">
+                <div>
+                  <svg class="w-[1.75rem] h-[1.5rem]" viewBox="0 0 30 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20.8367 5.46955C22.2174 5.46955 23.3367 4.35708 23.3367 2.98477C23.3367 1.61247 22.2174 0.5 20.8367 0.5C19.456 0.5 18.3367 1.61247 18.3367 2.98477C18.3367 4.35708 19.456 5.46955 20.8367 5.46955Z" fill="white"/>
+                    <path d="M29.1793 7.79545C29.8742 6.93689 29.7416 5.67753 28.8831 4.98258C28.0245 4.28764 26.7651 4.42028 26.0702 5.27884L14.1699 19.9809C13.475 20.8394 13.6076 22.0988 14.4662 22.7937C15.3247 23.4887 16.5841 23.356 17.279 22.4975L29.1793 7.79545Z" fill="white"/>
+                    <path d="M17.9401 9.90706C18.613 9.03112 18.4484 7.77554 17.5725 7.10263C16.6965 6.42972 15.441 6.59432 14.768 7.47026L7.48852 16.9462L3.79703 12.4412C3.09694 11.5869 1.8368 11.4618 0.982433 12.1619C0.128064 12.862 0.00299624 14.1221 0.703087 14.9765L5.99209 21.431C6.37895 21.9031 6.9602 22.1727 7.57048 22.1632C8.18077 22.1536 8.75326 21.8658 9.1251 21.3818L17.9401 9.90706Z" fill="white"/>
+                    </svg>
+                    
+                </div>
+              <div class="text-white text-xl ml-2 font-inter">
+                JobCheck
+              </div>
+            </div> -->
+
+          <img src="../../../../assets/images/JobChecklogo.svg" />
+        </div>
+        <div class="flex items-center">
+          <div class="flex items-center ml-3 md:-ml-32 mt-1">
+            <div class="flex space-x-4">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="0.1"
+                stroke="currentColor"
+                class="w-[1.875rem] h-[2.1875rem] text-white"
+              >
+                <path
+                  d="M7 19H11C11 20.1 10.1 21 9 21C7.9 21 7 20.1 7 19ZM18 17V18H0V17L2 15V9C2 5.9 4 3.2 7 2.3V2C7 0.9 7.9 0 9 0C10.1 0 11 0.9 11 2V2.3C14 3.2 16 5.9 16 9V15L18 17ZM14 9C14 6.2 11.8 4 9 4C6.2 4 4 6.2 4 9V16H14V9Z"
+                  fill="white"
+                />
+              </svg>
+              <div>
+                <button
+                  type="button"
+                  class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
+                  aria-expanded="false"
+                  data-dropdown-toggle="dropdown-user"
+                >
+                  <span class="sr-only">Open user menu</span>
+
+                  <img
+                    class="w-8 h-8 rounded-full"
+                    (click)="Qpop()"
+                    *ngIf="accountDetails.profilePicture != ''"
+                    src="https://job-check.s3.ap-south-1.amazonaws.com/{{
+                      accountDetails.profilePicture
+                    }}"
+                  />
+                  <!-- <img class="w-8 h-8 rounded-full"  *ngIf="accountDetails.profilePicture==''" (click)="Qpop()" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
+                    alt="user photo"> -->
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600"
+              id="dropdown-user"
+            >
+              <div class="px-4 py-3" role="none">
+                <p class="text-sm text-gray-900 dark:text-white" role="none">
+                  Neil Sims
+                </p>
+                <p
+                  class="text-sm font-medium text-gray-900 truncate dark:text-gray-300"
+                  role="none"
+                >
+                  neil.sims@flowbite.com
+                </p>
+              </div>
+              <ul class="py-1" role="none">
+                <li>
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
+                    role="menuitem"
+                    >Dashboard</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
+                    role="menuitem"
+                    >Settings</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
+                    role="menuitem"
+                    >Earnings</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
+                    role="menuitem"
+                    >Sign out</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>
+
+<!-- <app-side-bar [sidebar]="sidebar" [show]="show" [mobile]="mobile"></app-side-bar> -->
+
+<!-- popup -->
+<div>
+  <div
+    *ngIf="popupmodal"
+    id="popup-modal"
+    tabindex="-1"
+    class="p-4 w-[15rem] mt-10 absolute top-0 right-0 mr-[2.6rem]"
+  >
+    <div class="relative w-full max-w-md max-h-full">
+      <div class="relative bg-white rounded-lg shadow">
+        <!-- <div class="fixed py-5 flex justify-end inset-0 bg-gray-500 bg-opacity-75 transition-opacity">  -->
+        <div class="p-4 text-start">
+          <div class="flex">
+            <img
+              class="w-12 h-12 rounded-full border-[0.2rem] border-[#0175A2]"
+              src="https://job-check.s3.ap-south-1.amazonaws.com/{{
+                accountDetails.profilePicture
+              }}"
+              alt="user photo"
+            />
+            <div
+              class="ml-[0.7rem] font-semibold text-gray-600 text-[1.1rem] -mt-[0.4rem]"
+            >
+              {{ accountDetails.firstName }} {{ accountDetails.lastName }}
+            </div>
+          </div>
+          <div class="ml-[4rem] -mt-[1.9rem] text-[0.6rem] text-gray-600">
+            {{ accountDetails.userRole }}
+          </div>
+          <div class="ml-[4rem] text-[0.76rem] text-gray-600">
+            {{ accountDetails.emailId }}
+          </div>
+          <div class="border mt-3 border-opacity-5"></div>
+
+          <button class="mt-4 text-[0.9rem] text-gray-900 font-normal">
+            Profile
+          </button>
+          <div>
+            <button
+              class="mt-4 text-[0.9rem] text-gray-900 font-normal"
+              routerLink="../changepassword"
+            >
+              Change Password
+            </button>
+          </div>
+          <button (click)="logout()"
+            class="mt-4 text-[0.9rem] text-gray-900 font-normal" 
+          >
+            Log out
+          </button>
+        </div>
+        <!-- </div> -->
+      </div>
+    </div>
+  </div>
+</div>
+<!--  -->

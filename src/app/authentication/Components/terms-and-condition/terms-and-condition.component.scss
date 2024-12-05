@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+.sidebar {
+  position: fixed;
+  width: 25%;
+  height: 100vh;
+  font-size: 0.80em;
+  color:#0175a2;
+  font-family: sans-serif;
+}
+
+.nav {
+  position: relative;
+  margin: 0 25%;
+  text-align: left;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1rem;
+  font-family: sans-serif;
+  /* 16px */
+  // line-height: 1rem;
+  /* 24px */
+
+}
+
+
+.termsAndConditions {
+  position: relative;
+  width: 75%;
+  float: right;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+
+p {
+  font-size: 1em;
+  letter-spacing: 0.1em;
+  font-weight: normal;
+  margin-top: 20px;
+  color: #0175a2;
+  font-family: sans-serif;
+}
+
+h3 {
+  text-transform: uppercase;
+  font-size: 1.5em;
+  letter-spacing: 0.1em;
+  font-weight: bold;
+  margin-top: 20px;
+  color: #21a14b;
+  font-family: sans-serif;
+}
+
+.index {
+  z-index: 1;
+}
+
+li:hover {
+  color: #21a14b
+}
+
+footer {
+  color: #21a14b;
+}
+
+.b {
+  color: #0175a2
+}
+
+.alignleft {
+  float: left;
+}
+
+.alignright {
+  float: right;
+  padding-top: 8px;
+  cursor: pointer;
+}
+
+.classes {
+  float: left;
+}
+
+.booking {
+  float: right;
+  cursor: pointer;
+  padding-top: 7px;
+}
+
+.timings {
+  text-align: left;
+  font-size: 14px;
+}
+
+.slots {
+  margin-left: 2%;
+}
+
+a {
+  font-size: 13px;
+}
+
+.booking-list:hover {
+  background-color: #21a14b;
+}
+
+.selected {
+  background-color: #21a14b;
+}

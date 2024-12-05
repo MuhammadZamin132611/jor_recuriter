@@ -1,0 +1,1025 @@
+<div class="flex h-2/3 flex-row ml-[4rem] mr-[1.688rem] space-x-2 overflow-y-auto ">
+  <div class="flex ml-[1rem] h-full overflow-y-auto flex-col flex-grow  xl:block ">
+    <form [formGroup]="FilterForm">
+      <div class="filter shadow-md">
+        <div class="border-gray-300 rounded-lg w-full bg-white shadow-md">
+          <div class="">
+            <!-- filter -->
+            <div class="flex items-center gap-x-2 p-2 justify-center">
+              <div>
+                <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M5.28904 10.7786C5.0999 10.7786 4.94147 10.7144 4.81374 10.5859C4.68557 10.4578 4.62149 10.299 4.62149 10.1094V6.09375L0.749678 1.14115C0.58279 0.918055 0.557868 0.683811 0.674912 0.438412C0.791511 0.193012 0.994447 0.0703125 1.28372 0.0703125H10.6295C10.9187 0.0703125 11.1219 0.193012 11.2389 0.438412C11.3555 0.683811 11.3304 0.918055 11.1635 1.14115L7.2917 6.09375V10.1094C7.2917 10.299 7.22783 10.4578 7.10011 10.5859C6.97194 10.7144 6.81328 10.7786 6.62414 10.7786H5.28904Z"
+                    fill="#344054" />
+                </svg>
+              </div>
+              <div>
+                <p class="font-medium text-[#101828] text-lg">Filter</p>
+              </div>
+            </div>
+
+            <hr />
+            <div class="mt-2 mx-2 py-2 font-semibold">
+              <div class="flex justify-between px-2">
+                <div class="flex flex-wrap items-center gap-x-2 text-sm">
+                  <div>
+                    <p class="font-medium text-md text-[#475467]">
+                      {{ count }} Filters
+                    </p>
+                  </div>
+                  <div>
+                    <span class="text-[#667085] &nbsp"> Applied</span>
+                  </div>
+                </div>
+                <div class=" ">
+                  <button>
+                    <input class="cursor-pointer font-medium text-center text-[#1D2939] text-sm" type="reset"
+                      (click)="cancelFilter()" value="Reset" />
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="overflow-y-scroll pb-2 w-full flex flex-col gap-y-3 scrollbar-hide">
+              <hr class="mx-3" />
+              <div class="mx-3">
+                <div class="">
+                  <label class="form-label inline-block text-gray-3 font-medium">Experience</label>
+                </div>
+                <div class="flex mt-1 -mr-1 gap-x-7">
+                  <div class="w-full">
+                    <input type="number"
+                      class="block w-full border border-gray-300 bg-gray-50 rounded-lg shadow-xs py-2.5 px-3.5 cursor-default no-border"
+                      placeholder="Minimum" minlength="0" maxlength="2" formControlName="minimum"
+                      onKeyPress="if(this.value.length==2) return false;" />
+                  </div>
+                  <!--  -->
+                  <div class="items-center flex justify-center">
+                    <span class="w-full text-base font-normal text-gray-500">to</span>
+                  </div>
+                  <!--  -->
+                  <div class="w-full">
+                    <input type="number"
+                      class="w-full block border border-gray-300 bg-gray-50 rounded-lg shadow-xs py-2.5 px-3.5 cursor-default no-border"
+                      placeholder="Maximum" minlength="0" maxlength="2" formControlName="maximum"
+                      onKeyPress="if(this.value.length==2) return false;" />
+                  </div>
+                </div>
+              </div>
+              <div class="mx-3">
+                <div class="">
+                  <label class="block text-base font-medium text-gray-700 h-6 w-24">Current CTC</label>
+                </div>
+                <div class="flex mt-1 -mr-1 gap-x-7">
+                  <div class="w-full">
+                    <input type="text"
+                      class="block w-full border border-gray-300 bg-gray-50 rounded-lg shadow-xs py-2.5 px-3.5 cursor-default no-border"
+                      placeholder="Minimum" autocomplete="off" minlength="6" maxlength="7"
+                      onKeyPress="if(this.value.length==8) return false;" (input)="changeToCurrency('minSalary')"
+                      [ngModel]="minSalaryValue | number" formControlName="minSalary" />
+                  </div>
+                  <div class="items-center flex justify-center">
+                    <span class="w-full text-base font-normal text-gray-500">to</span>
+                  </div>
+                  <div class="w-full">
+                    <input type="text"
+                      class="block w-full border border-gray-300 bg-gray-50 rounded-lg shadow-xs py-2.5 px-3.5 cursor-default no-border"
+                      placeholder="Maximum" minlength="6" maxlength="7"
+                      onKeyPress="if(this.value.length==8) return false;" (input)="changeToCurrency('maxSalary')"
+                      [ngModel]="maxSalaryValue | number" formControlName="maxSalary" />
+                  </div>
+                </div>
+              </div>
+              <div class="mx-3">
+                <div class="flex cursor-pointer justify-between" (click)="showNotice = !showNotice">
+                  <label class="block w-64 h-6 font-medium text-base text-gray-700 cursor-pointer">Notice Period</label>
+                  <svg width="14" height="8" viewBox="0 0 14 8" class="m-2" fill="none" *ngIf="!showNotice"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1L7 7L13 1" stroke="#101828" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                    *ngIf="showNotice" stroke="currentColor" class="w-5 h-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                  </svg>
+                </div>
+                <div class="" *ngIf="showNotice">
+                  <div class="flex items-center mb-1 ml-2">
+                    <input type="radio" value="15" name="notice" formControlName="noticePeriod"
+                      class="w-3 h-3 mt-3.5 bg-white border border-gray-300 cursor-default" />
+                    <label class="block text-sm font-medium text-gray-700 ml-2 mt-3 w-24 h-5">
+                      &lt;15 days</label>
+                  </div>
+
+                  <div class="flex items-center mb-1 ml-2">
+                    <input type="radio" value="30" name="notice" formControlName="noticePeriod"
+                      class="w-3 h-3 mt-3.5 rounded-md bg-white border border-gray-300 cursor-default" />
+                    <label class="block text-sm font-medium text-gray-700 ml-2 mt-3 w-16 h-5">
+                      &lt;1 month
+                    </label>
+                  </div>
+
+                  <div class="flex items-center mb-1 ml-2">
+                    <input type="radio" value="60" name="notice" formControlName="noticePeriod"
+                      class="w-3 h-3 mt-3.5 rounded-md bg-white border border-gray-300 cursor-default" />
+                    <label class="block text-sm font-medium text-gray-700 ml-2 mt-3 w-24 h-5">
+                      &lt;2 months
+                    </label>
+                  </div>
+
+                  <div class="flex items-center mb-1 ml-2">
+                    <input type="radio" value="90" name="notice" formControlName="noticePeriod"
+                      class="w-3 h-3 mt-3.5 rounded-md bg-white border border-gray-300 cursor-default" />
+                    <label class="block text-sm font-medium text-gray-700 ml-2 mt-3 w-24 h-5">
+                      &lt;3 months
+                    </label>
+                  </div>
+                  <div class="flex items-center mb-1 ml-2">
+                    <input type="radio" value="91" name="notice" formControlName="noticePeriod"
+                      class="w-3 h-3 mt-3.5 rounded-md bg-white border border-gray-300 cursor-default" />
+                    <label class="block text-sm font-medium text-gray-700 ml-2 mt-3 w-24 h-5">
+                      &gt;3 months
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="mx-3">
+                <div class="flex cursor-pointer justify-between" (click)="showActive = !showActive">
+                  <label class="block w-64 h-6 font-medium text-base text-gray-700 cursor-pointer">Last Active</label>
+
+                  <div class="">
+                    <svg *ngIf="!showActive" width="14" height="8" viewBox="0 0 14 8" class="m-2" fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1 1L7 7L13 1" stroke="#101828" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                    <svg *ngIf="showActive" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                      stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </div>
+                </div>
+
+                <div class="" *ngIf="showActive">
+                  <div class="flex items-center mb-1 ml-2">
+                    <input type="radio" value="7" name="activity" formControlName="activity"
+                      class="w-3 h-3 mt-3.5 bg-white border border-gray-300 cursor-default" />
+                    <label class="block text-sm font-medium text-gray-700 ml-2 mt-3 w-16 h-5">
+                      &lt;7 days
+                    </label>
+                  </div>
+
+                  <div class="flex items-center mb-1 ml-2">
+                    <input type="radio" value="14" name="activity" formControlName="activity"
+                      class="w-3 h-3 mt-3.5 rounded-md bg-white border border-gray-300 cursor-default" />
+                    <label class="block text-sm font-medium text-gray-700 ml-2 mt-3 w-16 h-5">
+                      &lt;14 days
+                    </label>
+                  </div>
+
+                  <div class="flex items-center mb-1 ml-2">
+                    <input type="radio" value="30" name="activity" formControlName="activity"
+                      class="w-3 h-3 mt-3.5 rounded-md bg-white border border-gray-300 cursor-default" />
+                    <label class="block text-sm font-medium text-gray-700 ml-2 mt-3 w-16 h-5">
+                      &lt;1 month
+                    </label>
+                  </div>
+
+                  <div class="flex items-center mb-1 ml-2">
+                    <input type="radio" value="31" name="activity" formControlName="activity"
+                      class="w-3 h-3 mt-3.5 rounded-md bg-white border border-gray-300 cursor-default" />
+                    <label class="block text-sm font-medium text-gray-700 ml-2 mt-3 w-16 h-5">
+                      &gt;1 month
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="mx-3">
+                <div class="form-group -mr-1">
+                  <label for="exampleInputName" class="form-label inline-block text-gray-700 font-medium">Preferred
+                    Locations <small>(Max 4)</small></label>
+                  <div>
+                    <div class="mt-1" *ngIf="locations$ | async as locationlist">
+                      <!-- <ng-select #select []="true" placeholder="Search" [items]="locations" [multiple]="true" class="form-control"
+                        (change)="Searchlocation($event)" [maxSelectedItems]="9" (paste)="false" (paste)="false"
+                        formControlName="location">
+                      </ng-select> -->
+
+                      <ng-select [items]="locationlist" [multiple]="true" class="form-control w-full max-w-[400px]"
+                        [maxSelectedItems]="4" (paste)="(false)" [(ngModel)]="selectedLocation" (paste)="(false)"
+                        [ngModelOptions]="{ standalone: true }" placeholder="Job Location" [clearable]="true">
+                      </ng-select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mx-3">
+                <div class="form-group">
+                  <div>
+                    <label for="exampleInputName" class="form-label text-gray-700 font-medium">Role</label>
+                  </div>
+
+                  <div class="mt-1 -mr-1">
+                    <div class="" *ngIf="roles$ | async as rolesList">
+                      <ng-select [items]="rolesList" [maxSelectedItems]="4" [multiple]="true"
+                        class="form-control w-full max-w-[400px]" (paste)="(false)" (paste)="(false)"
+                        [(ngModel)]="selectedRole" [ngModelOptions]="{ standalone: true }" placeholder="Role">
+                      </ng-select>
+                    </div>
+                  </div>
+                  <div class="w-full"></div>
+                </div>
+              </div>
+              <div class="mx-3">
+                <div class="form-group">
+                  <div>
+                    <label for="exampleInputName"
+                      class="form-label inline-block text-gray-3 font-medium">Industry</label>
+                  </div>
+
+                  <div class="mt-1 -mr-1">
+                    <div class="" *ngIf="industry$ | async as industry">
+                      <ng-select [items]="industry" [maxSelectedItems]="1" [multiple]="true"
+                        class="form-control w-full max-w-[400px] " (paste)="(false)" [(ngModel)]="selectedInd"
+                        [ngModelOptions]="{ standalone: true }" (paste)="(false)" placeholder="Industry">
+                      </ng-select>
+                    </div>
+                  </div>
+                  <div class="w-full"></div>
+                </div>
+              </div>
+              <div class="mx-3">
+                <div class="form-group">
+                  <label for="exampleInputName" class="form-label inline-block text-gray-3 font-medium">Education
+                    <small>(Max 4)</small></label>
+                  <div class="mt-1 -mr-1">
+                    <div class="" *ngIf="
+                        EduacationalQualifications$
+                          | async as EduacationalQualifications
+                      ">
+                      <!-- <ng-select #select []="true" placeholder="Search" [items]="education" [multiple]="true" class="form-control "
+                        (change)="searcheducation($event)" [maxSelectedItems]="9" (paste)="false" (paste)="false"
+                        formControlName="education">
+  
+                      </ng-select> -->
+                      <ng-select [items]="EduacationalQualifications" [multiple]="true"
+                        class="form-control w-full max-w-[400px]" [clearable]="true" [maxSelectedItems]="4"
+                        (paste)="(false)" [(ngModel)]="selectedEdu" (paste)="(false)"
+                        [ngModelOptions]="{ standalone: true }" placeholder="Educational
+                     Qualifications">
+                      </ng-select>
+                    </div>
+                  </div>
+                  <div class="w-full">
+                    <!-- <button *ngFor="let edu of selectededu" class="text-sm mt-1  font-medium rounded-full  bg-blue-100 
+                  text-gray-700  mr-2 ml-3 px-4 py-1.5 " disabled>
+                      {{edu}}
+                    </button> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr />
+
+            <div class="block p-2 space-x-4">
+              <button (click)="filterSearch()"
+                class="bg-[#0175A2] disabled:bg-gray-300 text-white font-semibold py-0.5 h-11 w-full border border-gray-400 text-base rounded-md shadow">
+                Apply
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="w-4/5 h-full overflow-y-auto lg::w-full md:w-full xl:w-3/4">
+    <div class="flex">
+      <div class="w-1/2 flex bg-[#F9FAFB]">
+        <p class="lg:text-xl md:text-md md:col-span-2 font-semibold col-span-3 text-[#101828]">
+          {{ candidatesList.length }} Recommended Candidates
+        </p>
+
+        <div class="">
+          <button (click)="clickit($event)"
+            class="right-0 border border-gray-300 lg:w-32 h-9 ml-[1rem] md:w-28 md:text-sm px-1 flex items-center justify-center text-gray-700 text-base font-medium rounded-lg xl:h-[2.5rem] lg:h-[2.3rem] bg-white">
+            Bulk Actions
+            <div class="mx-3 my-2 ml-1 mt-2.5">
+              <svg class="" width="15" height="15" viewBox="0 0 24 24" fill="none" *ngIf="!show"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 9L12 15L18 9" stroke="#101828" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="none" viewBox="0 0 24 24"
+                *ngIf="show" stroke-width="" stroke="currentColor" class="">
+                <path stroke-linecap="round" stroke="#101828" stroke-width="2" stroke-linejoin="round"
+                  d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+              </svg>
+            </div>
+          </button>
+        </div>
+        <div class=" " *ngIf="show" style="z-index: 1">
+          <div id="dropdown"
+            class="-ml-[10rem] mt-10 w-30 items-center rounded-lg divide-y absolute divide-gray-700 shadow">
+            <ul class=" text-sm text-gray-700 bg-white rounded-lg" aria-labelledby="dropdownDefault">
+              <li class="flex cursor-default hover:bg-gray-100 hover:rounded-t-lg" (click)="showBulk(false)">
+                <svg class="mx-3 ml-3 mt-3" width="16" height="16" viewBox="0 0 16 14" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M14.6666 2.99984C14.6666 2.2665 14.0666 1.6665 13.3333 1.6665H2.66659C1.93325 1.6665 1.33325 2.2665 1.33325 2.99984M14.6666 2.99984V10.9998C14.6666 11.7332 14.0666 12.3332 13.3333 12.3332H2.66659C1.93325 12.3332 1.33325 11.7332 1.33325 10.9998V2.99984M14.6666 2.99984L7.99992 7.6665L1.33325 2.99984"
+                    stroke="#344054" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <a class="block py-2 px-4 hover:bg-gray-100 text-gray-700" style="line-height: 1.5rem">
+                  Email Candidate</a>
+              </li>
+              <li class="flex cursor-default hover:bg-gray-100" (click)="showBulk(true)">
+                <svg class="mx-3 my-2 ml-3 mt-3" width="14" height="14" viewBox="0 0 14 14" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M13 9C13 9.35362 12.8595 9.69276 12.6095 9.94281C12.3594 10.1929 12.0203 10.3333 11.6667 10.3333H3.66667L1 13V2.33333C1 1.97971 1.14048 1.64057 1.39052 1.39052C1.64057 1.14048 1.97971 1 2.33333 1H11.6667C12.0203 1 12.3594 1.14048 12.6095 1.39052C12.8595 1.64057 13 1.97971 13 2.33333V9Z"
+                    stroke="#344054" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <a class="block py-2 px-4 hover:bg-gray-100 text-gray-700">
+                  SMS Candidates</a>
+              </li>
+              <li class="flex cursor-default hover:bg-gray-100">
+                <svg class="mx-3 my-2 ml-3 mt-3" width="14" height="15" viewBox="0 0 14 15" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M7 14.5C10.866 14.5 14 11.366 14 7.5C14 3.63401 10.866 0.5 7 0.5C3.13401 0.5 0 3.63401 0 7.5C0 8.75544 0.330499 9.93369 0.909237 10.9525L0 14.5L3.65743 13.6519C4.65069 14.1927 5.78946 14.5 7 14.5ZM7 13.4231C10.2712 13.4231 12.9231 10.7712 12.9231 7.5C12.9231 4.22878 10.2712 1.57692 7 1.57692C3.72878 1.57692 1.07692 4.22878 1.07692 7.5C1.07692 8.76303 1.47225 9.93373 2.14592 10.8951L1.61538 12.8846L3.63997 12.3785C4.59468 13.0373 5.75229 13.4231 7 13.4231Z"
+                    fill="#BFC8D0" />
+                  <path
+                    d="M13 7C13 10.3137 10.3137 13 7 13C5.73608 13 4.56344 12.6092 3.59633 11.9418L1.54545 12.4545L2.08288 10.4392C1.40046 9.46534 1 8.27944 1 7C1 3.68629 3.68629 1 7 1C10.3137 1 13 3.68629 13 7Z"
+                    fill="url(#paint0_linear_107_44729)" />
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M7 14C10.866 14 14 10.866 14 7C14 3.13401 10.866 0 7 0C3.13401 0 0 3.13401 0 7C0 8.25544 0.330499 9.43369 0.909237 10.4525L0 14L3.65743 13.1519C4.65069 13.6927 5.78946 14 7 14ZM7 12.9231C10.2712 12.9231 12.9231 10.2712 12.9231 7C12.9231 3.72878 10.2712 1.07692 7 1.07692C3.72878 1.07692 1.07692 3.72878 1.07692 7C1.07692 8.26303 1.47225 9.43373 2.14592 10.3951L1.61538 12.3846L3.63997 11.8785C4.59468 12.5373 5.75229 12.9231 7 12.9231Z"
+                    fill="white" />
+                  <path
+                    d="M5.25001 3.74994C5.08358 3.41565 4.82826 3.44525 4.57034 3.44525C4.10938 3.44525 3.39062 3.99739 3.39062 5.02498C3.39063 5.86714 3.76172 6.78901 5.01221 8.16806C6.21902 9.49894 7.80469 10.1874 9.1211 10.164C10.4375 10.1405 10.7083 9.00772 10.7083 8.62516C10.7083 8.4556 10.6031 8.371 10.5306 8.34801C10.082 8.13272 9.25467 7.73157 9.06641 7.6562C8.87816 7.58083 8.77986 7.68278 8.71876 7.73823C8.54804 7.90092 8.20963 8.38039 8.09376 8.48823C7.97789 8.59608 7.80514 8.5415 7.73325 8.50073C7.46872 8.39458 6.75146 8.07554 6.17973 7.52131C5.47266 6.83589 5.43116 6.60007 5.29795 6.39015C5.19138 6.22222 5.26958 6.11919 5.3086 6.07416C5.46095 5.89838 5.6713 5.62699 5.76564 5.49213C5.85997 5.35727 5.78508 5.15251 5.74015 5.02498C5.54689 4.47651 5.38316 4.01737 5.25001 3.74994Z"
+                    fill="white" />
+                  <defs>
+                    <linearGradient id="paint0_linear_107_44729" x1="12.25" y1="2.5" x2="1" y2="13"
+                      gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#5BD066" />
+                      <stop offset="1" stop-color="#27B43E" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+
+                <a class="block py-2 px-4 hover:bg-gray-100 text-gray-700">
+                  Whatsapp Candidates</a>
+              </li>
+              <hr />
+              <li class="flex cursor-default hover:bg-gray-100" (click)="bulkShareJobDetails()">
+                <svg class="mx-3 my-2 ml-3 mt-3" width="14" height="16" viewBox="0 0 14 16" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M4.72667 9.00683L9.28 11.6602M9.27333 4.34016L4.72667 6.9935M13 3.3335C13 4.43807 12.1046 5.3335 11 5.3335C9.89543 5.3335 9 4.43807 9 3.3335C9 2.22893 9.89543 1.3335 11 1.3335C12.1046 1.3335 13 2.22893 13 3.3335ZM5 8.00016C5 9.10473 4.10457 10.0002 3 10.0002C1.89543 10.0002 1 9.10473 1 8.00016C1 6.89559 1.89543 6.00016 3 6.00016C4.10457 6.00016 5 6.89559 5 8.00016ZM13 12.6668C13 13.7714 12.1046 14.6668 11 14.6668C9.89543 14.6668 9 13.7714 9 12.6668C9 11.5623 9.89543 10.6668 11 10.6668C12.1046 10.6668 13 11.5623 13 12.6668Z"
+                    stroke="#344054" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <a class="block py-2 px-4 hover:bg-gray-100 text-gray-700">
+                  Share Profile</a>
+              </li>
+              <li class="flex cursor-default hover:bg-gray-100" (click)="getAllResume()" (click)="signleResume = false">
+                <svg class="mx-3 my-2 ml-3 mt-3" width="14" height="14" viewBox="0 0 14 14" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M13 9V11.6667C13 12.0203 12.8595 12.3594 12.6095 12.6095C12.3594 12.8595 12.0203 13 11.6667 13H2.33333C1.97971 13 1.64057 12.8595 1.39052 12.6095C1.14048 12.3594 1 12.0203 1 11.6667V9M3.66667 5.66667L7 9M7 9L10.3333 5.66667M7 9V1"
+                    stroke="#344054" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <a class="block py-2 px-4 hover:bg-gray-100 text-gray-700">
+                  Download Resumes</a>
+              </li>
+              <hr />
+              <li class="flex cursor-default hover:bg-gray-100 hover:rounded-b-lg" (click)="openCandidateProfile()"
+                (click)="signleResume = true">
+                <svg class="mx-3 my-2 ml-3 mt-3" width="14" height="14" viewBox="0 0 14 14" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M11 7.66667V11.6667C11 12.0203 10.8595 12.3594 10.6095 12.6095C10.3594 12.8595 10.0203 13 9.66667 13H2.33333C1.97971 13 1.64057 12.8595 1.39052 12.6095C1.14048 12.3594 1 12.0203 1 11.6667V4.33333C1 3.97971 1.14048 3.64057 1.39052 3.39052C1.64057 3.14048 1.97971 3 2.33333 3H6.33333M9 1H13M13 1V5M13 1L5.66667 8.33333"
+                    stroke="#344054" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <a class="block py-2 px-4 hover:bg-gray-100 text-gray-700">
+                  Open in new tab</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="group w-1/2">
+        <div class="lg:order-2 flex flex-wrap flex-row justify-end items-center max-w-screen-xl">
+          <div class="inline-block items-center lg:order-2">
+            <div class="inline-flex rounded-md pt-1 pr-1 xl:h-[2.5rem] lg:h-[2.3rem]" role="group">
+              <div class="py-2 h-9 xl:h-[2.5rem] lg:h-[2.3rem]">
+                Profile Match
+              </div>
+              <button (click)="filter('90+')" type="button"
+                class="ml-2 inline-flex items-center py-2 px-4 xl:text-sm lg:text-xs md:text-[0.7rem] font-medium text-gray-900 rounded-l-lg border border-gray-300 hover:bg-gray-100 hover:text-[#0175A2] focus:z-10 focus:ring-2 focus:ring-[#0175A2] focus:text-[#0175A2]shadow-md h-9 xl:h-[2.5rem] lg:h-[2.3rem] bg-white">
+                >90%
+              </button>
+              <button (click)="filter('75+')" type="button"
+                class="inline-flex items-center py-2 px-4 xl:text-sm lg:text-xs md:text-[0.7rem] font-medium text-gray-900 border border-gray-300 hover:bg-gray-100 hover:text-[#0175A2] focus:z-10 focus:ring-2 focus:ring-[#0175A2] focus:text-[#0175A2]shadow-md h-9 xl:h-[2.5rem] lg:h-[2.3rem] bg-white">
+                >75%
+              </button>
+              <button (click)="filter('75-')"
+                class="inline-flex items-center py-2 px-4 xl:text-sm lg:text-xs md:text-[0.7rem] font-medium text-gray-900 rounded-r-md border border-gray-300 hover:bg-gray-100 hover:text-[#0175A2] focus:z-10 focus:ring-2 focus:ring-[#0175A2] focus:text-[#0175A2]shadow-md h-9 xl:h-[2.5rem] lg:h-[2.3rem] bg-white">
+                <75% </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button (click)="filterShow = !filterShow"
+        class="xl:hidden border border-gray-300 lg:w-32 h-9 ml-[1rem] md:w-28 md:text-sm px-1 flex items-center justify-center text-gray-900 text-base font-medium rounded-lg bg-white right-0 top-0"
+        type="button" data-te-offcanvas-toggle data-te-target="#offcanvasRight" aria-controls="offcanvasRight"
+        data-te-ripple-init data-te-ripple-color="light">
+        <svg width="12" height="11" class="mr-2" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M5.28904 10.7786C5.0999 10.7786 4.94147 10.7144 4.81374 10.5859C4.68557 10.4578 4.62149 10.299 4.62149 10.1094V6.09375L0.749678 1.14115C0.58279 0.918055 0.557868 0.683811 0.674912 0.438412C0.791511 0.193012 0.994447 0.0703125 1.28372 0.0703125H10.6295C10.9187 0.0703125 11.1219 0.193012 11.2389 0.438412C11.3555 0.683811 11.3304 0.918055 11.1635 1.14115L7.2917 6.09375V10.1094C7.2917 10.299 7.22783 10.4578 7.10011 10.5859C6.97194 10.7144 6.81328 10.7786 6.62414 10.7786H5.28904Z"
+            fill="#344054" />
+        </svg>
+        Filter
+      </button>
+    </div>
+    <div class="pb-2">
+      <div class="flex items-center">
+        <input id="filter-mobile-color-5" name="color" value="purple" type="checkbox"
+          (click)="CheckProfileBulkShare($event)" (change)="bulk($event)" [checked]="
+            selectedCandidates.length === candidatesList.length &&
+            selectedCandidates.length != 0
+          " [disabled]="selectedCandidates.length >= 10 && !selectedCandidates.includes(data)"
+          class="h-4 w-4 border-purple-700 rounded-md text-purple-700 focus:ring-purple-700" />
+        <p class="ml-3 text-gray-900 font-medium md:text-md lg:text-md w-72">
+          {{ selectedCandidates.length }} Out of
+          {{ candidatesList.length }} Candidates Selected
+        </p>
+      </div>
+    </div>
+    <div class="overflow-y-auto scrollbar-hide">
+      <div class="border border-gray-200 rounded-lg mt-4 shadow-md bg-white w-full h-auto"
+        *ngFor="let data of candidatesList  ; let i = index">
+        <!-- profile -->
+        <div class="flex justify-between">
+          <!-- 1st part -->
+          <div class="w-full flex py-4">
+            <div class="w-1/3 bg-white lg:px-2">
+              <div class="grid place-items-center">
+                <img *ngIf="data.profilePictureUrl == 'NA'"
+                  src="https://st.depositphotos.com/2101611/4338/v/600/depositphotos_43381243-stock-illustration-male-avatar-profile-picture.jpg"
+                  alt="profile pic" class="w-20 h-20 border-4 border-white shadow-lg rounded-full" />
+                <img src="https://job-check.s3.ap-south-1.amazonaws.com/{{
+                    data.profilePictureUrl
+                  }}" class="w-20 h-20 border-4 border-white shadow-lg rounded-full" alt="" srcset=""
+                  *ngIf="data.profilePictureUrl != 'NA'" />
+              </div>
+            </div>
+            <!-- 2nd part -->
+            <div class="w-3/4 bg-white border-r-2">
+              <div class="px-2">
+                <div class="flex bg-white">
+                  <!-- profile -->
+                  <div
+                    class="font-semibold whitespace-nowrap overflow-hidden text-[#101828] text-xl cursor-pointer grow"
+                    mat-raised-button matTooltip="{{
+                      data.fullName.length > 15 ? data.fullName : null
+                    }}">
+                    {{
+                    data.fullName.length > 15
+                    ? (data.fullName.slice(0, 15) + "..." | titlecase)
+                    : (data.fullName | titlecase)
+                    }}
+                  </div>
+                  <div class="flex items-center ml-6">
+                    <div class="text-xs bg-[#ECFDF3] text-[#027A48] flex place-items-center rounded-2xl px-2 py-1 gap-1"
+                      type="button">
+                      <p class="text-xl/40 font-semibold">
+                        {{ data.matchingPercentage | number : "1.0-0" }}%
+                      </p>
+                      <span class="ml-1">Profile Match</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- <p class="text-sm ml-8 font-medium text-gray-700">{{data.designation}}</p> -->
+                <div class="flex flex-col sapce-y-2 mt-2">
+                  <div class="text-[#101828]">
+                    {{ data.jobRole }}
+                  </div>
+                  <div class="flex items-center text-base font-normal text-gray-500 py-2">
+                    <svg width="20" height="16" class="mr-2" viewBox="0 0 20 16" fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M18.3333 3.00004C18.3333 2.08337 17.5833 1.33337 16.6667 1.33337H3.33333C2.41666 1.33337 1.66666 2.08337 1.66666 3.00004M18.3333 3.00004V13C18.3333 13.9167 17.5833 14.6667 16.6667 14.6667H3.33333C2.41666 14.6667 1.66666 13.9167 1.66666 13V3.00004M18.3333 3.00004L10 8.83337L1.66666 3.00004"
+                        stroke="#667085" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        matTooltip="Gmail" />
+                    </svg>
+                    <div class="text-[#101828]">
+                      {{ data.email }}
+                    </div>
+
+                    <svg width="16" height="16" class="mr-2 ml-2" viewBox="0 0 16 16" fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M14.6667 7.38662V7.99995C14.6658 9.43757 14.2003 10.8364 13.3396 11.9878C12.4788 13.1393 11.2689 13.9816 9.89023 14.3892C8.51162 14.7968 7.03817 14.7479 5.68964 14.2497C4.34112 13.7515 3.18976 12.8307 2.4073 11.6247C1.62484 10.4186 1.25319 8.99199 1.34778 7.55749C1.44237 6.12299 1.99813 4.7575 2.93218 3.66467C3.86623 2.57183 5.12852 1.81021 6.53079 1.49338C7.93306 1.17656 9.40017 1.32151 10.7133 1.90662M14.6667 2.66662L8 9.33995L6 7.33995"
+                        stroke="#12B76A" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </div>
+
+                  <div class="flex items-center text-base font-normal text-gray-500 py-2">
+                    <svg width="20" height="20" class="mr-2" viewBox="0 0 20 20" fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M18.3333 14.1V16.6C18.3343 16.8321 18.2867 17.0618 18.1938 17.2745C18.1008 17.4871 17.9644 17.678 17.7934 17.8349C17.6224 17.9918 17.4205 18.1113 17.2006 18.1856C16.9808 18.26 16.7478 18.2876 16.5167 18.2667C13.9524 17.9881 11.4892 17.1118 9.325 15.7084C7.31152 14.4289 5.60445 12.7218 4.325 10.7084C2.91665 8.53438 2.0402 6.0592 1.76667 3.48337C1.74584 3.25293 1.77323 3.02067 1.84708 2.80139C1.92094 2.58211 2.03964 2.38061 2.19564 2.20972C2.35163 2.03883 2.5415 1.9023 2.75316 1.80881C2.96481 1.71532 3.19362 1.66692 3.425 1.66671H5.925C6.32942 1.66273 6.72149 1.80594 7.02813 2.06965C7.33478 2.33336 7.53506 2.69958 7.59167 3.10004C7.69719 3.9001 7.89288 4.68565 8.175 5.44171C8.28712 5.73998 8.31139 6.06414 8.24492 6.37577C8.17846 6.68741 8.02405 6.97347 7.8 7.20004L6.74167 8.25837C7.92796 10.3447 9.65538 12.0721 11.7417 13.2584L12.8 12.2C13.0266 11.976 13.3126 11.8216 13.6243 11.7551C13.9359 11.6887 14.2601 11.7129 14.5583 11.825C15.3144 12.1072 16.0999 12.3029 16.9 12.4084C17.3048 12.4655 17.6745 12.6694 17.9388 12.9813C18.2031 13.2932 18.3435 13.6914 18.3333 14.1Z"
+                        stroke="#667085" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        matTooltip="Phone Number" />
+                    </svg>
+                    <div class="text-[#101828]">
+                      <p *ngIf="data.mobileNumber != null; else message">
+                        {{ data.mobileNumber.slice(0, 5) }}
+                        {{ data.mobileNumber.slice(5, 10) }}
+                      </p>
+                    </div>
+                    <svg width="16" height="16" class="ml-2" viewBox="0 0 16 16" fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M14.6667 7.38662V7.99995C14.6658 9.43757 14.2003 10.8364 13.3396 11.9878C12.4788 13.1393 11.2689 13.9816 9.89023 14.3892C8.51162 14.7968 7.03817 14.7479 5.68964 14.2497C4.34112 13.7515 3.18976 12.8307 2.4073 11.6247C1.62484 10.4186 1.25319 8.99199 1.34778 7.55749C1.44237 6.12299 1.99813 4.7575 2.93218 3.66467C3.86623 2.57183 5.12852 1.81021 6.53079 1.49338C7.93306 1.17656 9.40017 1.32151 10.7133 1.90662M14.6667 2.66662L8 9.33995L6 7.33995"
+                        stroke="#12B76A" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </div>
+
+                  <div class=" ">
+                    <div class="text-[1rem] font-normal text-gray-500 flex items-center py-2">
+                      <svg width="20" height="18" viewBox="0 0 20 18" fill="none" class="mr-1"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M13.3333 16.5V3.16667C13.3333 2.72464 13.1577 2.30072 12.8452 1.98816C12.5326 1.67559 12.1087 1.5 11.6667 1.5H8.33332C7.8913 1.5 7.46737 1.67559 7.15481 1.98816C6.84225 2.30072 6.66666 2.72464 6.66666 3.16667V16.5M3.33332 4.83333H16.6667C17.5871 4.83333 18.3333 5.57953 18.3333 6.5V14.8333C18.3333 15.7538 17.5871 16.5 16.6667 16.5H3.33332C2.41285 16.5 1.66666 15.7538 1.66666 14.8333V6.5C1.66666 5.57953 2.41285 4.83333 3.33332 4.83333Z"
+                          stroke="#667085" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                          matTooltip="Experience" />
+                      </svg>
+                      <div class="text-[#101828] ml-1">
+                        <p *ngIf="data.totalWorkExperience != 0; else message">
+                          {{ data.totalWorkExperience }} Years Experience
+                        </p>
+                      </div>
+                    </div>
+
+                    <div class="text-base font-normal ml-1 text-gray-500 flex items-center py-2">
+                      <svg class="" width="19" height="20" viewBox="0 0 19 20" fill="none"
+                        xmlns="http://www.w3.org/2000/svg ">
+                        <path
+                          d="M10.8129 3.51886C10.8139 2.4957 8.72756 1.66699 6.15693 1.66699C3.5863 1.66699 1.50186 2.49663 1.5 3.51886M1.5 3.51886C1.5 4.54202 3.58444 5.37074 6.15693 5.37074C8.72942 5.37074 10.8139 4.54202 10.8139 3.51886L10.8139 10.7041M1.5 3.51886V14.63C1.50093 15.6532 3.58537 16.4819 6.15693 16.4819C7.40406 16.4819 8.5301 16.2847 9.36556 15.9671M1.50093 7.22259C1.50093 8.24575 3.58538 9.07446 6.15787 9.07446C8.73036 9.07446 10.8148 8.24575 10.8148 7.22259M9.42144 12.2458C8.58133 12.5746 7.42921 12.7783 6.15693 12.7783C3.58537 12.7783 1.50093 11.9495 1.50093 10.9264M16.106 11.2209C17.7424 12.8477 17.7424 15.4866 16.106 17.1135C14.4696 18.7404 11.8151 18.7404 10.1787 17.1135C8.54221 15.4866 8.54221 12.8477 10.1787 11.2209C11.8151 9.59399 14.4696 9.59399 16.106 11.2209Z"
+                          stroke="#667085" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                          matTooltip="Currency" />
+                      </svg>
+
+                      <div class="text-[#101828] ml-1">
+                        <p class="text-lg" *ngIf="data.currentCTC != 0; else message">
+                          <span class="font-medium">₹</span> {{ data.currentCTC.toLocaleString("en-IN") }}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="text-base font-normal text-gray-500 flex items-center py-2">
+                    <svg width="18" height="20" viewBox="0 0 18 20" fill="none" class="mr-1"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M16.5 8.33337C16.5 14.1667 9 19.1667 9 19.1667C9 19.1667 1.5 14.1667 1.5 8.33337C1.5 6.34425 2.29018 4.4366 3.6967 3.03007C5.10322 1.62355 7.01088 0.833374 9 0.833374C10.9891 0.833374 12.8968 1.62355 14.3033 3.03007C15.7098 4.4366 16.5 6.34425 16.5 8.33337Z"
+                        stroke="#667085" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      <path
+                        d="M9 10.8334C10.3807 10.8334 11.5 9.71408 11.5 8.33337C11.5 6.95266 10.3807 5.83337 9 5.83337C7.61929 5.83337 6.5 6.95266 6.5 8.33337C6.5 9.71408 7.61929 10.8334 9 10.8334Z"
+                        stroke="#667085" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        matTooltip="Location" />
+                    </svg>
+
+                    <p class="text-[#101828] ml-1">
+                      {{ data.preferedLocations[0] }}
+                    </p>
+                    <ng-template #message> Not Available </ng-template>
+                  </div>
+                  <div class="text-base font-normal text-gray-500 flex items-center py-2">
+                    <svg width="16" height="20" viewBox="0 0 16 20" class="mr-2" fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M1.33334 16.25C1.33334 15.6974 1.55284 15.1675 1.94354 14.7768C2.33424 14.3861 2.86414 14.1666 3.41668 14.1666H14.6667M1.33334 16.25C1.33334 16.8025 1.55284 17.3324 1.94354 17.7231C2.33424 18.1138 2.86414 18.3333 3.41668 18.3333H14.6667V1.66663H3.41668C2.86414 1.66663 2.33424 1.88612 1.94354 2.27682C1.55284 2.66752 1.33334 3.19743 1.33334 3.74996V16.25Z"
+                        stroke="#667085" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        matTooltip="Education" />
+                    </svg>
+                    <p class="text-[#101828] ml-1" *ngIf="
+                        data.educationalQualifications.length != 0;
+                        else message
+                      ">
+                      {{ data.educationalQualifications }}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- key skill -->
+          <div class="flex w-full py-4 ml-[1.5rem]">
+            <div class="w-3/4 bg-white">
+              <div class="flex flex-wrap">
+                <div class="flex justify-center">
+                  <div class="text-[0.688rem] text-gray-500">Last Active</div>
+                  <span class="text-[0.688rem] text-gray-900 ml-1 font-semibold">
+                    {{ calculateDaysAgo(data.lastSeen) }}</span>
+                </div>
+                <div class="flex lg:ml-2">
+                  <span class="text-[#D0D5DD] text-[0.688rem]"> | </span>
+                  <div class="text-[0.688rem] font-normal text-gray-500 lg:ml-[0.375rem]">
+                    Profile Updated
+                  </div>
+                  <span class="text-[0.688rem] text-gray-900 ml-1 font-semibold">
+                    {{ data.update == null ? "NA" : data.update }} days
+                    ago</span>
+                </div>
+              </div>
+              <!-- <div class=""> -->
+              <p class="flex items-center text-base font-normal text-[#667085]">
+                Key Skills
+              </p>
+              <p class="flex break-words text-md font-normal max-w-full text-[#101828] mt-1"
+                *ngIf="data.skills.length != 0; else message">
+                <!-- {{data.skills}} -->
+                {{
+                data.skills.length > 4
+                ? data.skills.slice(0, 4) + "..."
+                : data.skills
+                }}
+              </p>
+              <!-- </div> -->
+
+              <!-- <div class="  bg-gray-100 p-2 max-w-sm ml-6"> -->
+
+              <p class="flex items-center text-base font-normal text-[#667085] mt-3">
+                Preferred Locations
+              </p>
+              <p class="text-md flex font-normal max-w-full flex-wrap mt-1 text-[#101828]"
+                *ngIf="data.preferedLocations.length != 0; else message">
+                {{ data.preferedLocations }}
+
+                <!-- <div class=" bg-gray-100 p-2 max-w-sm ml-6"> -->
+              </p>
+
+              <p class="flex items-center text-base font-normal text-[#667085] mt-3">
+                Expected CTC
+              </p>
+              <p class="flex break-words text-lg  mt-1 text-[#101828]" *ngIf="data.expectedCTC != 0; else message">
+                <span class="font-medium">₹</span> {{ data.expectedCTC.toLocaleString("en-IN") }}
+              </p>
+
+              <!-- </div> -->
+              <!-- <div class=" bg-gray-100 p-2 max-w-sm ml-6"> -->
+              <div class="p-1">
+                <p class="flex items-center text-base font-normal text-[#667085] mt-3">
+                  Notice Period
+                </p>
+                <p class="flex break-words text-md font-normal text-[#101828] mt-1"
+                  *ngIf="data.noticePeriod != null; else message">
+                  {{ data.noticePeriod }} days
+                </p>
+              </div>
+            </div>
+            <!-- green -->
+            <div class="w-1/4 bg-white">
+              <div class="grid place-items-end space-y-6 mr-4 mb-6 ml-1">
+                <div class="flex mt-1 mr-[0.1rem]" matTooltip="Select">
+                  <input id="filter-mobile-color-5" type="checkbox" (change)="slect($event, data, i)" [checked]="
+                      selectedCandidates.length == candidatesList.length ||
+                      data.checked
+                    " class="h-4 w-4 border-purple-700 rounded-md text-purple-700 focus:ring-purple-700" />
+                </div>
+                <button (click)="open(data.profileId)" class="cursor-pointer" matTooltip="Open New Tab">
+                  <svg class="cursor-pointer" width="18" height="18" viewBox="0 0 18 18" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M14 9.83333V14.8333C14 15.2754 13.8244 15.6993 13.5118 16.0118C13.1993 16.3244 12.7754 16.5 12.3333 16.5H3.16667C2.72464 16.5 2.30072 16.3244 1.98816 16.0118C1.67559 15.6993 1.5 15.2754 1.5 14.8333V5.66667C1.5 5.22464 1.67559 4.80072 1.98816 4.48816C2.30072 4.17559 2.72464 4 3.16667 4H8.16667M11.5 1.5H16.5M16.5 1.5V6.5M16.5 1.5L7.33333 10.6667"
+                      stroke="#667085" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </button>
+                <button (click)="downloadResume(data)" (click)="signleResume = true" class="cursor-pointer"
+                  matTooltip="Download Resume">
+                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M16.5 11.3V14.6334C16.5 15.0754 16.3244 15.4993 16.0118 15.8119C15.6993 16.1245 15.2754 16.3 14.8333 16.3H3.16667C2.72464 16.3 2.30072 16.1245 1.98816 15.8119C1.67559 15.4993 1.5 15.0754 1.5 14.6334V11.3M4.83333 7.13338L9 11.3M9 11.3L13.1667 7.13338M9 11.3V1.30005"
+                      stroke="#667085" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </button>
+
+                <!-- <button
+                  (click)="Sourced(data.profileId)"
+                  (click)="getActiveRequirements(data.profileId)"
+                  class="cursor-pointer"
+                  matTooltip="Source"
+                > -->
+
+                <button (click)="Sourced(data.profileId)" class="cursor-pointer" matTooltip="Source">
+                  <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M9 5.26676V11.9334M5.66667 8.6001H12.3333M3.16667 1.1001H14.8333C15.7538 1.1001 16.5 1.84629 16.5 2.76676V14.4334C16.5 15.3539 15.7538 16.1001 14.8333 16.1001H3.16667C2.24619 16.1001 1.5 15.3539 1.5 14.4334V2.76676C1.5 1.84629 2.24619 1.1001 3.16667 1.1001Z"
+                      stroke="#667085" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </button>
+
+                <svg width="20" class="cursor-pointer" height="16" viewBox="0 0 20 16" fill="none"
+                  (click)="emailPop(data)" xmlns="http://www.w3.org/2000/svg" matTooltip="Send Mail/SMS">
+                  <path
+                    d="M18.3333 3.40006C18.3333 2.4834 17.5833 1.7334 16.6667 1.7334H3.33332C2.41666 1.7334 1.66666 2.4834 1.66666 3.40006M18.3333 3.40006V13.4001C18.3333 14.3167 17.5833 15.0667 16.6667 15.0667H3.33332C2.41666 15.0667 1.66666 14.3167 1.66666 13.4001V3.40006M18.3333 3.40006L9.99999 9.2334L1.66666 3.40006"
+                    stroke="#667085" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+
+                <svg width="18" class="cursor-pointer" height="19" viewBox="0 0 18 19" fill="none"
+                  (click)="shareCandidate(data.profileId)" xmlns="http://www.w3.org/2000/svg" matTooltip="Share">
+                  <path
+                    d="M6.15833 10.4582L11.85 13.7749M11.8417 4.62491L6.15833 7.94158M16.5 3.36658C16.5 4.74729 15.3807 5.86658 14 5.86658C12.6193 5.86658 11.5 4.74729 11.5 3.36658C11.5 1.98587 12.6193 0.866577 14 0.866577C15.3807 0.866577 16.5 1.98587 16.5 3.36658ZM6.5 9.19991C6.5 10.5806 5.38071 11.6999 4 11.6999C2.61929 11.6999 1.5 10.5806 1.5 9.19991C1.5 7.8192 2.61929 6.69991 4 6.69991C5.38071 6.69991 6.5 7.8192 6.5 9.19991ZM16.5 15.0332C16.5 16.414 15.3807 17.5332 14 17.5332C12.6193 17.5332 11.5 16.414 11.5 15.0332C11.5 13.6525 12.6193 12.5332 14 12.5332C15.3807 12.5332 16.5 13.6525 16.5 15.0332Z"
+                    stroke="#667085" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <svg width="20" class="mb-9 cursor-pointer" height="18" (click)="reportCanndidate(data)"
+                  viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg" matTooltip="Report">
+                  <path
+                    d="M9.9998 6.66667V10M9.9998 13.3333H10.0081M8.5748 2.38334L1.51647 14.1667C1.37094 14.4187 1.29394 14.7044 1.29313 14.9954C1.29231 15.2865 1.36771 15.5726 1.51183 15.8254C1.65594 16.0783 1.86374 16.289 2.11456 16.4366C2.36538 16.5841 2.65047 16.6635 2.94147 16.6667H17.0581C17.3491 16.6635 17.6342 16.5841 17.885 16.4366C18.1359 16.289 18.3437 16.0783 18.4878 15.8254C18.6319 15.5726 18.7073 15.2865 18.7065 14.9954C18.7057 14.7044 18.6287 14.4187 18.4831 14.1667L11.4248 2.38334C11.2762 2.13843 11.0671 1.93594 10.8175 1.79541C10.5679 1.65488 10.2863 1.58105 9.9998 1.58105C9.71336 1.58105 9.43175 1.65488 9.18214 1.79541C8.93254 1.93594 8.72336 2.13843 8.5748 2.38334Z"
+                    stroke="#667085" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--  -->
+      <div *ngIf="candidatesList.length == 0 && loading">
+        <div class="flex items-center justify-center mt-24">
+          <div
+            class="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
+            role="status">
+            <span
+              class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">Loading...</span>
+          </div>
+          <p class="ml-2">Loading</p>
+        </div>
+      </div>
+      <div *ngIf="candidatesList.length == 0 && !loading"
+        class="grid place-items-center mt-40 font-[jost] font-semibold md:mx-35 md:text-lg lg:text-4xl">
+        No Profiles found
+      </div>
+    </div>
+    <div *ngIf="mailMessage">
+      <app-send-email-sms [email]="email" [number]="numb" [Candidates]="selectedCandidates" [bulk]="bulks" [SMS]="SMS"
+        (childMessage)="childMessage($event)" (CandidateList)="removedCandidates($event)">
+      </app-send-email-sms>
+    </div>
+    <div *ngIf="candidateAction">
+      <app-edit-job-status [reportCandidateDetails]="reportCandidateDetails" [reportCandidate]="reportCandidate"
+        [candidatesResumeList]="candidatesResumeList" [candidatesNotResume]="candidatesNotResume"
+        [signleResume]="signleResume" [openResumeModel]="resumePop" [candidateId]="candidateId"
+        [Closesourced]="Closesourced" [profileId]="profileId" [sourcePath]="sourcePath" [jobId]="jobId"
+        (closeMdoel)="closeModel($event)"></app-edit-job-status>
+    </div>
+  </div>
+
+  <div *ngIf="filterShow"
+    class="absolute inset-y-14 right-0 z-50 xl:hidden border-none mt-2 bg-clip-padding text-neutral-700 shadow-sm outline-none mb-1 animate-[fade-in-up_1s_ease-in-out]">
+    <form [formGroup]="FilterForm">
+      <div class="filter">
+        <div class="border border-gray-300 rounded-lg w-80 h-full bg-white">
+          <div class="">
+            <p class="p-2 font-medium text-gray-900 text-lg flex">Filter</p>
+            <hr />
+            <div class="mt-2 mx-2 font-semibold">
+              <div class="flex justify-between ml-2">
+                <div class="flex flex-wrap text-sm">
+                  <p class="text-[#475467]">{{ count }} Filters</p>
+                  <span class="text-[#667085]">&nbsp; Applied</span>
+                </div>
+                <button>
+                  <input class="cursor-default text-[#1D2939] text-md" type="reset" (click)="cancelFilter()"
+                    value="Reset" />
+                </button>
+              </div>
+            </div>
+            <div class="overflow-y-auto  h-[{{
+                height + 140
+              }}px] space-y-2 scrollbar-hide">
+              <hr class="mx-4" />
+
+              <div class="mx-4">
+                <label class="form-label inline-block text-gray-3 font-medium">Experience</label>
+                <div class="flex flex-wrap">
+                  <input type="number"
+                    class="mt-1 block w-28 h-11 border border-gray-300 bg-gray-50 rounded-lg shadow-xs py-2.5 px-3.5 cursor-default"
+                    placeholder="Minimum" minlength="0" maxlength="2" formControlName="minimum"
+                    onKeyPress="if(this.value.length==2) return false;" />
+
+                  <span class="mx-1.5 w-4 h-6 text-base font-normal text-gray-500 mt-3">to</span>
+
+                  <input type="number"
+                    class="mt-1 block w-28 h-11 border border-gray-300 bg-gray-50 rounded-lg shadow-xs py-2.5 px-3.5 cursor-default"
+                    placeholder="Maximum" minlength="0" maxlength="2" formControlName="maximum"
+                    onKeyPress="if(this.value.length==2) return false;" />
+                </div>
+              </div>
+              <div class="mx-4">
+                <label class="block text-base font-medium text-gray-700 h-6 w-24">Current CTC</label>
+                <div class="flex flex-wrap">
+                  <input type="number"
+                    class="mt-1 block w-28 h-11 border border-gray-300 bg-gray-50 rounded-lg shadow-xs py-2.5 px-3.5 cursor-default"
+                    placeholder="Minimum" autocomplete="off" minlength="6" maxlength="7"
+                    onKeyPress="if(this.value.length==8) return false;" formControlName="salarymin" />
+
+                  <span class="mx-1.5 w-4 h-6 text-base font-normal text-gray-500 mt-3">to</span>
+
+                  <input type="number"
+                    class="mt-1 block w-28 h-11 border border-gray-300 bg-gray-50 rounded-lg shadow-xs py-2.5 px-3.5 cursor-default"
+                    placeholder="Maximum" minlength="6" maxlength="7"
+                    onKeyPress="if(this.value.length==8) return false;" formControlName="salarymax" />
+                </div>
+              </div>
+              <div class="mx-4">
+                <div class="flex cursor-pointer" (click)="showNotice = !showNotice">
+                  <label class="block w-64 h-6 font-medium text-base text-gray-700 cursor-pointer">Notice Period</label>
+                  <svg width="14" height="8" viewBox="0 0 14 8" class="m-2" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1L7 7L13 1" stroke="#101828" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </div>
+                <div class="" *ngIf="showNotice">
+                  <div class="flex items-center mb-1 ml-2">
+                    <input type="radio" value="15" name="notice" formControlName="noticePeriod"
+                      class="w-3 h-3 mt-3.5 bg-white border border-gray-300 cursor-default" />
+                    <label class="block text-sm font-medium text-gray-700 ml-2 mt-3 w-24 h-5">
+                      &lt;15 days</label>
+                  </div>
+
+                  <div class="flex items-center mb-1 ml-2">
+                    <input type="radio" value="30" name="notice" formControlName="noticePeriod"
+                      class="w-3 h-3 mt-3.5 rounded-md bg-white border border-gray-300 cursor-default" />
+                    <label class="block text-sm font-medium text-gray-700 ml-2 mt-3 w-16 h-5">
+                      &lt;1 month
+                    </label>
+                  </div>
+
+                  <div class="flex items-center mb-1 ml-2">
+                    <input type="radio" value="60" name="notice" formControlName="noticePeriod"
+                      class="w-3 h-3 mt-3.5 rounded-md bg-white border border-gray-300 cursor-default" />
+                    <label class="block text-sm font-medium text-gray-700 ml-2 mt-3 w-24 h-5">
+                      &lt;2 months
+                    </label>
+                  </div>
+
+                  <div class="flex items-center mb-1 ml-2">
+                    <input type="radio" value="90" name="notice" formControlName="noticePeriod"
+                      class="w-3 h-3 mt-3.5 rounded-md bg-white border border-gray-300 cursor-default" />
+                    <label class="block text-sm font-medium text-gray-700 ml-2 mt-3 w-24 h-5">
+                      &lt;3 months
+                    </label>
+                  </div>
+                  <div class="flex items-center mb-1 ml-2">
+                    <input type="radio" value="91" name="notice" formControlName="noticePeriod"
+                      class="w-3 h-3 mt-3.5 rounded-md bg-white border border-gray-300 cursor-default" />
+                    <label class="block text-sm font-medium text-gray-700 ml-2 mt-3 w-16 h-5">
+                      &gt;3 months
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="mx-4">
+                <div class="flex cursor-pointer" (click)="showActive = !showActive">
+                  <label class="block w-64 h-6 font-medium text-base text-gray-700 cursor-pointer">Last Active</label>
+                  <svg width="14" height="8" viewBox="0 0 14 8" class="m-2" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1L7 7L13 1" stroke="#101828" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </div>
+
+                <div class="" *ngIf="showActive">
+                  <div class="flex items-center mb-1 ml-2">
+                    <input type="radio" value="7" name="activity" formControlName="activity"
+                      class="w-3 h-3 mt-3.5 rounded-md bg-white border border-gray-300 cursor-default" />
+                    <label class="block text-sm font-medium text-gray-700 ml-2 mt-3 w-16 h-5">
+                      &lt;7 days
+                    </label>
+                  </div>
+
+                  <div class="flex items-center mb-1 ml-2">
+                    <input type="radio" value="14" name="activity" formControlName="activity"
+                      class="w-3 h-3 mt-3.5 rounded-md bg-white border border-gray-300 cursor-default" />
+                    <label class="block text-sm font-medium text-gray-700 ml-2 mt-3 w-16 h-5">
+                      &lt;14 days
+                    </label>
+                  </div>
+
+                  <div class="flex items-center mb-1 ml-2">
+                    <input type="radio" value="30" name="activity" formControlName="activity"
+                      class="w-3 h-3 mt-3.5 rounded-md bg-white border border-gray-300 cursor-default" />
+                    <label class="block text-sm font-medium text-gray-700 ml-2 mt-3 w-16 h-5">
+                      &lt;1 month
+                    </label>
+                  </div>
+
+                  <div class="flex items-center mb-1 ml-2">
+                    <input type="radio" value="31" name="activity" formControlName="activity"
+                      class="w-3 h-3 mt-3.5 rounded-md bg-white border border-gray-300 cursor-default" />
+                    <label class="block text-sm font-medium text-gray-700 ml-2 mt-3 w-16 h-5">
+                      &gt;1 month
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="mx-4">
+                <div class="form-group">
+                  <label for="exampleInputName" class="form-label inline-block text-gray-700 font-medium">Preferred
+                    Locations</label>
+                  <div>
+                    <div class="" *ngIf="locations$ | async as locationlist">
+                      <!-- <ng-select #select []="true" placeholder="Search" [items]="locations" [multiple]="true" class="form-control"
+                            (change)="Searchlocation($event)" [maxSelectedItems]="9" (paste)="false" (paste)="false"
+                            formControlName="location">
+                          </ng-select> -->
+
+                      <ng-select [items]="locationlist" [multiple]="true" class="form-control w-full"
+                        [maxSelectedItems]="4" (paste)="(false)" [(ngModel)]="selectedLocation" (paste)="(false)"
+                        [ngModelOptions]="{ standalone: true }" placeholder="Job Location" [clearable]="true">
+                      </ng-select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mx-4">
+                <div class="form-group">
+                  <label for="exampleInputName" class="form-label text-gray-700 font-medium">Role</label>
+                  <div class="">
+                    <div class="" *ngIf="roles$ | async as rolesList">
+                      <ng-select [items]="rolesList" [multiple]="true" class="" (paste)="(false)" (paste)="(false)"
+                        [(ngModel)]="selectedRole" [ngModelOptions]="{ standalone: true }" placeholder="Role">
+                      </ng-select>
+                    </div>
+                  </div>
+                  <div class="w-full"></div>
+                </div>
+              </div>
+              <div class="mx-4">
+                <div class="form-group">
+                  <label for="exampleInputName" class="form-label inline-block text-gray-3 font-medium">Industry</label>
+                  <div class="">
+                    <div class="" *ngIf="industry$ | async as industry">
+                      <!-- <ng-select #select []="true" placeholder="Search" [items]="industry" [multiple]="true" class="form-control "
+                            (change)="searchIndustry($event)" [maxSelectedItems]="9" (paste)="false" (paste)="false"
+                            formControlName="industry">
+                          </ng-select> -->
+                      <ng-select [items]="industry" [multiple]="true" class="" (paste)="(false)"
+                        [(ngModel)]="selectedInd" [ngModelOptions]="{ standalone: true }" (paste)="(false)"
+                        placeholder="Industry">
+                      </ng-select>
+                    </div>
+                  </div>
+                  <div class="w-full">
+                    <!-- <button *ngFor="let ind of selectedind" class="text-sm mt-1  font-medium  rounded-full bg-blue-100 
+                      text-gray-700  mr-2 ml-3 px-4 py-1.5 " disabled>
+                          {{ind}}
+                        </button> -->
+                  </div>
+                </div>
+              </div>
+              <div class="mx-4">
+                <div class="form-group">
+                  <label for="exampleInputName"
+                    class="form-label inline-block text-gray-3 font-medium">Education</label>
+                  <div class="">
+                    <div class="" *ngIf="
+                        EduacationalQualifications$
+                          | async as EduacationalQualifications
+                      ">
+                      <!-- <ng-select #select []="true" placeholder="Search" [items]="education" [multiple]="true" class="form-control "
+                            (change)="searcheducation($event)" [maxSelectedItems]="9" (paste)="false" (paste)="false"
+                            formControlName="education">
+      
+                          </ng-select> -->
+                      <ng-select [items]="EduacationalQualifications" [multiple]="true" class="" [clearable]="false"
+                        [maxSelectedItems]="4" (paste)="(false)" [(ngModel)]="selectedEdu" (paste)="(false)"
+                        [ngModelOptions]="{ standalone: true }" placeholder="Educational
+                         Qualifications">
+                      </ng-select>
+                    </div>
+                  </div>
+                  <div class="w-full mb-2">
+                    <!-- <button *ngFor="let edu of selectededu" class="text-sm mt-1  font-medium rounded-full  bg-blue-100 
+                      text-gray-700  mr-2 ml-3 px-4 py-1.5 " disabled>
+                          {{edu}}
+                        </button> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr />
+            <div class="block p-2 space-x-4">
+              <button (click)="filterSearch()"
+                class="bg-[#0175A2] disabled:bg-gray-300 text-white font-semibold py-0.5 h-11 w-full border border-gray-400 text-xl rounded-md shadow">
+                Apply
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

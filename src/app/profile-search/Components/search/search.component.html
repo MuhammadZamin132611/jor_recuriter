@@ -1,0 +1,825 @@
+<!-- <div class=" ">
+    -->
+    <div class="max-w-screen max-h-screen overflow-hidden  bg-[#FCFCFD]" (window:resize)="onResize($event)">
+      <app-header></app-header>
+      <app-side-bar> </app-side-bar>
+      <div  class="mt-12 h-[7rem] w-full bg-white pl-14">
+        <div class="pt-4">
+          <div class="text-[1.4rem] ml-12 font-medium text-gray-900 flex rubik">
+            Profile Search
+          </div>
+          <div class="flex ml-12 text-gray-500 font-normal">
+            Search from over
+            <div class="font-medium ml-1">
+              1,00,000+
+              <span class="font-normal">profiles to find your perfect candidate</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="w-7/8 max-h-fit grid bg-gray-50 lg:grid-cols-2 gap-2 pl-14 pr-10">
+        <div class="w-full relative mx-6 bg-[#F9FAFB] h-full">
+          <div *ngIf="showPop"
+            class="w-2/3 lg:hidden absolute border-none py-10 -top-12 bg-clip-padding text-neutral-700 shadow-sm outline-none right-0 z-30 animate-[fade-in-up_1s_ease-in-out]">
+            <app-view-recent-search (closePop)="closePopUp($event)" [height]="height - 114" *ngIf="showPopHistory">
+            </app-view-recent-search>
+            <app-boolean-search (closePop)="closePopUp($event)" [height]="height" class="h-full" *ngIf="showPopBoolean">
+            </app-boolean-search>
+          </div>
+          <div class="w-full h-[{{ height }}px]">
+            <div class="w-11/12 space-x-6">
+              <div class="rounded-t-lg px-6 w-full flex relative pt-[1rem]">
+                <h3 class="text-[20px] font-semibold leading-6 text-gray-700 py-1">
+                  {{showBoolean?'Boolean Search':'Basic Information'}}
+                </h3>
+                <div class="absolute inset-y-0 -right-4 mt-2.5  lg:hidden"
+                  (click)="showPop = true; showPopHistory = !showPopHistory">
+                  <svg class="" width="20" height="45" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M10.582 4.27031H9.4064V8.18906L12.7609 10.1798L13.3252 9.23145L10.582 7.60125V4.27031ZM10.1902 0.351562C8.31938 0.351563 6.52524 1.09472 5.2024 2.41756C3.87957 3.74039 3.13641 5.53454 3.13641 7.40531H0.785156L3.88881 10.5638L7.05516 7.40531H4.70391C4.70391 5.95027 5.28192 4.55482 6.31079 3.52595C7.33966 2.49708 8.73511 1.91906 10.1902 1.91906C11.6452 1.91906 13.0406 2.49708 14.0695 3.52595C15.0984 4.55482 15.6764 5.95027 15.6764 7.40531C15.6764 8.86036 15.0984 10.2558 14.0695 11.2847C13.0406 12.3135 11.6452 12.8916 10.1902 12.8916C8.67752 12.8916 7.30596 12.2724 6.31843 11.277L5.20551 12.39C5.85717 13.0488 6.63364 13.5711 7.48951 13.9264C8.34538 14.2816 9.26348 14.4627 10.1902 14.4591C12.0609 14.4591 13.8551 13.7159 15.1779 12.3931C16.5007 11.0702 17.2439 9.27608 17.2439 7.40531C17.2439 5.53454 16.5007 3.74039 15.1779 2.41756C13.8551 1.09472 12.0609 0.351563 10.1902 0.351562Z"
+                      fill="#667085" />
+                  </svg>
+                </div>
+                
+            <div class="absolute inset-y-0 right-3 top-6">
+
+              <label class="relative inline-flex items-center mb-5">
+                <input type="checkbox" value="" class="sr-only peer" (click)="showBooleanSearch()" />
+                <div
+                  class="w-9 h-5 bg-gray-300 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-gray-200 after:border-gray-300 after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-[#0175A2]">
+                </div>
+                <span class="ml-3 text-sm font-medium">{{ showBoolean ? 'Boolean Search On' : 'Boolean Search Off' }}</span>
+              </label>
+            </div>
+                </div>
+              </div>
+              <div class="scrollable-container">
+              <div class="w-full h-[{{ height }}px] overflow-y-auto overflow-x-hidden ">
+              
+              <form *ngIf="!showBoolean" [formGroup]="profileSearch" class="w-full mx-6 mb-[8rem]">
+                <div class="w-full">
+                  <div class="space-y-2">
+                    <label for="company-website" class="block text-[16px] font-medium text-gray-600 mt-4">
+                      Search Title
+                    </label>
+                    <div class="mt-1 flex rounded-md w-5/6">
+                      <input type="text" formControlName="searchTitle"
+                        class="w-full h-[3rem] px-3 mb-2 text-base text-gray-700 border border-gray-300 rounded-md focus:shadow-outline outline-none"
+                        placeholder="eg. Junior Developer, Tech Support Engineer" (keypress)="keyPressChars($event)" />
+                    </div>
+                    <div class="text-red-800" *ngIf="submitted && form.searchTitle.errors">
+                      <div class="-mt-2" *ngIf="form.searchTitle.errors.required">
+                        Please Enter Title
+                      </div>
+                    </div>
+                    <!-- <div class="">
+                      <label class="relative inline-flex items-center mb-5">
+                        <input type="checkbox" value="" class="sr-only peer" (click)="booleanpop()" />
+                        <div
+                          class="w-9 h-5 bg-gray-300 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-gray-200 after:border-gray-300 after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-[#0175A2]">
+                        </div>
+                        <span class="ml-3 text-[14px] font-normal text-gray-600 dark:text-gray-300" *ngIf="!boolean">Boolean
+                          Search On</span>
+                        <span class="ml-3 text-[14px] font-medium text-gray-600 dark:text-gray-300" *ngIf="boolean">Boolean
+                          Search Off</span>
+                      </label>
+                    </div> -->
+                    <!-- <div class="" *ngIf="boolean">
+                      <label for="company-website" class="block text-sm font-medium text-gray-700 mt-2">Boolean
+                      </label>
+                      <input type="text"
+                        class="w-5/6 h-9 px-3 mb-2 text-base text-gray-700 border rounded-lg focus:shadow-outline outline-none mt-1.5 shadow"
+                        placeholder="eg.Development manager OR Development Engineer" />
+                    </div> -->
+                  </div>
+                  <div  iv class="space-y-2">
+                    <label for="company-website" class="block text-[16px] font-medium text-gray-600 mt-0.5">
+                      <!-- <span style="color: red">*</span> -->
+                      Keywords Search
+                    </label>
+                    <div class="mt-1 flex rounded-md w-5/6" *ngIf="skillList$">
+                      <ng-select [items]="skillList" [multiple]="true" class="w-full rounded-md cursor-pointer"
+                        [maxSelectedItems]="9" [dropdownPosition]="'bottom'" placeholder="eg: Java, JEE, Springboot"
+                        formControlName="mustHaveKeyWord">
+                      </ng-select>
+                    </div>
+                    <div class="text-red-800" *ngIf="submitted && form.mustHaveKeyWord.errors">
+                      <div *ngIf="form.mustHaveKeyWord.errors.required">
+                        Please Select keywords
+                      </div>
+                    </div>
+                    <div class="flex pt-1">
+                      <div class="-mt-1"  (click)="toggleDropdown()">
+                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect width="28" height="28" rx="14" fill="#F2F4F7" />
+                          <path d="M14 10.5V17.5M10.5 14H17.5" stroke="#0175A2" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        </svg>
+                      </div>
+    
+                      <label class="inline-block pl-[10px] text-[15px] font-normal text-gray-600 dark:text-gray-300 hover:"
+                        for="flexSwitchCheckDefault">Add keyword to exclude</label>
+                    </div>
+                    <div class="mt-1 flex rounded-md w-5/6" *ngIf="showDropdown">
+                      <ng-select [items]="skillList" [multiple]="true" class="w-full rounded-md cursor-pointer"
+                        [maxSelectedItems]="9"  [dropdownPosition]="'bottom'" placeholder="eg: Java, JEE, Springboot"
+                        formControlName="showDropdown">
+                      </ng-select>
+                    
+                  </div>
+                  </div>
+                  <div>
+                    <label for="company-website" class="block text-[16px] font-medium text-gray-600 mt-2">Experience
+                    </label>
+                    <div class="flex mt-1">
+                      <div class=" w-5/6 flex gap-2 ">
+                      <input type="text"
+                        class="mt-1 block w-[43.4%] h-11 border border-gray-300 focus:outline-none bg-white rounded-lg shadow-xs py-1.5 px-2"
+                        formControlName="minExp" placeholder="Minimum" minlength="0" maxlength="2"
+                        onKeyPress="if(this.value.length==2) return false;" (keypress)="keyPressNumbers($event)"/>
+                        <!-- <div class="mt-1 flex items-center">
+                          <span class="text-sm font-medium">[</span>
+                          <input type="text"
+                                 class="block w-[43.3%] h-11 border border-gray-300 focus:outline-none bg-white rounded-lg shadow-xs py-1.5 px-2"
+                                 formControlName="minExp" placeholder="Minimum" minlength="0" maxlength="2"
+                                 onKeyPress="if(this.value.length==2) return false;" />
+                          <span class="text-sm font-medium">]</span>
+                        </div>
+                         -->
+                      <span class="h-6 text-base  font-normal text-gray-500 mt-3">to</span>
+                      <input type="text"
+                        class="mt-1 block w-[43.3%] h-11 border border-gray-300 focus:outline-none bg-white rounded-lg shadow-xs py-1.5 px-2"
+                        formControlName="maxExp" [required]="
+                          profileSearch.controls['minExp'].value !== '' &&
+                          profileSearch.controls['minExp'].value !== null
+                        " placeholder="Maximum" onKeyPress="if(this.value.length==2) return false;" (keypress)="keyPressNumbers($event)"/>
+    
+                      <span class=" h-6 text-base font-normal text-gray-500 mt-3">Years</span>
+                    </div>
+                    </div>
+    
+                    <div class="text-red-800 mt-2" *ngIf="submitted && form.maxExp.errors">
+                      <div *ngIf="form.maxExp.errors.required">
+                        Please Enter Maximum Experience
+                      </div>
+                      <div *ngIf="form.maxExp.errors.greaterThan">
+                        Please Enter Correct Maximum Experience
+                      </div>
+                    </div>
+                  </div>
+    
+                  <div class="space-y-2 mt-4">
+                    <label for="company-website" class="block text-[16px] font-medium text-gray-600">Preferred Location
+                    </label>
+                    <div class="mt-4 flex rounded-md w-5/6" *ngIf="loactions$ | async as loactionlist">
+                      <ng-select #select [items]="loactionlist" [multiple]="true" formControlName="location"
+                        placeholder="Add Preferred Location" class="form-control w-full rounded-md cursor-pointer "
+                        [maxSelectedItems]="9" (paste)="(false)" [dropdownPosition]="'bottom'" (paste)="(false)">
+                      </ng-select>
+                    </div>
+                    <div class="mt-2">
+                      <label class="relative flex">
+                        <input type="checkbox" value="" class="sr-only peer" />
+                        <div
+                          class="w-9 h-5 bg-gray-300 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-gray-200 after:border-gray-300 after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-[#0175A2]">
+                        </div>
+    
+                        <span class="text-[14px] font-normal text-gray-600 w-full ml-2">Include willing candidates for
+                          relocations to
+                          listed</span>
+                      </label>
+                    </div>
+                  </div>
+                
+            <div class="space-y-2 mt-4">
+              <label for="company-website" class="block text-[16px] font-medium text-gray-600">Annual CTC</label>
+              <div class="flex mt-1.5 ">
+                <div class="flex w-5/6 gap-2">
+                  <select name="" id="icon"
+                    class="border border-gray-300 text-[1rem] h-11 flex items-center justify-center text-base font-normal rounded-lg">
+                    <option class="text-gray-500" value="INR">INR</option>
+                  </select>
+            
+                  <input
+                    class="block w-[40%] ml-[1rem] h-11 border border-gray-300 focus:outline-none bg-white rounded-lg shadow-xs py-1.5 px-2"
+                    formControlName="minSalary" placeholder="Minimum" type="text" autocomplete="off"
+                    (keypress)="keyPressNumbers($event)"
+                    (input)="changeToCurrency('minSalary')"
+                    [ngModel]="minSalaryValue | number"
+                    maxlength="9" />
+            
+                  <div class="mt-2 ">
+                    <p class="text-gray-500 text-[16px]">to</p>
+                  </div>
+            
+                  <input
+                    class="block w-[40%] h-11  border border-gray-300 focus:outline-none bg-white rounded-lg shadow-xs py-1.5 px-2"
+                    formControlName="maxSalary" placeholder="Maximum" type="text" autocomplete="off"
+                    (keypress)="keyPressNumbers($event)"
+                    (input)="changeToCurrency('maxSalary')"
+                    [ngModel]="maxSalaryValue | number"
+                    maxlength="9" />
+                </div>
+              </div>
+            </div>
+               
+                </div>
+                <hr class="mt-4 w-5/6 border border-gray-200" />
+    
+                <div class="space-y-4">
+                  <h3 class="text-[20px] font-semibold leading-6 text-gray-700 mt-5">
+                    Employment
+                  </h3>
+                  <div>
+                    <label for="company-website" class="block text-[16px] font-medium text-gray-600">Industry
+                    </label>
+                    <div class="flex rounded-md w-5/6 mt-2" *ngIf="industry$ | async as indusrys">
+                      <ng-select [readonly]="false" [items]="indusrys" [multiple]="false"
+                        class="form-control w-full h-9 rounded-md" formControlName="industry" [maxSelectedItems]="9"
+                        (paste)="(false)" (paste)="(false)" [dropdownPosition]="'bottom'"
+                        placeholder="eg: Software Development, Marketing">
+                      </ng-select>
+                    </div>
+                  </div>
+                  <div class="mt-1">
+                    <label for="company-website" class="block text-[16px] font-medium text-gray-600">Department
+                    </label>
+                    <div class="flex rounded-md mt-2 w-5/6" *ngIf="department$ | async as department">
+                      <ng-select [readonly]="false" [items]="department" [multiple]="false"
+                        class="form-control w-full h-9 rounded-md" formControlName="department" [maxSelectedItems]="9"
+                        (paste)="(false)" placeholder="eg: User Interface,Networking" [dropdownPosition]="'bottom'"
+                        (paste)="(false)">
+                      </ng-select>
+                    </div>
+                  </div>
+                  <div class="mt-4">
+                    <label for="company-website" class="block text-[16px] font-medium text-gray-600">Designation
+                    </label>
+                    <div class="flex rounded-md pt-2 w-5/6" *ngIf="designations$ | async as designations">
+                      <ng-select [items]="designations" [readonly]="false" [multiple]="false" data-icon="glyphicon-search"
+                        class="form-control w-full h-9 rounded-md" formControlName="designation" [maxSelectedItems]="9"
+                        (paste)="(false)" (paste)="(false)" placeholder="Meta, Alphabet, Tesla" dropdownPosition="bottom">
+                      </ng-select>
+                    </div>
+                    <div class="pt-4" (click)="toggleDropdowns()">
+                      <span id="dropdownDefaultButton" class="text-[14px] flex bg-gray-50 font-medium text-gray-600">
+                        Type of Association
+                        <svg width="12" class="mt-2 ml-2" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M1 1L7 7L13 1" stroke="#475467" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                      </span>
+                      <div *ngIf="isDropdownOpen" id="dropdown" class="z-10 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+                        <ul class="py-2 text-md text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
+                          <li>
+                            <a  class="block px-1 py-1 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Current Role</a>
+                          </li>
+                          <hr class="my-1 dark:border-gray-600">
+                          <li>
+                            <a  class="block px-1 py-1 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Previous Role</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    
+                      
+                    
+                  </div>
+    
+                  <div>
+                    <label for="company-website" class="block text-[16px] font-medium text-gray-600">Preferred Company
+                    </label>
+                    <div class="flex rounded-md mt-2 w-5/6">
+                      <ng-select [items]="companies" [readonly]="false" class="form-control w-full h-9 rounded-md" [maxSelectedItems]="9"
+                        (paste)="(false)" (paste)="(false)" formControlName="comapnies" placeholder="Add Preferred Company" dropdownPosition="bottom">
+                      </ng-select>
+                    </div>
+                    <div class="pt-4"(click)="toggleDropdownss()">
+                      <span class="text-[14px] flex bg-gray-50 font-medium text-gray-600">Type of Association
+                        <svg width="12" class="mt-2 ml-2" height="8" viewBox="0 0 14 8" fill="none"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <path d="M1 1L7 7L13 1" stroke="#475467" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        </svg>
+                      </span>
+                      <div *ngIf="isDropdownOpens" id="dropdown" class="z-10 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+                        <ul class="py-2 text-md text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
+                          <li>
+                            <a  class="block px-1 py-1 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Current Employer</a>
+                          </li>
+                          <hr class="my-1 dark:border-gray-600">
+                          <li>
+                            <a  class="block px-1 py-1 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Previous Employer</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+    
+                  <div class="flex">
+                    <div class="-mt-1" (click)="toggleExcludeCompaniesDropdown()">
+                      <svg  width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="28" height="28" rx="14" fill="#F2F4F7" />
+                        <path d="M14 10.5V17.5M10.5 14H17.5" stroke="#0175A2" stroke-width="1.5" stroke-linecap="round"
+                          stroke-linejoin="round" />
+                      </svg>
+                    </div>
+    
+                    <label  class="inline-block pl-[10px] text-[15px] text-gray-700 font-normal hover:"
+                      for="flexSwitchCheckDefault">Add list of companies to exclude</label>
+                  </div>
+                  <div class="mt-1 flex rounded-md w-5/6" *ngIf="showExcludeCompaniesDropdown">
+                    <ng-select [items]="companies" [readonly]="false" class="form-control w-full h-9 rounded-md" [maxSelectedItems]="9"
+                      (paste)="(false)" (paste)="(false)" formControlName="companies" placeholder="Add Companies to Exclude" dropdownPosition="bottom" #dropdown>
+                    </ng-select>
+                  </div>
+                  <div class="mt-4 w-5/6">
+                    <label for="company-website" class="block text-[18px] font-medium text-gray-600">Notice Period
+                    </label>
+    
+                    <div class="flex-wrap rounded-md">
+                      <div class="flex -ml-4 md:flex-wrap mt-3 space-x-3">
+                        <div>
+                          <input type="radio" id="notice-any" name="notice" value="any" class="hidden peer"
+                            formControlName="noticePeriod" />
+                          <label for="notice-any"
+                            class="h-3/6 peer-checked:bg-[#0175A2] ml-3 peer-checked:text-white inline-flex items-center justify-between px-2 py-3 text-gray-500 bg-gray-100 border-0 rounded-full dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:text-white dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+                            <div class="block rounded-xl px-2">
+                              <div class="grid-flow-row">Any</div>
+                            </div>
+                          </label>
+                        </div>
+    
+                        <div>
+                          <input type="radio" id="notice-immediate" name="notice" value="" class="hidden peer"
+                            formControlName="noticePeriod" />
+                          <label for="notice-immediate"
+                            class="h-3/6 peer-checked:bg-[#0175A2] peer-checked:text-white inline-flex items-center justify-between px-2 py-3 text-gray-500 bg-gray-100 border-0 rounded-full dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:text-white dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+                            <div class="block">
+                              <div class="grid-flow-row">Immediate Joining</div>
+                            </div>
+                          </label>
+                        </div>
+    
+                        <div>
+                          <input type="radio" id="15" name="notice" value="15" class="hidden peer"
+                            formControlName="noticePeriod" />
+                          <label for="15"
+                            class="h-3/6 inline-flex items-center justify-between px-2 py-3 text-gray-500 bg-gray-100 border-0 rounded-full dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:bg-[#0175A2] peer-checked:text-white dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+                            <div class="block">
+                              <div class="w-full">15 days or less</div>
+                            </div>
+                          </label>
+                        </div>
+    
+                        <div>
+                          <input type="radio" id="1" name="notice" value="30" class="hidden peer"
+                            formControlName="noticePeriod" />
+                          <label for="1"
+                            class="h-3/6 inline-flex items-center justify-between px-2 py-3 text-gray-500 bg-gray-100 border-0 rounded-full dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:bg-[#0175A2] peer-checked:text-white dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+                            <div class="block">
+                              <div class="w-full">1 month or less</div>
+                            </div>
+                          </label>
+                        </div>
+                        <div>
+                          <input type="radio" id="2" name="notice" value="60" class="hidden peer"
+                            formControlName="noticePeriod" />
+                          <label for="2"
+                            class="h-3/6 inline-flex items-center justify-between px-2 py-3 text-gray-500 bg-gray-100 border-0 rounded-full dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:bg-[#0175A2] peer-checked:text-white dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+                            <div class="block">
+                              <div class="w-full">2 months or less</div>
+                            </div>
+                          </label>
+                        </div>
+                        <div>
+                          <input type="radio" id="3" name="notice" value="90" class="hidden peer"
+                            formControlName="noticePeriod" />
+                          <label for="3"
+                            class="h-3/6 inline-flex items-center justify-between px-2 py-3 text-gray-500 bg-gray-100 border-0 rounded-full dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:bg-[#0175A2] peer-checked:text-white dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+                            <div class="block">
+                              <div class="w-full">3 months</div>
+                            </div>
+                          </label>
+                        </div>
+                      </div>
+    
+                      <div class=" ">
+                        <label class="relative flex">
+                          <input type="checkbox" value="" class="sr-only peer" />
+                          <div
+                            class="w-9 h-5 bg-gray-300 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-gray-200 after:border-gray-300 after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-[#0175A2]">
+                          </div>
+                          <span class="text-[15px] font-normal text-gray-700 w-full ml-2">Include Candidates Currently
+                            Serving Notice
+                            Period</span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <hr class="w-5/6 border border-gray-200 mt-4" />
+    
+                <div class="">
+                  <h3 class="text-[20px] font-semibold leading-6 text-gray-700 mt-4">
+                    Education
+                  </h3>
+                  <div class="space-y-2 mt-2">
+                    <label for="company-website" class="block text-[16px] font-medium text-gray-600">UG Qualification
+                    </label>
+                    <div class="mt-2 flex flex-wrap gap-x-4 rounded-md">
+                      <div>
+                        <input type="radio" id="under-graduate-any" name="qualification" value="any"
+                          formControlName="educationalQualification" class="hidden peer" />
+                        <label for="under-graduate-any"
+                          class="h-3/6 inline-flex text-[16px] items-center justify-between px-2 py-3 font-normal text-gray-600 bg-gray-100 border-0 rounded-full dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:bg-[#0175A2] peer-checked:text-white dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+                          <div class="block">
+                            <div class="w-full flex">
+                              Any UG Qualification
+                              <div class="pt-[0.4rem] pl-2">
+                                <svg width="10" height="10" viewBox="0 0 10 10" fill="none"
+                                  xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M5.00008 0.916504V9.08317M0.916748 4.99984H9.08341" stroke="#667085"
+                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                        </label>
+                      </div>
+                      <div>
+                        <input type="radio" id="under-graduate-specification" name="qualification" value="Graduation"
+                          formControlName="educationalQualification" class="hidden peer" />
+                        <label for="under-graduate-specification"
+                          class="h-3/6 inline-flex items-center text-[16px] justify-between px-2 py-3 text-gray-600 bg-gray-100 font-normal border-0 rounded-full dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:bg-[#0175A2] peer-checked:text-white dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+                          <div class="block">
+                            <div class="w-full flex">
+                              Specified UG Qualification
+                              <div class="pt-[0.4rem] pl-2">
+                                <svg width="10" height="10" viewBox="0 0 10 10" fill="none"
+                                  xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M5.00008 0.916504V9.08317M0.916748 4.99984H9.08341" stroke="#667085"
+                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                        </label>
+                      </div>
+                      <div>
+                        <input type="radio" id="under-graduate-notNeeded" name="qualification" value="10th,12th"
+                          formControlName="educationalQualification" class="hidden peer" [disabled]="false" />
+                        <label for="under-graduate-notNeeded"
+                          class="h-3/6 inline-flex items-center justify-between text-[16px] px-2 py-3 text-gray-600 bg-gray-100 font-normal border-0 rounded-full dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:bg-[#0175A2] peer-checked:text-white dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+                          <div class="block">
+                            <div class="w-full flex">
+                              Not Needed
+                              <div class="pt-[0.4rem] pl-2">
+                                <svg width="10" height="10" viewBox="0 0 10 10" fill="none"
+                                  xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M5.00008 0.916504V9.08317M0.916748 4.99984H9.08341" stroke="#667085"
+                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+    
+                  <div class="space-y-2">
+                    <label for="company-website" class="block text-[16px] font-medium text-gray-600">PG Qualification
+                    </label>
+    
+                    <div class="mt-2 flex flex-wrap gap-x-4 rounded-md">
+                      <div class="">
+                        <input type="radio" id="post-graduate-any" name="qualification" value="Any" class="hidden peer"
+                          formControlName="educationalQualification" />
+                        <label for="post-graduate-any"
+                          class="h-3/6 inline-flex items-center justify-between text-[16px] px-2 py-3 text-gray-600 bg-gray-100 border-0 rounded-full dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:bg-[#0175A2] peer-checked:text-white dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+                          <div class="block">
+                            <div class="w-full flex">
+                              Any PG Qualification
+                              <div class="pt-[0.4rem] pl-2">
+                                <svg width="10" height="10" viewBox="0 0 10 10" fill="none"
+                                  xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M5.00008 0.916504V9.08317M0.916748 4.99984H9.08341" stroke="#667085"
+                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                        </label>
+                      </div>
+                      <div>
+                        <input type="radio" id="post-graduate-specification" name="qualification" value="Post Graduation"
+                          formControlName="educationalQualification" class="hidden peer" />
+                        <label for="post-graduate-specification"
+                          class="h-3/6 inline-flex items-center justify-between text-[16px] px-2 py-3 text-gray-600 bg-gray-100 border-0 rounded-full dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:bg-[#0175A2] peer-checked:text-white dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+                          <div class="block">
+                            <div class="w-full flex">
+                              Specified PG Qualification
+                              <div class="pt-[0.4rem] pl-2">
+                                <svg width="10" height="10" viewBox="0 0 10 10" fill="none"
+                                  xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M5.00008 0.916504V9.08317M0.916748 4.99984H9.08341" stroke="#667085"
+                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                        </label>
+                      </div>
+                      <div>
+                        <input type="radio" id="post-graduate-notNeeded" name="qualification" value="Diploma"
+                          formControlName="educationalQualification" class="hidden peer" />
+                        <label for="post-graduate-notNeeded"
+                          class="h-3/6 inline-flex items-center justify-between text-[16px] px-2 py-3 text-gray-600 bg-gray-100 border-0 rounded-full dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:bg-[#0175A2] peer-checked:text-white dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+                          <div class="block">
+                            <div class="w-full flex">
+                              Not Needed
+                              <div class="pt-[0.4rem] pl-2">
+                                <svg width="10" height="10" viewBox="0 0 10 10" fill="none"
+                                  xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M5.00008 0.916504V9.08317M0.916748 4.99984H9.08341" stroke="#667085"
+                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+    
+                  <div class="space-y-4">
+                    <label for="company-website" class="block text-[16px] font-medium text-gray-600">Specialization
+                    </label>
+                    <div class="mt-1 flex rounded-md w-5/6">
+                      <ng-select #select [items]="specialization" [multiple]="false" placeholder="eg: Bachelor of Science"
+                        class="form-control w-full h-9 rounded-md" [maxSelectedItems]="9" (paste)="(false)"
+                        (paste)="(false)" formControlName="specialization" [disabled]="false">
+                      </ng-select>
+                    </div>
+    
+                    <div class="space-y-4 ">
+                      <label for="company-website" class="block text-[16px] font-medium pt-2 text-gray-600">Institute Name
+                      </label>
+                      <div class="mt-1 flex rounded-md w-5/6">
+                        <ng-select  [items]="universities" [multiple]="false" placeholder="Enter College Name"
+                          class="form-control w-full h-9 rounded-md" [maxSelectedItems]="9" (paste)="(false)"
+                          (paste)="(false)" formControlName="universities">
+                        </ng-select>
+                      </div>
+    
+                      <div class="space-y-1  ">
+                        <label for="company-website" class="block text-[16px] pt-2 font-medium text-gray-600">Education Type
+                        </label>
+                        <div class="gap-3  flex rounded-md">
+                          <div>
+                            <input type="radio" id="Full-Time" name="hosting" formControlName="educationType"
+                              value="FullTime" class="hidden peer" />
+                            <label for="Full-Time"
+                              class="h-3/6 inline-flex items-center justify-between text-[16px] mt-3 px-2 py-3 text-gray-600 bg-gray-100 border border-[#F9FAFB] rounded-xl dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:bg-[#0175A2] peer-checked:text-white dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+                              <div class="block">
+                                <div class="w-full">Full Time</div>
+                              </div>
+                            </label>
+                          </div>
+    
+                          <div>
+                            <input type="radio" id="Part-Time" name="hosting" value="PartTime"
+                              formControlName="educationType" class="hidden peer" />
+                            <label for="Part-Time"
+                              class="h-3/6 inline-flex items-center justify-between text-[16px] mt-3 px-2 py-3 text-gray-600 bg-gray-100 border border-[#F9FAFB] rounded-xl dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:bg-[#0175A2] peer-checked:text-white dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+                              <div class="block">
+                                <div class="w-full">Part Time</div>
+                              </div>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+    
+                      <div class=" space-y-1" >
+                        <label for="company-website" class="block text-[16px] mt-[-15px] font-medium text-gray-600">Pass Out Year
+                        </label>
+                        <div class="mt-1 flex rounded-md mb-10">
+                          <select
+                            class="w-40 h-9 px-3 mb-2 text-base text-gray-500 border rounded-lg focus:shadow-outline outline-none mt-1.5 shadow"
+                            formControlName="startdate">
+                            <option value="" selected class="text-[16px] text-gray-500">
+                              From
+                            </option>
+                            <option value="2015">2015</option>
+                            <option value="2016">2016</option>
+                            <option value="2017">2017</option>
+                            <option value="2018">2018</option>
+                            <option value="2019">2019</option>
+                            <option value="2020">2020</option>
+                            <option value="2021">2021</option>
+                            <option value="2022">2022</option>
+                            <option value="2022">2023</option>
+                          </select>
+    
+                          <select
+                            class="ml-9 w-40 h-9 px-3 mb-2 text-base text-gray-500 border rounded-lg focus:shadow-outline outline-none mt-1.5 shadow"
+                            formControlName="enddate">
+                            <option value="" selected class="text-[16px] text-gray-500">
+                              To
+                            </option>
+                            <option value="2015">2015</option>
+                            <option value="2016">2016</option>
+                            <option value="2017">2017</option>
+                            <option value="2018">2018</option>
+                            <option value="2019">2019</option>
+                            <option value="2020">2020</option>
+                            <option value="2021">2021</option>
+                            <option value="2022">2022</option>
+                            <option value="2022">2023</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+              <form [formGroup]="booleanSearch" action="" *ngIf="showBoolean" class="w-full mx-6 my-4  mb-[8rem]">
+                <div >
+                  <div>
+    
+                    <label for="company-website" class="block  font-medium text-gray-700 text-[0.9rem] font-[rubik] ">Job
+                      Titles
+                    </label>
+                    <p class="text-[11px] font-normal  text-gray-500">OR (At least include one of them)</p>
+                    <div class="mt-1 flex rounded-md " *ngIf="roles$ | async as roleList">
+                      <ng-select [items]="roleList" [multiple]="true" class="w-11/12 rounded-md cursor-pointer" formControlName="jobTitle" (remove)="removeTitle($event)"
+                        [maxSelectedItems]="9" [dropdownPosition]="'bottom'" placeholder="eg. Junior Developer, Tech Support Engineer">
+                      </ng-select>
+                    </div>
+                    <div class="text-red-800" *ngIf="submitted && booleanForm.jobTitle.errors">
+                      <div class="mt-2" *ngIf="booleanForm.jobTitle.errors.required">
+                        Please select job title
+                      </div>
+                    </div>
+                  </div>
+    
+                  <div class="space-y-2">
+    
+                    <label for="company-website"
+                      class="block font-medium text-gray-700  text-[0.9rem] font-[rubik]  mt-3">Skills
+                    </label>
+                    <div>
+    
+                      <p class="text-[11px] font-normal text-gray-500">AND (Include all of them)</p>
+                      <div class="mt-1 flex rounded-md ">
+                        <ng-select [items]="skillLists" [multiple]="true" class="w-11/12 rounded-md cursor-pointer" formControlName="skills" (change)="selectedSkills($event)" (remove)="removeSkills($event)"
+                          [maxSelectedItems]="9" [dropdownPosition]="'bottom'" placeholder="eg.Java, Python">
+                        </ng-select>
+                      </div>
+                      <div class="text-red-800" *ngIf="submitted && booleanForm.skills.errors">
+                        <div class="mt-2" *ngIf="booleanForm.skills.errors.required">
+                          Please select skill
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+    
+                      <p class="text-[11px] font-normal text-gray-500">OR (At least include one of them)</p>
+    
+                      <div class="mt-1 flex rounded-md " >
+                        <ng-select [items]="orSkillLists " [multiple]="true" class="w-11/12 rounded-md cursor-pointer" formControlName="orSkills" (remove)="removeOrSkill($event)" (change)="selectOrSkills($event)"
+                          [maxSelectedItems]="9"  placeholder="eg.Dotnet,C++">
+                        </ng-select>
+                      </div>
+                    </div>
+                    <div>
+    
+                      <p class="text-[11px] text-gray-500 font-normal">NOT (Exclude)</p>
+    
+                      <div class="mt-1 flex rounded-md " >
+                        <ng-select [items]="notSkillLists" [multiple]="true" class="w-11/12 rounded-md cursor-pointer" formControlName="notSkills" (remove)="removeNotSkill($event)" (change)="selectNotSkills($event)"
+                          [maxSelectedItems]="9"  placeholder="eg.Ruby">
+                        </ng-select>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+    
+                    <label for="company-website"
+                      class="block font-medium text-gray-700  text-[0.9rem] font-[rubik]    mt-4 ">Location
+                    </label>
+                    <p class="text-[11px] font-normal text-gray-500">OR (Atleast include one of them)</p>
+    
+                    <div class="mt-3 flex rounded-md " *ngIf="loactions$ | async as loactionlist">
+                      <ng-select [items]="loactionlist" [multiple]="true" class="w-11/12 rounded-md cursor-pointer" formControlName="loactions" (remove)="removeLocation($event)"
+                        [maxSelectedItems]="4"  placeholder="eg. Java, Python">
+                      </ng-select>
+                    </div>
+    
+                    <div class="text-red-800" *ngIf="submitted && booleanForm.loactions.errors">
+                      <div class="mt-2" *ngIf="booleanForm.loactions.errors.required">
+                        Please select location
+                      </div>
+                    </div>
+                  </div>
+                </div>
+    
+              </form>
+            </div>
+          </div>
+            
+          </div>
+
+          
+          <div class="absolute bg-[#F9FAFB]  bottom-0 inset-x-0" style="z-index: 1;">
+            <!-- <div
+        class="fixed  w-full     flex justify-center items-center gap-x-8 bg-[#F9FAFB] z-30 py-3 rounded-b-lg  px-14 search"
+      > -->
+            <div class="w-full flex px-10 py-3 gap-x-4 justify-center">
+              <div>
+                <button
+                  class="bg-[white] text-base font-normal text-[#0175A2] w-[10.4rem] border-gray-300 border rounded-md h-9"
+                  (click)="profileSearchs(true)">
+                  Save
+                </button>
+              </div>
+              <div class="">
+                <button class="bg-[#0175A2] text-base font-normal text-white w-[10.4rem] rounded-md h-9"
+                (click)="showBoolean?booleanSearchResult():profileSearchs(false)">
+                  Search
+                </button>
+              </div>
+            </div>
+    
+            <!-- </div>  -->
+          </div>
+        </div>
+        <div class="w-full hidden mt-[0.9rem] lg:block mx-4 bg-[#F9FAFB]">
+          <div class="grid grid-cols-2 text-gray-700 w-full mx-6 pl-[3rem] relative">
+            <div class="mx-3 xl:w-2/3 py-1 rounded-t-md cursor-pointer xl:text-xl text-center" [ngClass]="
+                showHistory ? 'border-b-2  border-[#0175A2] text-[#0175A2]' : ''
+              ">
+              <button class="justify-center font-semibold place-items-center mb-1"
+                (click)="showHistory = true; showBoolean = false">
+                Search History
+              </button>
+            </div>
+            <!-- <div class="py-1 xl:w-2/3 mx-3 rounded-t-md cursor-pointer xl:text-xl text-center" [ngClass]="
+                showBoolean ? 'border-b-2 border-[#0175A2] text-[#0175A2]' : ''
+              ">
+              <button class="justify-center font-semibold place-items-center mb-1"
+                (click)="showHistory = false; showBoolean = true">
+                Boolean Search
+              </button>
+            </div> -->
+          </div>
+          <app-view-recent-search *ngIf="showHistory" [height]="height - 160"></app-view-recent-search>
+          <!-- <app-boolean-search *ngIf="!showHistory" [height]="height - 44" class="h-full"></app-boolean-search> -->
+        </div>
+      </div>
+    </div>
+    <div *ngIf="saveMethod"
+      class="overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex">
+      <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+      <div class="relative bg-white rounded-lg shadow">
+        <div class="max-w-sm rounded overflow-hidden shadow-lg">
+          <div class="p-6">
+            <div class="grid place-items-center">
+              <svg class="mx-auto" width="56" height="56" viewBox="0 0 56 56" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <rect x="4" y="4" width="48" height="48" rx="24" fill="#FEF0C7" />
+                <path
+                  d="M27.9998 24V28M27.9998 32H28.0098M26.2898 18.86L17.8198 33C17.6451 33.3024 17.5527 33.6453 17.5518 33.9945C17.5508 34.3437 17.6413 34.6871 17.8142 34.9905C17.9871 35.2939 18.2365 35.5467 18.5375 35.7238C18.8385 35.9009 19.1806 35.9961 19.5298 36H36.4698C36.819 35.9961 37.1611 35.9009 37.4621 35.7238C37.7631 35.5467 38.0124 35.2939 38.1854 34.9905C38.3583 34.6871 38.4488 34.3437 38.4478 33.9945C38.4468 33.6453 38.3544 33.3024 38.1798 33L29.7098 18.86C29.5315 18.5661 29.2805 18.3231 28.981 18.1544C28.6814 17.9858 28.3435 17.8972 27.9998 17.8972C27.656 17.8972 27.3181 17.9858 27.0186 18.1544C26.7191 18.3231 26.468 18.5661 26.2898 18.86Z"
+                  stroke="#DC6803" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <rect x="4" y="4" width="48" height="48" rx="24" stroke="#FFFAEB" stroke-width="8" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-medium text-center leading-6 text-gray-900 mt-5">
+              Do you want to save the search
+            </h3>
+            <h3 class="text-lg font-normal text-center text-gray-500 mt-2">
+              Are you sure you want to save this Search?
+            </h3>
+            <div class="grid place-items-center">
+              <div class="flex">
+                <button
+                  class="text-gray-700 shadow-xs bg-white border border-gray-300 focus:outline-none font-medium rounded-lg text-md px-6 py-2.5 mt-8"
+                  type="button" data-modal-toggle="popup-modal">
+                  Cancel
+                </button>
+                <button
+                  class="text-white bg-[#0175A2] border border-gray-300 focus:outline-none font-medium rounded-lg text-md px-6 py-2.5 ml-3 mt-8"
+                  type="button" data-modal-toggle="popup-modal">
+                  Save
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- </div>
+    
+     -->

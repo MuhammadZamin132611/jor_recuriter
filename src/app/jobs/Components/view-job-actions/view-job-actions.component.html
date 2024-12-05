@@ -1,0 +1,151 @@
+
+<div  *ngIf="openDelete"
+class=" overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex ">
+<div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+<div class="relative bg-white rounded-lg shadow ">
+  <div class="max-w-sm rounded overflow-hidden shadow-lg ">
+    <div class="p-6 ">
+      <div class="grid place-items-center">
+          <svg class="mx-auto" width="56" height="56" viewBox="0 0 56 56" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <rect x="4" y="4" width="48" height="48" rx="24" fill="#FEF0C7" />
+          <path
+            d="M27.9998 24V28M27.9998 32H28.0098M26.2898 18.86L17.8198 33C17.6451 33.3024 17.5527 33.6453 17.5518 33.9945C17.5508 34.3437 17.6413 34.6871 17.8142 34.9905C17.9871 35.2939 18.2365 35.5467 18.5375 35.7238C18.8385 35.9009 19.1806 35.9961 19.5298 36H36.4698C36.819 35.9961 37.1611 35.9009 37.4621 35.7238C37.7631 35.5467 38.0124 35.2939 38.1854 34.9905C38.3583 34.6871 38.4488 34.3437 38.4478 33.9945C38.4468 33.6453 38.3544 33.3024 38.1798 33L29.7098 18.86C29.5315 18.5661 29.2805 18.3231 28.981 18.1544C28.6814 17.9858 28.3435 17.8972 27.9998 17.8972C27.656 17.8972 27.3181 17.9858 27.0186 18.1544C26.7191 18.3231 26.468 18.5661 26.2898 18.86Z"
+            stroke="#DC6803" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <rect x="4" y="4" width="48" height="48" rx="24" stroke="#FFFAEB" stroke-width="8" />
+        </svg>
+      </div>
+      <h3 class=" text-lg font-medium text-center leading-6 text-gray-900 mt-5 ">Delete the Requirement</h3>
+      <h3 class=" text-lg font-normal text-center text-gray-500  mt-2">Are you sure you want to delete this
+          Requirement?
+      </h3>
+      <div class="grid place-items-center">
+        <div class="flex">
+          <button  class=" text-gray-700 shadow-xs bg-white border border-gray-300 focus:outline-none  
+                    font-medium rounded-lg text-md px-6 py-2.5 mt-8" type="button" data-modal-toggle="popup-modal"
+            (click)="closeDelete()">
+            Cancel
+          </button>
+          <button 
+            class=" text-white bg-[#0175A2] border border-gray-300 focus:outline-none  font-medium rounded-lg text-md px-6 py-2.5 ml-3 mt-8"
+            type="button" data-modal-toggle="popup-modal" (click)="deleteJob()">
+            Delete
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+<div  *ngIf="updatePop"
+class=" overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex ">
+<div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+<div class="relative bg-white rounded-lg shadow ">
+        <div class="max-w-sm">
+          <div class="ml-6 mr-6 mt-6">
+            <div class="flex">
+              <div class="">
+                <svg width="56" height="57" viewBox="0 0 56 57" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="4" y="4.5" width="48" height="48" rx="24" fill="#F4EBFF" />
+                  <path
+                    d="M32 37.5V35.5C32 34.4391 31.5786 33.4217 30.8284 32.6716C30.0783 31.9214 29.0609 31.5 28 31.5H21C19.9391 31.5 18.9217 31.9214 18.1716 32.6716C17.4214 33.4217 17 34.4391 17 35.5V37.5M36 24.5V30.5M39 27.5H33M28.5 23.5C28.5 25.7091 26.7091 27.5 24.5 27.5C22.2909 27.5 20.5 25.7091 20.5 23.5C20.5 21.2909 22.2909 19.5 24.5 19.5C26.7091 19.5 28.5 21.2909 28.5 23.5Z"
+                    stroke="#0175A2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  <rect x="4" y="4.5" width="48" height="48" rx="24" stroke="#F9F5FF" stroke-width="8" />
+                </svg>
+
+              </div>
+              <div>
+
+                <p class="text-lg ml-2.5">Add recruiter to requirement</p>
+                <p class="text-md text-gray-500 ml-2.5">
+                  The following users have been added:
+                </p>
+              </div>
+
+            </div>
+
+            <div class="overflow-y-auto h-36">
+
+              <div class="flex   w-full" *ngFor="let rec of AssignRecruitersLists">
+                <div class="mt-5 w-10">
+                  <div *ngIf="rec.profilePicture==null"
+                    class=" flex items-center justify-center  capitalize  w-full h-10 rounded-full border shadow">
+                    {{rec.firstName.slice(0,1)}}
+                  </div>
+                  <img *ngIf="rec.profilePicture!=null"
+                    class="w-full h-10  border-white bg-gray-100  shadow-md rounded-full"
+                    src="https://job-check.s3.ap-south-1.amazonaws.com/{{rec.profilePicture}}" alt="" srcset="">
+                </div>
+                <div class="mt-5 ml-2 w-3/4">
+                  <p class="text-sm font-semibold ml-3 text-gray-700 capitalize ">{{rec.firstName+' '+rec.lastName}}</p>
+                  <!-- <p class="text-sm ml-3 text-gray-500">
+                    {{rec.organizationMailId}}
+                  </p> -->
+                </div>
+                <div class="mt-5 ">
+                  <button class="text-sm  text-red-700" (click)="removeRecruiter(rec.recruiterId)"
+                   >Remove</button>
+                </div>
+
+              </div>
+              <div *ngIf="AssignRecruitersLists.length==0" class="text-center mt-10">
+                No Recruiter Found
+              </div>
+            </div>
+
+
+
+
+
+            <div class=" w-full">
+
+              <div class="mt-6 ml-2.5 text-700">
+                <p>Team member</p>
+              </div>
+
+              <div class="relative mt-5">
+               
+                <ng-select [items]="recruitersLists" class=" w-full" bindLabel="firstName" placeholder="Search and select recruiter"
+                  [multiple]="true" [(ngModel)]="selectedRecruiters">
+                  <ng-template ng-option-tmp let-item="item" let-index="index">
+                    <div class="flex">
+                      <svg width="16" height="17" class="mt-1" viewBox="0 0 16 17" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M14.6663 16V14.3333C14.6663 13.4493 14.3151 12.6014 13.69 11.9763C13.0649 11.3512 12.2171 11 11.333 11H4.66634C3.78229 11 2.93444 11.3512 2.30932 11.9763C1.6842 12.6014 1.33301 13.4493 1.33301 14.3333V16M11.333 4.33333C11.333 6.17428 9.84062 7.66667 7.99967 7.66667C6.15872 7.66667 4.66634 6.17428 4.66634 4.33333C4.66634 2.49238 6.15872 1 7.99967 1C9.84062 1 11.333 2.49238 11.333 4.33333Z"
+                          stroke="#667085" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                      <p class="ml-2">{{item.firstName +' '+ item.lastName}}</p>
+                    </div>
+
+                  </ng-template>
+                </ng-select>
+              </div>
+              
+            </div>
+            <div class="text-purple-700 mt-2.5 mb-6">
+              <div class="grid place-items-center">
+                <div class="flex space-x-2 mt-6">
+                  <div>
+                    <button
+                      class="bg-white border border-gray-300 text-base font-medium text-gray-700 w-40 rounded-md h-11"
+                      (click)="closeDelete()">
+                      Cancel
+                    </button>
+                  </div>
+                  <div>
+                    <button class="bg-[#0175A2] text-base font-medium text-white w-40 rounded-md h-11"
+                      (click)="updateteam()"  (click)="closeDelete()">
+                      Save
+                    </button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

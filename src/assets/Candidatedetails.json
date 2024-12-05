@@ -1,0 +1,2434 @@
+[
+  {
+    "profileId": "28f4def9-dadf-4713-9953-9d72a074087a",
+    "name": "Venkat K",
+    "profilePictureUrl": "NA",
+    "totalWorkExperience": 3,
+    "email": "venkat@gmail.com",
+    "phoneNumber": "9703806605",
+    "skills": [
+      "Cloud Computing",
+      "Gitlab",
+      "Database",
+      "Angular Js"
+      
+    
+    ],
+    "preferedLocations": [
+      "Hoshiarpur",
+      "Kakinada",
+      "Gandhinagar"
+    ],
+    "expectedCTC": 810000,
+    "noticePeriod": "45",
+    "currentCTC": 408000,
+    "lastSeen": "2023-04-08",
+    "lastUpdated":"2023-03-12",
+    "jobRole": [
+      "Food Safety"
+    ],
+    "areaOfInterests": [
+      "Corporate Affairs"
+    ],
+    "educationalQualifications": [
+      "Diploma"
+    ],
+    "matchingPercentage": 29,
+    "preferedLocation": {
+      "preferedLocationId": "4228c02d-fc1e-408d-8cee-175aae908c4a",
+      "primaryLocation": "Hoshiarpur",
+      "pinCode": 562872,
+      "secondaryLocation": "Kakinada",
+      "otherPreferedLocation": [
+        "Gandhinagar"
+      ]
+    },
+    "profileSkills": [
+      {
+        "skillId": "82687aa1-fe34-4f25-84de-bf6e495bee21",
+        "skillName": "Cloud Computing",
+        "rating": 5,
+        "skillType": "PRIMARY"
+      },
+      {
+        "skillId": "b7eebb42-9841-4eb7-8a84-e6196710d926",
+        "skillName": "Gitlab",
+        "rating": 8,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "ad62bc1c-f44c-4f9e-b2e0-af2473aa913a",
+        "skillName": "Database",
+        "rating": 8,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "4fe1dcbb-35b2-47da-975a-6d8737a421be",
+        "skillName": "Angular Js",
+        "rating": 8,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "bac5c28f-d811-4f8f-b973-84a295123d55",
+        "skillName": "Java Script",
+        "rating": 7,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "88a72cc7-a4b9-4586-937c-3381f6ae1567",
+        "skillName": "C++",
+        "rating": 7,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "3104c4cf-24b4-4c70-92dd-6c2b97f826e6",
+        "skillName": "Azure",
+        "rating": 4,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "31eae685-92ba-4ee5-848c-89a71dcc28f3",
+        "skillName": "Big Data",
+        "rating": 6,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "f327b208-e42d-4012-aed7-3f94dfe76a60",
+        "skillName": "Bootstrap",
+        "rating": 2,
+        "skillType": "OTHER"
+      }
+    ],
+    "profileAreaOfInterests": [
+      {
+        "areaOfInterestId": "5e372646-7c1b-426e-8adf-dfbc446fd243",
+        "areaOfInterestName": "Corporate Affairs"
+      }
+    ],
+    "jobRoles": [
+      {
+        "jobRoleId": "47767ef7-e5a4-4336-b509-7fff65d42e5e",
+        "jobRoleName": "Food Safety"
+      }
+    ],
+    "educationalDetailsDtos": [
+      {
+        "educationDetailsId": "c9b9aa0c-678d-4c6e-8b30-d6d7e9272183",
+        "qualification": "Diploma",
+        "collegeName": "Assam Don Bosco University, Azara, Guwahati-781017, Assam. ",
+        "course": "Diploma",
+        "courseType": "FULLTIME",
+        "specialization": "Airport Operations",
+        "currentlyPursuing": false,
+        "startDate": "2017-06-12",
+        "endDate": "2020-06-12"
+      }
+    ],
+    "workExperienceDtos": [
+      {
+        "workExperienceId": "2708f901-5aa8-4c32-a73e-a3b0b1e574a8",
+        "companyName": "4C Consulting",
+        "jobTitle": "Full Stack Developer",
+        "industryType": "Assets & Wealth Manager",
+        "department": "Engineering - Hardware & Networks",
+        "currentlyWorking": true,
+        "salaryType": "MONTHLY",
+        "currentSalary": 34000,
+        "empType": "PARTTIME",
+        "startDate": "2020-05-01",
+        "endDate": null,
+        "experience": 3,
+        "noticePeriod": "45",
+        "description": null,
+        "location": null
+      }
+    ],
+    "empType": "PARTTIME",
+    "certifications": [],
+    "departments": [
+      "Engineering - Hardware & Networks"
+    ]
+  },
+  {
+    "profileId": "57e6e12b-89d2-4559-9cc7-4a3f8149e540",
+    "name": "Jonnala Srikanth Reddy",
+    "profilePictureUrl": "NA",
+    "totalWorkExperience": 3,
+    "email": "28.srikant@gmail.com",
+    "phoneNumber": "9968958845",
+    "skills": [
+      "Java Script",
+      "Big Data",
+      "Database",
+      "Azure"
+    ],
+    "preferedLocations": [
+      " Agartala ",
+      "MUMBAI",
+      "HYDERABAD"
+    ],
+    "expectedCTC": 1700000,
+    "noticePeriod": "45",
+    "currentCTC": 156000,
+    "lastSeen": "2023-02-25",
+    "lastUpdated":"2023-03-18",
+    "jobRole": [
+      "Database Analyst"
+    ],
+    "areaOfInterests": [
+      "Specialization Teacher"
+    ],
+    "educationalQualifications": [
+      "Post Graduation"
+    ],
+    "matchingPercentage": 29,
+    "preferedLocation": {
+      "preferedLocationId": "652f5721-7a8e-400c-a85c-d36d5a464e29",
+      "primaryLocation": " Agartala ",
+      "pinCode": 502323,
+      "secondaryLocation": "MUMBAI",
+      "otherPreferedLocation": [
+        "HYDERABAD"
+      ]
+    },
+    "profileSkills": [
+      {
+        "skillId": "15574298-b54d-4e29-b604-90d76783e7cc",
+        "skillName": "Gitlab",
+        "rating": 10,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "fc6fb0cc-9c69-4085-9055-dadff14fc4cc",
+        "skillName": "Angular Js",
+        "rating": 10,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "1b210672-e142-41eb-86a4-1eb1e355420f",
+        "skillName": "Jenkins",
+        "rating": 10,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "01709cfb-a6c0-4829-aa3b-06f2e95ccdbb",
+        "skillName": "Gradle",
+        "rating": 5,
+        "skillType": "PRIMARY"
+      },
+      {
+        "skillId": "9d4f4501-f448-434e-a0b4-7f1d172f93c3",
+        "skillName": "Java Script",
+        "rating": 4,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "7724ae8b-1b61-4189-a0a8-c41282345adb",
+        "skillName": "Big Data",
+        "rating": 3,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "cedc99e4-b29d-41a7-8034-a30d4086cd8d",
+        "skillName": "Database",
+        "rating": 2,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "1077fa39-1b24-41e2-a755-dfdeb6851e66",
+        "skillName": "Azure",
+        "rating": 4,
+        "skillType": "OTHER"
+      }
+    ],
+    "profileAreaOfInterests": [
+      {
+        "areaOfInterestId": "bf097c90-57db-41b3-af04-b8f6d67c6d58",
+        "areaOfInterestName": "Specialization Teacher"
+      }
+    ],
+    "jobRoles": [
+      {
+        "jobRoleId": "838eee26-8619-4ee5-b90e-85e73b2ae73d",
+        "jobRoleName": "Database Analyst"
+      }
+    ],
+    "educationalDetailsDtos": [
+      {
+        "educationDetailsId": "f73fb7a6-1146-4f8c-bc8f-0218fe6d7ea2",
+        "qualification": "Post Graduation",
+        "collegeName": "Jawaharlal Nehru Technological University, Anantpur-515 002, Andhra Pradesh ",
+        "course": "MS/M.Sc(Science)",
+        "courseType": "FULLTIME",
+        "specialization": "Bio-Chemistry",
+        "currentlyPursuing": false,
+        "startDate": "2019-06-07",
+        "endDate": "2021-06-07"
+      }
+    ],
+    "workExperienceDtos": [
+      {
+        "workExperienceId": "31735045-b4c3-4c01-917b-8138993ccf02",
+        "companyName": "1Point1",
+        "jobTitle": "Software Engineer",
+        "industryType": "  Retail & Hospitality",
+        "department": "Media Production & Entertainment",
+        "currentlyWorking": true,
+        "salaryType": "MONTHLY",
+        "currentSalary": 13000,
+        "empType": "FULLTIME",
+        "startDate": "2023-05-05",
+        "endDate": null,
+        "experience": 3,
+        "noticePeriod": "45",
+        "description": null,
+        "location": null
+      }
+    ],
+    "empType": "CONTRACT",
+    "certifications": [],
+    "departments": [
+      "Media Production & Entertainment"
+    ]
+  },
+  {
+    "profileId": "2795ff7d-eb11-457c-8f6c-5dddbd6aa70d",
+    "name": "Ganesan",
+    "profilePictureUrl": "NA",
+    "totalWorkExperience": 2,
+    "email": "tganesanvijay@gmail.com",
+    "phoneNumber": "9426556994",
+    "skills": [
+      "Big Data",
+      "Azure",
+      "Client Management",
+      "Bootstrap"
+    ],
+    "preferedLocations": [
+      "Arunachal Pradesh",
+      "Dharamsala",
+      "Bikaner"
+    ],
+    "expectedCTC": 390000,
+    "noticePeriod": "45",
+    "currentCTC": 348000,
+    "lastSeen": "2023-04-08",
+    "lastUpdated":"2023-05-12",
+    "jobRole": [
+      "Accounts Payable Executive"
+    ],
+    "areaOfInterests": [
+      "Administration"
+    ],
+    "educationalQualifications": [
+      "Diploma"
+    ],
+    "matchingPercentage": 34,
+    "preferedLocation": {
+      "preferedLocationId": "3af11016-eca0-46d5-bf36-397eaa98e3df",
+      "primaryLocation": "Arunachal Pradesh",
+      "pinCode": 560144,
+      "secondaryLocation": "Dharamsala",
+      "otherPreferedLocation": [
+        "Bikaner"
+      ]
+    },
+    "profileSkills": [
+      {
+        "skillId": "1719a02c-21e8-4fd2-9fa6-8fef4313927a",
+        "skillName": "Java Script",
+        "rating": 7,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "1b6cb3d1-1043-439d-9b13-ba7e5d857761",
+        "skillName": "Database",
+        "rating": 10,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "f377be5d-aa9d-48ea-b9ad-ea06aaeb3af5",
+        "skillName": "Jenkins",
+        "rating": 3,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "0ecd3133-2612-43e5-a7b1-99b1029efce6",
+        "skillName": "Angular Js",
+        "rating": 9,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "b4a35221-d249-46f7-8644-40bcea5d87b3",
+        "skillName": "Gitlab",
+        "rating": 7,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "7581c77d-b9a3-4c5d-b74b-47c98ff9edea",
+        "skillName": "Big Data",
+        "rating": 5,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "32fa33e8-519b-4b0b-bc80-1002ad979861",
+        "skillName": "Azure",
+        "rating": 4,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "e83d3b77-5395-4cf4-bbdd-5621f4527379",
+        "skillName": "Client Management",
+        "rating": 5,
+        "skillType": "PRIMARY"
+      },
+      {
+        "skillId": "ce3b77cd-6506-4f52-8b2b-9beb65f74fa0",
+        "skillName": "Bootstrap",
+        "rating": 5,
+        "skillType": "OTHER"
+      }
+    ],
+    "profileAreaOfInterests": [
+      {
+        "areaOfInterestId": "5392f158-33f5-4e70-ba55-055477e513bc",
+        "areaOfInterestName": "Administration"
+      }
+    ],
+    "jobRoles": [
+      {
+        "jobRoleId": "451368a8-4364-4d04-b5a3-256fa7873e52",
+        "jobRoleName": "Accounts Payable Executive"
+      }
+    ],
+    "educationalDetailsDtos": [
+      {
+        "educationDetailsId": "497d9c23-d217-4846-91a9-30c2606d3037",
+        "qualification": "Diploma",
+        "collegeName": "Assam Agricultural University, Jorhat- 785 013, Assam. ",
+        "course": "Diploma",
+        "courseType": "FULLTIME",
+        "specialization": "Airline Tourism and Hospitalty Management",
+        "currentlyPursuing": false,
+        "startDate": "2017-06-11",
+        "endDate": "2020-06-11"
+      }
+    ],
+    "workExperienceDtos": [
+      {
+        "workExperienceId": "a9c149ed-8d7d-448e-aa1f-249196b96a47",
+        "companyName": "10XDS",
+        "jobTitle": "Dev Ops Engineer",
+        "industryType": "IT Services",
+        "department": "DevOps",
+        "currentlyWorking": true,
+        "salaryType": "MONTHLY",
+        "currentSalary": 29000,
+        "empType": "PARTTIME",
+        "startDate": "2021-05-01",
+        "endDate": null,
+        "experience": 2,
+        "noticePeriod": "45",
+        "description": null,
+        "location": null
+      }
+    ],
+    "empType": "FULLTIME",
+    "certifications": [],
+    "departments": [
+      "DevOps"
+    ]
+  },
+  {
+    "profileId": "25b189ab-9ab8-400b-adf2-e6decda58f4e",
+    "name": "Aswin Unnikrishnan",
+    "profilePictureUrl": "1683613568395_1.jpg",
+    "totalWorkExperience": 1,
+    "email": "aswinhere111@gmail.com",
+    "phoneNumber": "9122131194",
+    "skills": [
+      "C#.Net",
+      "Angular Js",
+      "Data Quality"
+   
+    ],
+    "preferedLocations": [
+      "Ambala",
+      "Dalhousie",
+      "Bhilaigarh"
+    ],
+    "expectedCTC": 570000,
+    "noticePeriod": "45",
+    "currentCTC": 286800,
+    "lastSeen": "2023-04-08",
+    "lastUpdated":"2023-05-01",
+    "jobRole": [
+      "Finance Manager"
+    ],
+    "areaOfInterests": [
+      "Welding"
+    ],
+    "educationalQualifications": [
+      "Diploma"
+    ],
+    "matchingPercentage": 44,
+    "preferedLocation": {
+      "preferedLocationId": "30f2ed23-282c-4542-8f1a-3dc73b435e1c",
+      "primaryLocation": "Ambala",
+      "pinCode": 568039,
+      "secondaryLocation": "Dalhousie",
+      "otherPreferedLocation": [
+        "Bhilaigarh"
+      ]
+    },
+    "profileSkills": [
+      {
+        "skillId": "95dc2bec-6498-49c0-907b-73999494618c",
+        "skillName": "C#.Net",
+        "rating": 2,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "ade23d31-0770-435b-a889-dc9eab7de077",
+        "skillName": "Angular",
+        "rating": 1,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "4afec7b0-9447-4d6e-bc68-868f6c3a36c0",
+        "skillName": "Jenkins",
+        "rating": 5,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "e2b15198-1246-425e-8960-c48c184e0d60",
+        "skillName": "Finance",
+        "rating": 8,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "f7b5e5a4-b05f-43fc-b3f1-54783e8f6ef5",
+        "skillName": "Business Analyst",
+        "rating": 5,
+        "skillType": "PRIMARY"
+      },
+      {
+        "skillId": "40116863-66f8-46fe-896f-fba8e154972b",
+        "skillName": "Angular Js",
+        "rating": 4,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "e862de24-b237-4449-b1a9-76ee11a03bb9",
+        "skillName": "Data Quality",
+        "rating": 5,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "ba962751-c5c1-436c-88eb-2e4c6e309711",
+        "skillName": "Gitlab",
+        "rating": 4,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "26a48cd9-5749-4366-b3e6-0a510c9c555a",
+        "skillName": "Bootstrap",
+        "rating": 7,
+        "skillType": "OTHER"
+      }
+    ],
+    "profileAreaOfInterests": [
+      {
+        "areaOfInterestId": "3b8e8bd4-acaf-4d65-91ec-956431397281",
+        "areaOfInterestName": "Welding"
+      }
+    ],
+    "jobRoles": [
+      {
+        "jobRoleId": "39732716-8b45-4488-a87e-2ea0c5e65d64",
+        "jobRoleName": "Finance Manager"
+      }
+    ],
+    "educationalDetailsDtos": [
+      {
+        "educationDetailsId": "40bc7cd8-023d-4b23-9b00-30cbd25f6310",
+        "qualification": "Diploma",
+        "collegeName": "Rayalaseema University, Pasupula Village, Nandyal Road, Kurnool – 518 002, Andhra Pradesh. ",
+        "course": "Diploma",
+        "courseType": "FULLTIME",
+        "specialization": "Advance Accounting",
+        "currentlyPursuing": false,
+        "startDate": "2017-06-06",
+        "endDate": "2020-06-06"
+      }
+    ],
+    "workExperienceDtos": [
+      {
+        "workExperienceId": "30295a3b-b778-48ee-acb3-53f4d8d3837d",
+        "companyName": "Essar Shipping",
+        "jobTitle": "Machine Operator",
+        "industryType": "Manufacturing & Production",
+        "department": "Maintenance & Support",
+        "currentlyWorking": false,
+        "salaryType": "MONTHLY",
+        "currentSalary": 23900,
+        "empType": "PARTTIME",
+        "startDate": "2022-12-10",
+        "endDate": null,
+        "experience": 1,
+        "noticePeriod": "45",
+        "description": null,
+        "location": null
+      }
+    ],
+    "empType": "FULLTIME",
+    "certifications": [],
+    "departments": [
+      "Maintenance & Support"
+    ]
+  },
+  {
+    "profileId": "c7c83280-361a-4b3c-b910-4a3f2877b647",
+    "name": "Vignesh",
+    "profilePictureUrl": "NA",
+    "totalWorkExperience": 0,
+    "email": "vignesh@gmail.com",
+    "phoneNumber": "9856231478",
+    "skills": [
+      "Jenkins",
+      "Java Script",
+      "Angular",
+      "Angular Js"
+    ],
+    "preferedLocations": [
+      "Alwar",
+      "Dadra & Nagar Haveli",
+      "Bhavnagar"
+    ],
+    "expectedCTC": 650000,
+    "noticePeriod": "NA",
+    "currentCTC": 0,
+    "lastSeen": "2022-03-02",
+    "lastUpdated":"2023-05-20",
+    "jobRole": [
+      "Category Head"
+    ],
+    "areaOfInterests": [
+      "Surveying"
+    ],
+    "educationalQualifications": [
+      "Graduation"
+    ],
+    "matchingPercentage": 19,
+    "preferedLocation": {
+      "preferedLocationId": "c7a7b58b-8e4f-4559-9c5e-9f4e6954066a",
+      "primaryLocation": "Alwar",
+      "pinCode": 562330,
+      "secondaryLocation": "Dadra & Nagar Haveli",
+      "otherPreferedLocation": [
+        "Bhavnagar"
+      ]
+    },
+    "profileSkills": [
+      {
+        "skillId": "929927ec-e616-4ca5-9bfd-dac848784b0c",
+        "skillName": "Jenkins",
+        "rating": 10,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "99b4ec5a-6142-43a1-a9dc-e26ba2f15f25",
+        "skillName": "Azure",
+        "rating": 7,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "1e4cd233-dc3f-42c8-8d27-ef5ab6a8bee5",
+        "skillName": "Cloud Computing",
+        "rating": 6,
+        "skillType": "PRIMARY"
+      },
+      {
+        "skillId": "cdc4f53a-0d65-4911-ab11-1fdb521e0d44",
+        "skillName": "Gitlab",
+        "rating": 8,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "b7c4427c-0759-42d5-b075-528a21af6ba4",
+        "skillName": "Java Script",
+        "rating": 1,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "0b241da5-6f99-4cdf-81ed-e4b1219e9ef1",
+        "skillName": "Angular",
+        "rating": 9,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "98c4c1c8-b27a-4e74-87e4-77abdb9a86be",
+        "skillName": "Database",
+        "rating": 5,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "c72cdbc5-fbb6-426e-9fe2-62fb2f81eed5",
+        "skillName": "Angular Js",
+        "rating": 3,
+        "skillType": "OTHER"
+      }
+    ],
+    "profileAreaOfInterests": [
+      {
+        "areaOfInterestId": "40db3876-07b1-4290-a41b-f211d4b2a48b",
+        "areaOfInterestName": "Surveying"
+      }
+    ],
+    "jobRoles": [
+      {
+        "jobRoleId": "c35369c4-e316-47d2-8915-762b4c2f87d8",
+        "jobRoleName": "Category Head"
+      }
+    ],
+    "educationalDetailsDtos": [
+      {
+        "educationDetailsId": "c0ea9795-5244-4696-ba49-ddf8763bad88",
+        "qualification": "Graduation",
+        "collegeName": "Jawaharlal Nehru Technological University, Anantpur-515 002, Andhra Pradesh ",
+        "course": "B.Tech/B.E.",
+        "courseType": "FULLTIME",
+        "specialization": "Energy",
+        "currentlyPursuing": false,
+        "startDate": "2015-05-10",
+        "endDate": "2019-04-10"
+      }
+    ],
+    "workExperienceDtos": [],
+    "empType": "FULLTIME",
+    "certifications": [],
+    "departments": []
+  },
+  {
+    "profileId": "25da2e65-fdbd-4284-b1d8-445e51df056b",
+    "name": "Suvam Kumar",
+    "profilePictureUrl": "NA",
+    "totalWorkExperience": 7,
+    "email": "suvam.kumar@gmail.com",
+    "phoneNumber": "9964589745",
+    "skills": [
+      "Bootstrap",
+      "Angular",
+      "Gitlab",
+      "Angular Js"
+    ],
+    "preferedLocations": [
+      "Itanagar",
+      "Karur",
+      "Godhra"
+    ],
+    "expectedCTC": 650000,
+    "noticePeriod": "45",
+    "currentCTC": 1200000,
+    "lastSeen": "2023-04-08",
+    "lastUpdated":"2023-04-08",
+    "jobRole": [
+      "Fashion Designer"
+    ],
+    "areaOfInterests": [
+      "Surveying"
+    ],
+    "educationalQualifications": [
+      "Diploma"
+    ],
+    "matchingPercentage": 29,
+    "preferedLocation": {
+      "preferedLocationId": "322313bc-bcc1-482c-bdf7-e094e91a4bf1",
+      "primaryLocation": "Itanagar",
+      "pinCode": 562647,
+      "secondaryLocation": "Karur",
+      "otherPreferedLocation": [
+        "Godhra"
+      ]
+    },
+    "profileSkills": [
+      {
+        "skillId": "4914d197-b87b-4a21-bae5-cd52ff0d26f9",
+        "skillName": "Business Development",
+        "rating": 6,
+        "skillType": "PRIMARY"
+      },
+      {
+        "skillId": "f8a8a490-085f-4987-a3b2-0eea12aee83e",
+        "skillName": "C#.Net",
+        "rating": 4,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "d18f559b-a0cf-4f55-8226-6735e096e1ae",
+        "skillName": "Data Quality",
+        "rating": 6,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "659d2877-6ea9-4718-9c3b-ce3526bdc3c9",
+        "skillName": "Jenkins",
+        "rating": 1,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "53bf9809-a696-40d0-bc1d-6599a0b62961",
+        "skillName": "Boilermarker",
+        "rating": 7,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "19650882-4da9-4d8b-a146-5444d6b97c38",
+        "skillName": "Bootstrap",
+        "rating": 1,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "315856cb-c199-443b-b262-c0be9ded724d",
+        "skillName": "Angular",
+        "rating": 6,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "1f6ec73a-0762-4a6f-8587-7c01de332839",
+        "skillName": "Gitlab",
+        "rating": 1,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "2a8c6696-137d-4be2-98cb-d79da39d5458",
+        "skillName": "Angular Js",
+        "rating": 1,
+        "skillType": "OTHER"
+      }
+    ],
+    "profileAreaOfInterests": [
+      {
+        "areaOfInterestId": "40db3876-07b1-4290-a41b-f211d4b2a48b",
+        "areaOfInterestName": "Surveying"
+      }
+    ],
+    "jobRoles": [
+      {
+        "jobRoleId": "39f7605c-9590-4ef8-8593-b8090247c7e9",
+        "jobRoleName": "Fashion Designer"
+      }
+    ],
+    "educationalDetailsDtos": [
+      {
+        "educationDetailsId": "2a3d5007-1c59-41f4-8102-2186b72a80dc",
+        "qualification": "Diploma",
+        "collegeName": "Rajiv Gandhi University, Rono Hills, PO Doimukh, Itanagar-791 112, Arunachal Pradesh. .",
+        "course": "Diploma",
+        "courseType": "FULLTIME",
+        "specialization": "Advanced Computing",
+        "currentlyPursuing": false,
+        "startDate": "2017-06-07",
+        "endDate": "2020-06-07"
+      }
+    ],
+    "workExperienceDtos": [
+      {
+        "workExperienceId": "9876d9fd-ee21-40a6-9a63-de15941d36a1",
+        "companyName": "99roomz",
+        "jobTitle": "Plumber",
+        "industryType": "Infrastructure",
+        "department": "Maintenance & Support",
+        "currentlyWorking": true,
+        "salaryType": "MONTHLY",
+        "currentSalary": 100000,
+        "empType": "FULLTIME",
+        "startDate": "2022-12-10",
+        "endDate": null,
+        "experience": 7,
+        "noticePeriod": "45",
+        "description": null,
+        "location": null
+      }
+    ],
+    "empType": "CONTRACT",
+    "certifications": [],
+    "departments": [
+      "Maintenance & Support"
+    ]
+  },
+  {
+    "profileId": "55679fe4-41f2-4340-af6d-77f34849054b",
+    "name": "Saraswathi Iyer K",
+    "profilePictureUrl": "NA",
+    "totalWorkExperience": 1.1,
+    "email": "iyer.s56@gmail.com",
+    "phoneNumber": "9868445522",
+    "skills": [
+      "Bootstrap",
+      "Angular",
+      "Data Quality",
+      "Angular Js"
+    ],
+    "preferedLocations": [
+      "Bijapur",
+      "Dhanbad",
+      "Ankleshwar"
+    ],
+    "expectedCTC": 810000,
+    "noticePeriod": "45",
+    "currentCTC": 120000,
+    "lastSeen": "2023-02-21",
+    "lastUpdated":"2023-01-8",
+    "jobRole": [
+      "Database Manager"
+    ],
+    "areaOfInterests": [
+      "Stores & Material Management"
+    ],
+    "educationalQualifications": [
+      "Post Graduation"
+    ],
+    "matchingPercentage": 44,
+    "preferedLocation": {
+      "preferedLocationId": "5cad725b-9d17-4f55-b0fe-814779992dd0",
+      "primaryLocation": "Bijapur",
+      "pinCode": 563446,
+      "secondaryLocation": "Dhanbad",
+      "otherPreferedLocation": [
+        "Ankleshwar"
+      ]
+    },
+    "profileSkills": [
+      {
+        "skillId": "b5fd95d6-b9db-49ef-9946-0a6e8eee1fec",
+        "skillName": "Jenkins",
+        "rating": 10,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "0e7b739d-7f12-402a-9152-5d2e4dbeccbc",
+        "skillName": "Finance",
+        "rating": 3,
+        "skillType": "PRIMARY"
+      },
+      {
+        "skillId": "e6e361e2-85a7-41a9-becd-904d82b953d6",
+        "skillName": "Gitlab",
+        "rating": 7,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "4f1b8baf-5b50-4e42-b260-7166de0739dd",
+        "skillName": "C#.Net",
+        "rating": 6,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "885450c4-ca9e-4f7a-85dc-e019ebd7b4b9",
+        "skillName": "Bootstrap",
+        "rating": 3,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "0cad9cf1-bcfa-4722-8e8c-68bc66e962a3",
+        "skillName": "Angular",
+        "rating": 6,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "1d1a458a-5290-4c70-a9b8-981865867e13",
+        "skillName": "Data Quality",
+        "rating": 5,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "56bb9de9-24cd-4139-9438-ac149bdf9a6d",
+        "skillName": "Angular Js",
+        "rating": 1,
+        "skillType": "OTHER"
+      }
+    ],
+    "profileAreaOfInterests": [
+      {
+        "areaOfInterestId": "a59b29c2-06b8-4289-8464-1d7219189ab4",
+        "areaOfInterestName": "Stores & Material Management"
+      }
+    ],
+    "jobRoles": [
+      {
+        "jobRoleId": "7dd997f5-598c-4de8-8de5-30bb73222bf8",
+        "jobRoleName": "Database Manager"
+      }
+    ],
+    "educationalDetailsDtos": [
+      {
+        "educationDetailsId": "67b36e85-4d99-4bbd-89f3-215a6932fe88",
+        "qualification": "Post Graduation",
+        "collegeName": "Dr. Y.S.R Architecture and Fine Arts University, Kadapa, Andhra Pradesh ",
+        "course": "M.Tech",
+        "courseType": "FULLTIME",
+        "specialization": "Bio-Chemistry/Bio-Technology",
+        "currentlyPursuing": false,
+        "startDate": "2019-06-09",
+        "endDate": "2021-06-09"
+      }
+    ],
+    "workExperienceDtos": [
+      {
+        "workExperienceId": "7b9d90a3-5050-44c2-bd7b-3f002823e42e",
+        "companyName": "1589 Hotels",
+        "jobTitle": "Machine operator",
+        "industryType": "  Manufacturing & Production",
+        "department": "Human Resources",
+        "currentlyWorking": true,
+        "salaryType": "MONTHLY",
+        "currentSalary": 10000,
+        "empType": "INTERNSHIP",
+        "startDate": "2022-04-05",
+        "endDate": null,
+        "experience": 1.1,
+        "noticePeriod": "45",
+        "description": null,
+        "location": null
+      }
+    ],
+    "empType": "PARTTIME",
+    "certifications": [],
+    "departments": [
+      "Human Resources"
+    ]
+  },
+  {
+    "profileId": "cb56edb5-ecd8-4f76-93c3-738bdff296d8",
+    "name": "Krithi sundardas",
+    "profilePictureUrl": "NA",
+    "totalWorkExperience": 0,
+    "email": "sundardas.k.g@gmail.com",
+    "phoneNumber": "7856985698",
+    "skills": [
+      "Cobol",
+      "Azure",
+      "Angular Js",
+      "Gitlab"
+    ],
+    "preferedLocations": [
+      "Haryana",
+      "Jhansi",
+      "Erode"
+    ],
+    "expectedCTC": 390000,
+    "noticePeriod": "NA",
+    "currentCTC": 0,
+    "lastSeen": "2022-07-06",
+    "lastUpdated":"2023-04-2",
+    "jobRole": [
+      "Allied Health Manager"
+    ],
+    "areaOfInterests": [
+      "Procurement & Purchase"
+    ],
+    "educationalQualifications": [
+      "Diploma"
+    ],
+    "matchingPercentage": 19,
+    "preferedLocation": {
+      "preferedLocationId": "c861e954-5f50-4a47-a2e7-b21510875a7a",
+      "primaryLocation": "Haryana",
+      "pinCode": 568789,
+      "secondaryLocation": "Jhansi",
+      "otherPreferedLocation": [
+        "Erode"
+      ]
+    },
+    "profileSkills": [
+      {
+        "skillId": "ff22a5ae-0c0c-44db-8676-ca40d3efeb18",
+        "skillName": "Cobol",
+        "rating": 5,
+        "skillType": "PRIMARY"
+      },
+      {
+        "skillId": "6cc61de1-ad02-4a70-8bf1-458f176ad2a8",
+        "skillName": "Java Script",
+        "rating": 2,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "9bd6bc7c-85f0-4e65-88cf-65e7dc44806b",
+        "skillName": "Azure",
+        "rating": 1,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "ee2f6a60-0c2a-4f2d-929d-5f7db85d30b9",
+        "skillName": "Angular Js",
+        "rating": 9,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "14414104-93d0-4c2f-bd1e-4ff375212622",
+        "skillName": "Database",
+        "rating": 1,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "1d0b2a74-5db4-4ed8-80d0-ff0543a4cb8a",
+        "skillName": "C++",
+        "rating": 2,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "40898ae0-43d7-4006-912e-5a40ead6dff4",
+        "skillName": "Big Data",
+        "rating": 4,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "4c4cbfd8-7f3a-43f0-b5e0-ea044781649c",
+        "skillName": "Gitlab",
+        "rating": 4,
+        "skillType": "OTHER"
+      }
+    ],
+    "profileAreaOfInterests": [
+      {
+        "areaOfInterestId": "4b8c4329-36a3-4219-8b9d-3cec706430ed",
+        "areaOfInterestName": "Procurement & Purchase"
+      }
+    ],
+    "jobRoles": [
+      {
+        "jobRoleId": "c68a735b-edde-4065-b343-59740e63c05a",
+        "jobRoleName": "Allied Health Manager"
+      }
+    ],
+    "educationalDetailsDtos": [
+      {
+        "educationDetailsId": "3337fd23-8100-4a9a-a1b5-083814cb4a06",
+        "qualification": "Diploma",
+        "collegeName": "Jawaharlal Nehru Technological University - Gurajada, Vizianagram(JNTU-GV), Vizianagaram – 535 003, Andhra Pradesh ",
+        "course": "Diploma",
+        "courseType": "FULLTIME",
+        "specialization": "Civil Engineering",
+        "currentlyPursuing": false,
+        "startDate": "2017-04-05",
+        "endDate": "2020-04-06"
+      }
+    ],
+    "workExperienceDtos": [],
+    "empType": "FULLTIME",
+    "certifications": [],
+    "departments": []
+  },
+  {
+    "profileId": "26e2dde7-9a1b-4f42-b38c-1292adda345a",
+    "name": "Lakshmi srinivas",
+    "profilePictureUrl": "NA",
+    "totalWorkExperience": 0.6,
+    "email": "srinivas.lakshmi23@gmail.com",
+    "phoneNumber": "7856965987",
+    "skills": [
+      "Java Script",
+      "Angular Js",
+      "C#.Net"
+
+    ],
+    "preferedLocations": [
+      "Delhi",
+      "Andaman & Nicobar Islands",
+      "Bidar"
+    ],
+    "expectedCTC": 1700000,
+    "noticePeriod": "90",
+    "currentCTC": 1300000,
+    "lastSeen": "2023-04-08",
+    "lastUpdated":"2023-02-20",
+    "jobRole": [
+      "Location Manager"
+    ],
+    "areaOfInterests": [
+      "Direction"
+    ],
+    "educationalQualifications": [
+      "Diploma"
+    ],
+    "matchingPercentage": 39,
+    "preferedLocation": {
+      "preferedLocationId": "34e3cc0f-daec-4bd9-a21b-3afc6f1cc288",
+      "primaryLocation": "Delhi",
+      "pinCode": 565614,
+      "secondaryLocation": "Andaman & Nicobar Islands",
+      "otherPreferedLocation": [
+        "Bidar"
+      ]
+    },
+    "profileSkills": [
+      {
+        "skillId": "d5e0b8dd-6cb4-4f2c-80b6-486703fbcabe",
+        "skillName": "Java Script",
+        "rating": 2,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "6eea8579-33f4-441c-a136-99d66a636e1d",
+        "skillName": "Angular Js",
+        "rating": 1,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "900675fd-9334-480a-b7ff-f38aa8293320",
+        "skillName": "C#.Net",
+        "rating": 5,
+        "skillType": "PRIMARY"
+      },
+      {
+        "skillId": "28f2d3ea-3b27-4875-8829-0dad3727877f",
+        "skillName": "Data Quality",
+        "rating": 3,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "289e5bbc-eeb1-4fde-bb62-6a9358d86112",
+        "skillName": "Angular",
+        "rating": 7,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "519ffa85-8358-4fc7-bb12-9616a79d3fbe",
+        "skillName": "Jenkins",
+        "rating": 8,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "96c24913-37ce-449a-b9f6-2c83316d099d",
+        "skillName": "Bootstrap",
+        "rating": 2,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "3cd5cb81-cf0c-4f6b-b5a7-3c6add48d85d",
+        "skillName": "Gitlab",
+        "rating": 8,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "d565b5a7-4f08-4fcb-9baf-83a949c5bd1f",
+        "skillName": "Bootstrap",
+        "rating": 5,
+        "skillType": "OTHER"
+      }
+    ],
+    "profileAreaOfInterests": [
+      {
+        "areaOfInterestId": "49317181-e1c1-4c8d-a172-ff264b24eece",
+        "areaOfInterestName": "Direction"
+      }
+    ],
+    "jobRoles": [
+      {
+        "jobRoleId": "3a5a7cf6-47bc-4d71-b147-377d81af8681",
+        "jobRoleName": "Location Manager"
+      }
+    ],
+    "educationalDetailsDtos": [
+      {
+        "educationDetailsId": "593dcc7d-9e2f-4940-99bd-180e6f0adb26",
+        "qualification": "Diploma",
+        "collegeName": "The Global University, Hollongi, Itanagar, Arunachal Pradesh. ",
+        "course": "Diploma",
+        "courseType": "FULLTIME",
+        "specialization": "Air Hostess",
+        "currentlyPursuing": false,
+        "startDate": "2017-06-08",
+        "endDate": "2020-06-08"
+      }
+    ],
+    "workExperienceDtos": [
+      {
+        "workExperienceId": "47a6ebf9-96c0-4afe-85f6-e65224e446bc",
+        "companyName": "7 Hill Bar & Restaurant",
+        "jobTitle": "Selenium Tester",
+        "industryType": "Category Management & Operations",
+        "department": "Product Management",
+        "currentlyWorking": false,
+        "salaryType": "YEARLY",
+        "currentSalary": 1300000,
+        "empType": "CONTRACT",
+        "startDate": "2022-12-10",
+        "endDate": null,
+        "experience": 0.6,
+        "noticePeriod": "90",
+        "description": null,
+        "location": null
+      }
+    ],
+    "empType": "CONTRACT",
+    "certifications": [],
+    "departments": [
+      "Product Management"
+    ]
+  },
+  {
+    "profileId": "063a7c4e-be07-4078-bf8e-3db2951b33ce",
+    "name": "Pavan Kumar",
+    "profilePictureUrl": "1683613812094_depositphotos_77154385-stock-photo-passport-picture-of-a-german.jpg",
+    "totalWorkExperience": 2,
+    "email": "pavan.kumar@gmail.com",
+    "phoneNumber": "9864589745",
+    "skills": [
+      "Azure",
+      "Database",
+      "C++"
+
+    ],
+    "preferedLocations": [
+      "Anantnag",
+      "Dehradun",
+      "Bhuj"
+    ],
+    "expectedCTC": 850000,
+    "noticePeriod": "15",
+    "currentCTC": 294000,
+    "lastSeen": "2023-05-08",
+    "lastUpdated":"2023-05-08",
+    "jobRole": [
+      "Light Engineer"
+    ],
+    "areaOfInterests": [
+      "Software Developer in Test (SDET)"
+    ],
+    "educationalQualifications": [
+      "Graduation"
+    ],
+    "matchingPercentage": 58,
+    "preferedLocation": {
+      "preferedLocationId": "091df022-2115-44d1-8ab2-da45d2eee247",
+      "primaryLocation": "Anantnag",
+      "pinCode": 569729,
+      "secondaryLocation": "Dehradun",
+      "otherPreferedLocation": [
+        "Bhuj"
+      ]
+    },
+    "profileSkills": [
+      {
+        "skillId": "93578cf2-afac-4e16-9eff-6d370f131b21",
+        "skillName": "Azure",
+        "rating": 2,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "355e8962-8e59-43db-98c8-163937aa04ae",
+        "skillName": "Database",
+        "rating": 4,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "e5490f7e-182b-41ff-826f-335cdf5b7dac",
+        "skillName": "C++",
+        "rating": 1,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "039e100e-e0bf-403f-8821-dc882b336b15",
+        "skillName": "Core Java",
+        "rating": 10,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "61ba7192-8fdf-474b-bdee-43f6c6f52bc0",
+        "skillName": "Angular Js",
+        "rating": 10,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "fbc94120-f2c6-4cac-ae14-9b22edf8046e",
+        "skillName": "Big Data",
+        "rating": 2,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "1709b37b-9633-4e82-a83a-1a33c8ea46b2",
+        "skillName": "Gitlab",
+        "rating": 6,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "d6c17d41-325b-4422-b080-2ca639d26d23",
+        "skillName": "Java Script",
+        "rating": 6,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "e51ea45b-5f5e-461d-a637-23d1d16348dd",
+        "skillName": "Architect",
+        "rating": 5,
+        "skillType": "PRIMARY"
+      }
+    ],
+    "profileAreaOfInterests": [
+      {
+        "areaOfInterestId": "127a0174-9769-4fbd-b655-20c61cb5d377",
+        "areaOfInterestName": "Software Developer in Test (SDET)"
+      }
+    ],
+    "jobRoles": [
+      {
+        "jobRoleId": "0fb895e3-553d-43bf-b48a-59f02c348752",
+        "jobRoleName": "Light Engineer"
+      }
+    ],
+    "educationalDetailsDtos": [
+      {
+        "educationDetailsId": "c7c46bee-843b-4ed8-8f00-dbf0a4d074ed",
+        "qualification": "Graduation",
+        "collegeName": "Bharatiya Engineering Science and Technology Innovation University,Gownivaripalli, Gorantla Mandal, Anantapur, Andhra Pradesh ",
+        "course": "B.Tech/B.E.",
+        "courseType": "FULLTIME",
+        "specialization": "Ceramics",
+        "currentlyPursuing": false,
+        "startDate": "2016-06-14",
+        "endDate": "2020-06-14"
+      }
+    ],
+    "workExperienceDtos": [
+      {
+        "workExperienceId": "824fec08-89bc-496b-abff-d1f75c3a9de7",
+        "companyName": "3Di Systems",
+        "jobTitle": "Full Stack Developer",
+        "industryType": "Animation",
+        "department": "IT",
+        "currentlyWorking": true,
+        "salaryType": "MONTHLY",
+        "currentSalary": 24500,
+        "empType": "FULLTIME",
+        "startDate": "2021-05-09",
+        "endDate": null,
+        "experience": 2,
+        "noticePeriod": "15",
+        "description": null,
+        "location": null
+      }
+    ],
+    "empType": "FULLTIME",
+    "certifications": [
+      "Python"
+    ],
+    "departments": [
+      "IT"
+    ]
+  },
+  {
+    "profileId": "956f7def-d6fa-4157-9507-328b287b3816",
+    "name": "Surajit Mondal",
+    "profilePictureUrl": "NA",
+    "totalWorkExperience": 0,
+    "email": "surajit123mondal@gmail.com",
+    "phoneNumber": "9306556994",
+    "skills": [
+      "Java Script",
+      "Gitlab",
+      "Database"
+
+    ],
+    "preferedLocations": [
+      "Jammu",
+      "Kohima",
+      "Gurgaon or Gurugram"
+    ],
+    "expectedCTC": 1150000,
+    "noticePeriod": "NA",
+    "currentCTC": 0,
+    "lastSeen": "2023-01-04",
+    "lastUpdated":"2023-04-28",
+    "jobRole": [
+      "Full Stack Data Scientist"
+    ],
+    "areaOfInterests": [
+      "Artists"
+    ],
+    "educationalQualifications": [
+      "Diploma"
+    ],
+    "matchingPercentage": 19,
+    "preferedLocation": {
+      "preferedLocationId": "93c4399c-9d65-4739-a9e9-b3175711f6a5",
+      "primaryLocation": "Jammu",
+      "pinCode": 563648,
+      "secondaryLocation": "Kohima",
+      "otherPreferedLocation": [
+        "Gurgaon or Gurugram"
+      ]
+    },
+    "profileSkills": [
+      {
+        "skillId": "6b4ade4f-8ee3-459e-83a1-55342d30b8f2",
+        "skillName": "Java Script",
+        "rating": 10,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "b257a532-a231-45bb-9b90-bb74d3e0d02b",
+        "skillName": "Gitlab",
+        "rating": 8,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "7ac69357-542d-4f30-9dfd-3c8e7a1b1c5c",
+        "skillName": "Database",
+        "rating": 9,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "b8bcd388-1d14-4c07-a2d9-aa42361c2175",
+        "skillName": "Jenkins",
+        "rating": 9,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "249192b1-76aa-476a-be3e-cf60b9c4c349",
+        "skillName": "Azure",
+        "rating": 1,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "a5d06591-5b91-4aea-bee0-1230cf72d241",
+        "skillName": "Angular Js",
+        "rating": 5,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "80e06d9a-be12-4f2d-9d27-5f96279b48f0",
+        "skillName": "Artificial Intelligence",
+        "rating": 8,
+        "skillType": "PRIMARY"
+      },
+      {
+        "skillId": "75048386-c30d-4acb-8a4e-1ef153002878",
+        "skillName": "Big Data",
+        "rating": 2,
+        "skillType": "OTHER"
+      }
+    ],
+    "profileAreaOfInterests": [
+      {
+        "areaOfInterestId": "07c05917-962e-4151-92b9-ff588bb2e84a",
+        "areaOfInterestName": "Artists"
+      }
+    ],
+    "jobRoles": [
+      {
+        "jobRoleId": "a6b2df99-75c6-4f6c-9d1e-3758d16ed0bc",
+        "jobRoleName": "Full Stack Data Scientist"
+      }
+    ],
+    "educationalDetailsDtos": [
+      {
+        "educationDetailsId": "3feedb25-3c80-4f4f-925b-e6cfd0be466b",
+        "qualification": "Diploma",
+        "collegeName": "Children’s University, Subhash Chandra Bose Shikshan Sankul, Sector- 20, Gandhinagar - 382020, Gujarat. ",
+        "course": "Diploma",
+        "courseType": "FULLTIME",
+        "specialization": "Elementary Education",
+        "currentlyPursuing": false,
+        "startDate": "2017-03-18",
+        "endDate": "2020-03-18"
+      }
+    ],
+    "workExperienceDtos": [],
+    "empType": "CONTRACT",
+    "certifications": [],
+    "departments": []
+  },
+  {
+    "profileId": "0423ea75-f80b-4bd4-89e5-94281e65db5b",
+    "name": "Triveni Iyer",
+    "profilePictureUrl": "1683613321270_Baseema-Nizar.jpg",
+    "totalWorkExperience": 5,
+    "email": "triveni56@gmail.com",
+    "phoneNumber": "9268445522",
+    "skills": [
+      "Python",
+      "Java",
+      "Gitlab",
+      "Database"
+    ],
+    "preferedLocations": [
+      "Hubli",
+      "Kannur",
+      "Gaya"
+    ],
+    "expectedCTC": 850000,
+    "noticePeriod": "45",
+    "currentCTC": 900000,
+    "lastSeen": "2023-05-08",
+    "lastUpdated":"2023-03-02",
+    "jobRole": [
+      "Branch Manager"
+    ],
+    "areaOfInterests": [
+      "Management"
+    ],
+    "educationalQualifications": [
+      "Graduation"
+    ],
+    "matchingPercentage": 33,
+    "preferedLocation": {
+      "preferedLocationId": "0461ee7c-5ce5-4571-a8fa-1ed52ca2895a",
+      "primaryLocation": "Hubli",
+      "pinCode": 566576,
+      "secondaryLocation": "Kannur",
+      "otherPreferedLocation": [
+        "Gaya"
+      ]
+    },
+    "profileSkills": [
+      {
+        "skillId": "4702e58e-3bcd-4a39-9b3a-baf45f416acc",
+        "skillName": "Jenkins",
+        "rating": 7,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "007cf92a-cf47-4bfb-8975-0107f9e1954b",
+        "skillName": "Ui Design",
+        "rating": 10,
+        "skillType": "PRIMARY"
+      },
+      {
+        "skillId": "776af56a-a08c-45df-b838-8158cb2b712c",
+        "skillName": "Ansible",
+        "rating": 4,
+        "skillType": "PRIMARY"
+      },
+      {
+        "skillId": "45ace65e-5d52-4b1b-8522-4ce991dadb74",
+        "skillName": "Angular Js",
+        "rating": 2,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "eb51993a-b451-4b2d-bdca-c27913f3ec98",
+        "skillName": "Data Quality",
+        "rating": 4,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "78319cd2-911c-45ca-a7fe-8b9cf4e215b5",
+        "skillName": "Azure",
+        "rating": 8,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "b63c12a5-b2b6-4733-880c-69b0a5aaf445",
+        "skillName": "Java Script",
+        "rating": 10,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "0b3d52c5-6044-4eb3-b869-74a2ac01f26f",
+        "skillName": "Angular",
+        "rating": 10,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "2dcf572e-7064-4eef-80d3-b8307a8f56f2",
+        "skillName": "Python",
+        "rating": 10,
+        "skillType": "PRIMARY"
+      },
+      {
+        "skillId": "5af4bc21-1fd2-4dce-be7d-ee0685219c79",
+        "skillName": "Java",
+        "rating": 10,
+        "skillType": "PRIMARY"
+      },
+      {
+        "skillId": "8cc87507-cb49-4d13-8226-0787e4573650",
+        "skillName": "Gitlab",
+        "rating": 5,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "7e887558-d3d1-484a-a3b2-824eda9b7281",
+        "skillName": "Database",
+        "rating": 6,
+        "skillType": "OTHER"
+      }
+    ],
+    "profileAreaOfInterests": [
+      {
+        "areaOfInterestId": "0a348b21-9d1b-4873-b5f8-6e7b8853713b",
+        "areaOfInterestName": "Management"
+      }
+    ],
+    "jobRoles": [
+      {
+        "jobRoleId": "074a8904-bf48-4807-af35-0ea163b52d3d",
+        "jobRoleName": "Branch Manager"
+      }
+    ],
+    "educationalDetailsDtos": [
+      {
+        "educationDetailsId": "46b850eb-daf4-4f62-9c76-877b1c466e67",
+        "qualification": "Graduation",
+        "collegeName": "Adikavi Nannaya University, 25-7-9/1, Jayakrishnapuram, Rajahmundry – 533 105, East Godavari District, Andhra Pradesh. ",
+        "course": "B.Tech/B.E.",
+        "courseType": "FULLTIME",
+        "specialization": "Aviation",
+        "currentlyPursuing": false,
+        "startDate": "2016-06-14",
+        "endDate": "2020-06-14"
+      }
+    ],
+    "workExperienceDtos": [
+      {
+        "workExperienceId": "ce3ee8a5-26c9-40b5-8673-ef6dce981dd0",
+        "companyName": "104 Medical Helpline",
+        "jobTitle": "Java Developer",
+        "industryType": "IT",
+        "department": "Software Developer in Test (SDET)",
+        "currentlyWorking": false,
+        "salaryType": "YEARLY",
+        "currentSalary": 900000,
+        "empType": "CONTRACT",
+        "startDate": "2018-05-01",
+        "endDate": null,
+        "experience": 5,
+        "noticePeriod": "45",
+        "description": null,
+        "location": null
+      }
+    ],
+    "empType": "FULLTIME",
+    "certifications": [
+      "Dot Net"
+    ],
+    "departments": [
+      "Software Developer in Test (SDET)"
+    ]
+  },
+  {
+    "profileId": "8c83657c-df57-4a04-8b3a-fcda7dd6164e",
+    "name": "Karthik R D",
+    "profilePictureUrl": "NA",
+    "totalWorkExperience": 0.2,
+    "email": "karthikdwarak8777@gmail.com",
+    "phoneNumber": "9672031194",
+    "skills": [
+      "Data Quality",
+      "Angular",
+      "Appian"
+    ],
+    "preferedLocations": [
+      "Bareilly",
+      "Chattisgarh",
+      "Agartala"
+    ],
+    "expectedCTC": 750000,
+    "noticePeriod": "60",
+    "currentCTC": 600000,
+    "lastSeen": "2023-01-03",
+    "lastUpdated":"2023-04-20",
+    "jobRole": [
+      "Fraud Analyst"
+    ],
+    "areaOfInterests": [
+      "IT Support"
+    ],
+    "educationalQualifications": [
+      "Diploma"
+    ],
+    "matchingPercentage": 42,
+    "preferedLocation": {
+      "preferedLocationId": "8af66502-4844-49af-a544-bd3fa1d8972c",
+      "primaryLocation": "Bareilly",
+      "pinCode": 560067,
+      "secondaryLocation": "Chattisgarh",
+      "otherPreferedLocation": [
+        "Agartala"
+      ]
+    },
+    "profileSkills": [
+      {
+        "skillId": "22dc096f-c052-4143-abe3-b06f44470e73",
+        "skillName": "Data Quality",
+        "rating": 4,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "0e1db7ef-9e1c-438c-a25d-de15a6a5ccb8",
+        "skillName": "Angular",
+        "rating": 4,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "b5774686-1a2f-41af-902b-c61d5a73b85f",
+        "skillName": "Java Script",
+        "rating": 5,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "b3b9a80d-9690-4a10-9201-8b6029de376b",
+        "skillName": "Gitlab",
+        "rating": 9,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "c23c2e5b-036b-4560-b3c0-4bec0057b9ba",
+        "skillName": "Jenkins",
+        "rating": 5,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "9c4eec3e-72f0-4ab7-b361-ff8cd41d00dc",
+        "skillName": "Angular Js",
+        "rating": 6,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "f5bf1986-b7f4-4992-afcb-981d8ba6fa97",
+        "skillName": "Bootstrap",
+        "rating": 5,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "acbd136e-cb19-46d6-98e8-cf31589e3e87",
+        "skillName": "Appian",
+        "rating": 6,
+        "skillType": "PRIMARY"
+      }
+    ],
+    "profileAreaOfInterests": [
+      {
+        "areaOfInterestId": "fa57bed8-df20-4c4b-a9a1-2cc37bcb405b",
+        "areaOfInterestName": "IT Support"
+      }
+    ],
+    "jobRoles": [
+      {
+        "jobRoleId": "a4697ae7-9ae3-43c2-a658-de46855d938b",
+        "jobRoleName": "Fraud Analyst"
+      }
+    ],
+    "educationalDetailsDtos": [
+      {
+        "educationDetailsId": "8088789c-90f8-47d1-bd2c-4226e189e04d",
+        "qualification": "Diploma",
+        "collegeName": "Central University of Gujarat, Sector-30, Gandhinagar-382030, Gujarat .",
+        "course": "Diploma",
+        "courseType": "FULLTIME",
+        "specialization": "Chemical Engineering",
+        "currentlyPursuing": false,
+        "startDate": "2017-03-15",
+        "endDate": "2020-03-15"
+      }
+    ],
+    "workExperienceDtos": [
+      {
+        "workExperienceId": "f8b13f6a-ebd8-414e-83a1-49992c2de4fa",
+        "companyName": "31 Parallel",
+        "jobTitle": " Electrician",
+        "industryType": "BFSI",
+        "department": "Construction & Site Engineering",
+        "currentlyWorking": true,
+        "salaryType": "MONTHLY",
+        "currentSalary": 50000,
+        "empType": "INTERNSHIP",
+        "startDate": "2023-03-07",
+        "endDate": null,
+        "experience": 0.2,
+        "noticePeriod": "60",
+        "description": null,
+        "location": null
+      }
+    ],
+    "empType": "CONTRACT",
+    "certifications": [],
+    "departments": [
+      "Construction & Site Engineering"
+    ]
+  },
+  {
+    "profileId": "090e5d1d-cea6-490f-b891-67a89274d120",
+    "name": "Chandana G",
+    "profilePictureUrl": "1683613452496_R.jpg",
+    "totalWorkExperience": 2.8,
+    "email": "chandana.g345@gmail.com",
+    "phoneNumber": "8957456985",
+    "skills": [
+      "Devops",
+      "Artificial Intelligence",
+      "Java Script"
+    ],
+    "preferedLocations": [
+      "Chattisgarh",
+      "Agartala",
+      "Bareilly"
+    ],
+    "expectedCTC": 750000,
+    "noticePeriod": "45",
+    "currentCTC": 294000,
+    "lastSeen": "2023-05-08",
+    "lastUpdated":"2023-05-3",
+    "jobRole": [
+      "Animator"
+    ],
+    "areaOfInterests": [
+      "Pilot"
+    ],
+    "educationalQualifications": [
+      "Graduation"
+    ],
+    "matchingPercentage": 33,
+    "preferedLocation": {
+      "preferedLocationId": "0acf7e71-7860-403c-9ca2-3103f931888a",
+      "primaryLocation": "Chattisgarh",
+      "pinCode": 560428,
+      "secondaryLocation": "Agartala",
+      "otherPreferedLocation": [
+        "Bareilly"
+      ]
+    },
+    "profileSkills": [
+      {
+        "skillId": "cd9d87c6-2314-41e6-8f21-4cc05abcc407",
+        "skillName": "Azure",
+        "rating": 1,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "cbc3c1b7-ac1b-4461-8c7d-314250c4f6ff",
+        "skillName": "Big Data",
+        "rating": 9,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "5cac2890-d348-4fb5-b69b-30411ccec5cf",
+        "skillName": "C++",
+        "rating": 6,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "c36c943d-0a48-4e00-80f1-bf4f4c3d4d28",
+        "skillName": "Database",
+        "rating": 7,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "ccab6a7f-1dff-49b6-9b31-1fd6302e84f4",
+        "skillName": "Angular Js",
+        "rating": 4,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "45158d00-a4c0-46f9-afa7-e34712b81095",
+        "skillName": "Core Java",
+        "rating": 6,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "c649a847-68a9-4838-b2ba-175661e19955",
+        "skillName": "Devops",
+        "rating": 10,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "e708a78e-d69e-47df-96f6-5dc5ecea87a1",
+        "skillName": "Artificial Intelligence",
+        "rating": 9,
+        "skillType": "PRIMARY"
+      },
+      {
+        "skillId": "86fe7d32-472f-4749-b738-d655b9b12a22",
+        "skillName": "Java Script",
+        "rating": 1,
+        "skillType": "OTHER"
+      }
+    ],
+    "profileAreaOfInterests": [
+      {
+        "areaOfInterestId": "1423c90c-8425-4b56-91af-ffe0c970aa4c",
+        "areaOfInterestName": "Pilot"
+      }
+    ],
+    "jobRoles": [
+      {
+        "jobRoleId": "1628b81a-94d7-4ccc-b148-d93967bc94bb",
+        "jobRoleName": "Animator"
+      }
+    ],
+    "educationalDetailsDtos": [
+      {
+        "educationDetailsId": "d54a3ae4-861b-4cea-9761-48a2dabb9180",
+        "qualification": "Graduation",
+        "collegeName": "Central University of Andhra Pradesh, IT Incubation Centre Building, JNTU  Campus,  Chinmaynagar,  Anantapuramu,  Andhra  Pradesh-515002 ",
+        "course": "B.Tech/B.E.",
+        "courseType": "FULLTIME",
+        "specialization": "Chemical",
+        "currentlyPursuing": false,
+        "startDate": "2016-06-14",
+        "endDate": "2020-06-14"
+      }
+    ],
+    "workExperienceDtos": [
+      {
+        "workExperienceId": "94989041-ae93-4fb9-b37b-d02dbb8dc97c",
+        "companyName": "Accenture",
+        "jobTitle": "Full Stack Developer",
+        "industryType": "IT",
+        "department": "IT",
+        "currentlyWorking": true,
+        "salaryType": "MONTHLY",
+        "currentSalary": 24500,
+        "empType": "CONTRACT",
+        "startDate": "2021-08-09",
+        "endDate": null,
+        "experience": 2.8,
+        "noticePeriod": "45",
+        "description": null,
+        "location": null
+      }
+    ],
+    "empType": "CONTRACT",
+    "certifications": [
+      "Dot Net"
+    ],
+    "departments": [
+      "IT"
+    ]
+  },
+  {
+    "profileId": "26ede374-6744-4dc8-af62-b596a7514dc8",
+    "name": "Venaktesh enakonda",
+    "profilePictureUrl": "NA",
+    "totalWorkExperience": 0.5,
+    "email": "enakonda.venkatesh@gmail.com",
+    "phoneNumber": "7896598659",
+    "skills": [
+      "Angular Js",
+      "Gitlab",
+      "Java Script",
+      "Jenkins"
+    ],
+    "preferedLocations": [
+      "Aizawl",
+      "Chittaurgarh",
+      "Bengaluru or Bangalore"
+    ],
+    "expectedCTC": 390000,
+    "noticePeriod": "45",
+    "currentCTC": 65000,
+    "lastSeen": "2023-04-08",
+    "lastUpdated":"2023-04-26",
+    "jobRole": [
+      "Data Scientist"
+    ],
+    "areaOfInterests": [
+      "Procurement & Purchase"
+    ],
+    "educationalQualifications": [
+      "Diploma"
+    ],
+    "matchingPercentage": 64,
+    "preferedLocation": {
+      "preferedLocationId": "34fa1a9c-50ec-4c6d-9585-a4ddb12dbb42",
+      "primaryLocation": "Aizawl",
+      "pinCode": 561605,
+      "secondaryLocation": "Chittaurgarh",
+      "otherPreferedLocation": [
+        "Bengaluru or Bangalore"
+      ]
+    },
+    "profileSkills": [
+      {
+        "skillId": "a8262f4c-8946-48c4-8ccb-8201bce6224d",
+        "skillName": "Data Quality",
+        "rating": 6,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "a4fdfe3c-5d83-4c04-bdb9-8bd0e5dbb612",
+        "skillName": "Azure",
+        "rating": 5,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "5eb233e2-3818-4333-a509-179a958b07c5",
+        "skillName": "Budgeting",
+        "rating": 5,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "8a9df949-3195-43a9-9741-439c6293a9df",
+        "skillName": "Angular",
+        "rating": 4,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "4631bffb-8a28-4910-8774-8d76352e950b",
+        "skillName": "C++",
+        "rating": 8,
+        "skillType": "PRIMARY"
+      },
+      {
+        "skillId": "7a137e7e-153f-492e-a47c-1e0f16a19a6a",
+        "skillName": "Angular Js",
+        "rating": 10,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "b86c4371-c9fc-4688-b92f-0f0f7f534e41",
+        "skillName": "Gitlab",
+        "rating": 5,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "787c9122-d3e9-4715-a3a6-06cc8a0cfc99",
+        "skillName": "Java Script",
+        "rating": 2,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "b6151e7c-746e-4ba9-97fb-07601ee7c6dd",
+        "skillName": "Jenkins",
+        "rating": 7,
+        "skillType": "OTHER"
+      }
+    ],
+    "profileAreaOfInterests": [
+      {
+        "areaOfInterestId": "4b8c4329-36a3-4219-8b9d-3cec706430ed",
+        "areaOfInterestName": "Procurement & Purchase"
+      }
+    ],
+    "jobRoles": [
+      {
+        "jobRoleId": "3cdf161e-47ef-4205-b29b-7a9dcefcddf0",
+        "jobRoleName": "Data Scientist"
+      }
+    ],
+    "educationalDetailsDtos": [
+      {
+        "educationDetailsId": "c517c6b5-7e58-43c8-b378-9867cc48e1b6",
+        "qualification": "Diploma",
+        "collegeName": "The Indira Gandhi Technological & Medical Sciences University, Ziro, Arunachal Pradesh. ",
+        "course": "Diploma",
+        "courseType": "FULLTIME",
+        "specialization": "Aircraft Maintenance Engineering",
+        "currentlyPursuing": false,
+        "startDate": "2017-06-09",
+        "endDate": "2020-06-09"
+      }
+    ],
+    "workExperienceDtos": [
+      {
+        "workExperienceId": "4ea4cad8-ed4f-4ddf-87af-587681661f9b",
+        "companyName": "24seven",
+        "jobTitle": "Devops Engineer",
+        "industryType": "DevOps",
+        "department": "IT & Information Security",
+        "currentlyWorking": true,
+        "salaryType": "YEARLY",
+        "currentSalary": 65000,
+        "empType": "CONTRACT",
+        "startDate": "2022-12-01",
+        "endDate": null,
+        "experience": 0.5,
+        "noticePeriod": "45",
+        "description": null,
+        "location": null
+      }
+    ],
+    "empType": "FULLTIME",
+    "certifications": [],
+    "departments": [
+      "IT & Information Security"
+    ]
+  },
+  {
+    "profileId": "571dc3eb-8c57-40e7-826e-ea279a41a169",
+    "name": "Venkatesh",
+    "profilePictureUrl": "NA",
+    "totalWorkExperience": 0.7,
+    "email": "venkatesh@gmail.com",
+    "phoneNumber": "9966558877",
+    "skills": [
+      "Angular",
+      "Gitlab",
+      "Jenkins"
+    ],
+    "preferedLocations": [
+      "MUMBAI",
+      "DELHI",
+      "CHENNAI"
+    ],
+    "expectedCTC": 350000,
+    "noticePeriod": "45",
+    "currentCTC": 144000,
+    "lastSeen": "2023-02-23",
+    "lastUpdated":"2023-05-13",
+    "jobRole": [
+      "Biologist"
+    ],
+    "areaOfInterests": [
+      "Plumbing"
+    ],
+    "educationalQualifications": [
+      "Post Graduation"
+    ],
+    "matchingPercentage": 44,
+    "preferedLocation": {
+      "preferedLocationId": "5e61c9cb-7425-4965-a739-c84ab189c28d",
+      "primaryLocation": "MUMBAI",
+      "pinCode": 502369,
+      "secondaryLocation": "DELHI",
+      "otherPreferedLocation": [
+        "CHENNAI"
+      ]
+    },
+    "profileSkills": [
+      {
+        "skillId": "ed097f93-85cd-47fc-a571-3212c84f807f",
+        "skillName": "Data Quality",
+        "rating": 6,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "d065cfcf-d373-4b57-9a69-267a0cceaa04",
+        "skillName": "Angular Js",
+        "rating": 7,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "ca5532cc-1be4-4ed4-8571-28fad8821bce",
+        "skillName": "Flexible",
+        "rating": 6,
+        "skillType": "PRIMARY"
+      },
+      {
+        "skillId": "8bb1930b-9647-40b2-a81d-b444e481e691",
+        "skillName": "Java Script",
+        "rating": 3,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "3baa53e8-fa99-4f2d-aad5-61797b4b18cb",
+        "skillName": "Azure",
+        "rating": 3,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "6bf7dec2-a7b3-4fcb-ab09-30bf92b9a829",
+        "skillName": "Angular",
+        "rating": 3,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "9e412a90-ff52-47ff-9058-e4f4146112bc",
+        "skillName": "Gitlab",
+        "rating": 6,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "be9378ab-9017-4adb-99e7-a13a93bdac86",
+        "skillName": "Jenkins",
+        "rating": 9,
+        "skillType": "OTHER"
+      }
+    ],
+    "profileAreaOfInterests": [
+      {
+        "areaOfInterestId": "b02e1840-b7de-4f8e-a78b-6a7d5f85e3ff",
+        "areaOfInterestName": "Plumbing"
+      }
+    ],
+    "jobRoles": [
+      {
+        "jobRoleId": "808584c4-6c17-4bb6-bb1f-ba915832e418",
+        "jobRoleName": "Biologist"
+      }
+    ],
+    "educationalDetailsDtos": [
+      {
+        "educationDetailsId": "93555233-4217-4b95-a4f1-cc655f46cfee",
+        "qualification": "Post Graduation",
+        "collegeName": "Dr. N.T.R. University of Health Sciences (Formerly Andhra Pradesh University of Health Sciences), Vijayawada-520 008, Andhra Pradesh. ",
+        "course": "M.Ed",
+        "courseType": "FULLTIME",
+        "specialization": "Other Specialization",
+        "currentlyPursuing": false,
+        "startDate": "2019-06-11",
+        "endDate": "2021-06-11"
+      }
+    ],
+    "workExperienceDtos": [
+      {
+        "workExperienceId": "0b001d6d-1241-4976-a7b8-de65ca698d62",
+        "companyName": "1E",
+        "jobTitle": "Manual Tester",
+        "industryType": "  Miscellaneous",
+        "department": "Legal & Regulatory",
+        "currentlyWorking": true,
+        "salaryType": "MONTHLY",
+        "currentSalary": 12000,
+        "empType": "FULLTIME",
+        "startDate": "2022-10-05",
+        "endDate": null,
+        "experience": 0.7,
+        "noticePeriod": "45",
+        "description": null,
+        "location": null
+      }
+    ],
+    "empType": "PARTTIME",
+    "certifications": [],
+    "departments": [
+      "Legal & Regulatory"
+    ]
+  },
+  {
+    "profileId": "83a04529-ceba-495f-a8de-ff0443ce1672",
+    "name": "Krithi Kumar",
+    "profilePictureUrl": "NA",
+    "totalWorkExperience": 1.3,
+    "email": "krithi.g@gmail.com",
+    "phoneNumber": "7060143156",
+    "skills": [
+      "C#.Net",
+      "Angular",
+      "Finance"
+    ],
+    "preferedLocations": [
+      "Dadra & Nagar Haveli",
+      "Alwar",
+      "Bhavnagar"
+    ],
+    "expectedCTC": 850000,
+    "noticePeriod": "60",
+    "currentCTC": 348000,
+    "lastSeen": "2023-02-04",
+    "lastUpdated":"2023-05-18",
+    "jobRole": [
+      "Aircraft Maintenance Engineer"
+    ],
+    "areaOfInterests": [
+      "Sports Science & Medicine"
+    ],
+    "educationalQualifications": [
+      "Graduation"
+    ],
+    "matchingPercentage": 42,
+    "preferedLocation": {
+      "preferedLocationId": "88083560-e973-4866-8c02-3bf35363c424",
+      "primaryLocation": "Dadra & Nagar Haveli",
+      "pinCode": 560722,
+      "secondaryLocation": "Alwar",
+      "otherPreferedLocation": [
+        "Bhavnagar"
+      ]
+    },
+    "profileSkills": [
+      {
+        "skillId": "5bf40113-8461-4971-b788-f0cdfa2e836d",
+        "skillName": "Jenkins",
+        "rating": 2,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "fa5c44fb-e4ba-40a2-a91d-eb3f41bfca4f",
+        "skillName": "Python",
+        "rating": 30,
+        "skillType": "PRIMARY"
+      },
+      {
+        "skillId": "3e2d6d5d-9731-4741-b8a6-01f6361ab1fc",
+        "skillName": "Gitlab",
+        "rating": 6,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "7f4e4d1c-fd5a-4c6b-a83c-7ef12277ea29",
+        "skillName": "Angular Js",
+        "rating": 8,
+        "skillType": "PRIMARY"
+      },
+      {
+        "skillId": "15f28f17-a32f-4c2d-80fb-51a64e9bc1af",
+        "skillName": "Data Quality",
+        "rating": 6,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "8cc80222-82cd-415f-9ba7-a47112ed6bf5",
+        "skillName": "C#.Net",
+        "rating": 4,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "40e54d4d-62a4-4df0-be4c-023e26cb83df",
+        "skillName": "Angular",
+        "rating": 5,
+        "skillType": "OTHER"
+      },
+      {
+        "skillId": "66351620-24c9-476c-9f15-564693654951",
+        "skillName": "Finance",
+        "rating": 5,
+        "skillType": "OTHER"
+      }
+    ],
+    "profileAreaOfInterests": [
+      {
+        "areaOfInterestId": "f6b97af8-1e0d-4338-9a49-04e30772f0d7",
+        "areaOfInterestName": "Sports Science & Medicine"
+      }
+    ],
+    "jobRoles": [
+      {
+        "jobRoleId": "9d3c188b-e3e6-4d1b-85f9-637f4f30fc2e",
+        "jobRoleName": "Aircraft Maintenance Engineer"
+      }
+    ],
+    "educationalDetailsDtos": [
+      {
+        "educationDetailsId": "62199c80-52c3-47e2-8bd4-a207534f9518",
+        "qualification": "Graduation",
+        "collegeName": "Assam Women’s University, Jorhat-785004, Assam. ",
+        "course": "B.Tech/B.E.",
+        "courseType": "FULLTIME",
+        "specialization": "Ceramics",
+        "currentlyPursuing": false,
+        "startDate": "2017-03-20",
+        "endDate": "2021-03-20"
+      }
+    ],
+    "workExperienceDtos": [
+      {
+        "workExperienceId": "4df3bf27-84e8-49ed-841a-45ef84f138ec",
+        "companyName": "31 Parallel",
+        "jobTitle": "Software Engineer",
+        "industryType": "  Transport & Real Estate",
+        "department": "Aviation & Aerospace",
+        "currentlyWorking": false,
+        "salaryType": "MONTHLY",
+        "currentSalary": 29000,
+        "empType": "INTERNSHIP",
+        "startDate": "2022-02-03",
+        "endDate": null,
+        "experience": 1.3,
+        "noticePeriod": "60",
+        "description": null,
+        "location": null
+      }
+    ],
+    "empType": "FULLTIME",
+    "certifications": [],
+    "departments": [
+      "Aviation & Aerospace"
+    ]
+  }
+]
+
+  

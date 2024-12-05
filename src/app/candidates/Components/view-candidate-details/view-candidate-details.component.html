@@ -1,0 +1,270 @@
+
+<div class=" w-full h-full  gap-y-10 ">
+  
+  <div class=" gap-y-10  rounded-lg mt-3 shadow-lg bg-[#FFFFFF]  "
+  >
+  <div class="pt-5 ml-[2.625rem] flex space-x-1">
+    <svg width="21" height="19" viewBox="0 0 21 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M8.87034 2.63468C9.15225 2.63468 9.43141 2.6902 9.69186 2.79809C9.95232 2.90597 10.189 3.0641 10.3883 3.26344C10.5877 3.46279 10.7458 3.69944 10.8537 3.9599C10.9616 4.22035 11.0171 4.49951 11.0171 4.78142C11.0171 5.06334 10.9616 5.34249 10.8537 5.60295C10.7458 5.8634 10.5877 6.10006 10.3883 6.2994C10.189 6.49874 9.95232 6.65687 9.69186 6.76476C9.43141 6.87264 9.15225 6.92817 8.87034 6.92817C8.30099 6.92817 7.75495 6.70199 7.35236 6.2994C6.94977 5.89681 6.72359 5.35077 6.72359 4.78142C6.72359 4.21207 6.94977 3.66604 7.35236 3.26344C7.75495 2.86085 8.30099 2.63468 8.87034 2.63468ZM8.87034 11.835C11.9064 11.835 15.1061 13.3275 15.1061 13.9818V15.1062H2.63455V13.9818C2.63455 13.3275 5.83423 11.835 8.87034 11.835ZM8.87034 0.692383C6.61114 0.692383 4.7813 2.52223 4.7813 4.78142C4.7813 7.04061 6.61114 8.87046 8.87034 8.87046C11.1295 8.87046 12.9594 7.04061 12.9594 4.78142C12.9594 2.52223 11.1295 0.692383 8.87034 0.692383ZM8.87034 9.89272C6.1409 9.89272 0.692261 11.2625 0.692261 13.9818V16.0263C0.692261 16.5885 1.15228 17.0485 1.71452 17.0485H16.0262C16.5884 17.0485 17.0484 16.5885 17.0484 16.0263V13.9818C17.0484 11.2625 11.5998 9.89272 8.87034 9.89272Z" fill="#0175A2"/>
+      <rect x="11.6923" y="10" width="8.46154" height="8.46154" rx="4.23077" fill="white"/>
+      <path d="M15.9231 13.8781V15.641M15.9231 17.4038C15.5064 17.4038 15.0938 17.3217 14.7088 17.1622C14.3238 17.0028 13.974 16.769 13.6794 16.4744C13.3847 16.1798 13.151 15.83 12.9915 15.445C12.8321 15.06 12.75 14.6474 12.75 14.2307C12.75 13.814 12.8321 13.4014 12.9915 13.0164C13.151 12.6314 13.3847 12.2816 13.6794 11.987C13.974 11.6923 14.3238 11.4586 14.7088 11.2992C15.0938 11.1397 15.5064 11.0576 15.9231 11.0576C16.7646 11.0576 17.5717 11.3919 18.1668 11.987C18.7618 12.5821 19.0962 13.3891 19.0962 14.2307C19.0962 15.0722 18.7618 15.8793 18.1668 16.4744C17.5717 17.0695 16.7646 17.4038 15.9231 17.4038ZM15.9407 12.8204V12.8557H15.9054V12.8204H15.9407Z" stroke="#0175A2" stroke-width="0.833333" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+
+
+<span class="font-[rubik] text-[#344054] text-[1rem] font-medium">About</span>
+</div>
+<div class="ml-[2.625rem] mt-2" >
+      <span class="text-[#344054] font-[rubik] text-[1rem] font-normal">{{ userBio?.personalDescription  || "No data available" }}</span>
+      <div *ngIf="userBio.personalDescription .length == 0" class="text-center mt-5 p-2">
+        Not Available
+      </div>
+      
+    </div>
+<div class=" mt-1 ">
+  <div class=" ml-[2.625rem] mr-[2.74rem]">   <span class="text-[#475467] font-normal font-[jost]  text-[0.9rem]"  >{{userData?.personalBio || "No data available" }}
+</span>
+<div *ngIf="userData.personalBio.length == 0" class="text-center mt-5 p-2">
+  Not Available
+</div></div>
+
+</div>
+<div class=" mt-6 mx-10 " >
+  <svg width="99%" height="3" viewBox="0 0 99% 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <line y1="1.5" x2="99%" y2="1.5" stroke="#EAECF0" stroke-width="3"/>
+    </svg>
+
+  </div>
+    <div class="pl-[2.625rem] mt-4 flex space-x-1">
+<svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M14.666 18.25V3.58333C14.666 3.0971 14.4728 2.63079 14.129 2.28697C13.7852 1.94315 13.3189 1.75 12.8326 1.75H9.16598C8.67975 1.75 8.21343 1.94315 7.86961 2.28697C7.5258 2.63079 7.33264 3.0971 7.33264 3.58333V18.25M3.66598 5.41667H18.3326C19.3452 5.41667 20.166 6.23748 20.166 7.25V16.4167C20.166 17.4292 19.3452 18.25 18.3326 18.25H3.66598C2.65345 18.25 1.83264 17.4292 1.83264 16.4167V7.25C1.83264 6.23748 2.65345 5.41667 3.66598 5.41667Z" stroke="#0175A2" stroke-width="1.7816" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+  <div class="">
+    <span class="text-[#344054] font-[rubik] text-[1rem] h-full font-medium">Experience</span>
+  </div>
+  
+</div>
+<div *ngIf="userData?.workExperienceDtos.length == 0" class="text-center mt-5 p-2">
+  Not Available
+</div>
+<div *ngFor="let i of userData.workExperienceDtos" >
+<div class="flex ml-[2.625rem] mt-7">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="24" height="24" rx="3" fill="#EAECF0"/>
+    </svg>
+
+  <span class="text-[#344054] font-medium font-[jost] text-[0.6rem] -ml-5 mt-1">AD
+  </span>
+
+  <span class="text-[#1D2939] font-medium text-[0.9rem] font-[rubik] ml-4">{{i.jobTitle }}</span>
+  
+</div>
+<div class="ml-[5.5rem] mt-1">
+<div  class=" text-[#475467] font-normal font-[jost] text-[0.9rem]">{{i.companyName  }}</div>
+<div class="text-[#475467] font-normal font-[jost] text-[0.9rem]">{{i.description  }}</div>
+<div class="flex">
+<div class="text-[#475467] font-normal font-[jost] text-[0.9rem]">{{i.experience }} </div>
+<div class="text-[#1D2939] font-medium font-[jost] text-[0.9rem] ml-1">- Present</div>
+
+</div>
+</div>
+</div>
+
+<!--  -->
+
+  <!--  -->
+  <div class="pl-[2.625rem] mt-4 flex space-x-1">
+    <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M14.666 18.25V3.58333C14.666 3.0971 14.4728 2.63079 14.129 2.28697C13.7852 1.94315 13.3189 1.75 12.8326 1.75H9.16598C8.67975 1.75 8.21343 1.94315 7.86961 2.28697C7.5258 2.63079 7.33264 3.0971 7.33264 3.58333V18.25M3.66598 5.41667H18.3326C19.3452 5.41667 20.166 6.23748 20.166 7.25V16.4167C20.166 17.4292 19.3452 18.25 18.3326 18.25H3.66598C2.65345 18.25 1.83264 17.4292 1.83264 16.4167V7.25C1.83264 6.23748 2.65345 5.41667 3.66598 5.41667Z" stroke="#0175A2" stroke-width="1.7816" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div class="">
+        <span class="text-[#344054] font-[rubik] text-[1rem] font-medium h-full">Education</span>
+      </div>
+    </div>
+    <div *ngIf="userData.educationalDetailsDtos.length == 0" class="text-center mt-5 p-2">
+      Not Available
+    </div>
+  <div *ngFor="let i of userData.educationalDetailsDtos">
+    <div class="flex ml-[2.625rem] mt-7">
+      <svg width="24" height="18" viewBox="0 0 24 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1 5.7L11.511 1.5L22.022 5.7L11.511 9.9L1 5.7Z" stroke="#475467" stroke-width="2" stroke-linejoin="round"/>
+        <path d="M22.0223 5.75488V10.3664M5.77832 7.91238V14.1334C5.77832 14.1334 8.18332 16.4999 11.5113 16.4999C14.8398 16.4999 17.2448 14.1334 17.2448 14.1334V7.91238" stroke="#475467" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      <span class="text-[#1D2939] font-medium text-[0.9rem] font-[rubik] ml-2">{{i.qualification}}</span>
+    </div>
+    <div class="ml-[5.5rem] mt-1">
+      <div class=" text-[#475467] font-normal font-[jost] text-[0.9rem]">{{i.specialization}}</div>
+      <div class="flex">
+      <div class="text-[#475467] font-normal font-[jost] text-[0.9rem]">{{i.endDate}}</div>
+      <!-- <div class="text-[#475467] font-normal font-[jost] text-[0.9rem] ml-3">4 Months</div></div> -->
+</div>
+</div>
+
+<div class=" mt-6 mx-10 " >
+  <svg width="99%" height="3" viewBox="0 0 99% 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <line y1="1.5" x2="99%" y2="1.5" stroke="#EAECF0" stroke-width="3"/>
+    </svg>
+  </div>
+  <div class="pl-[2.625rem] mt-4 flex space-x-1">
+    <svg width="22" height="23" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M11.2336 6.99093L12.5234 10.3694C12.7822 11.0473 13.4326 11.4952 14.1583 11.4952H17.943C18.0229 11.4952 18.0689 11.5188 18.0991 11.5432C18.1345 11.5718 18.1666 11.6177 18.1834 11.6769C18.2002 11.736 18.1971 11.792 18.182 11.835C18.1691 11.8716 18.1424 11.9158 18.0744 11.9578L15.3047 13.6705C14.5906 14.1121 14.2907 14.9986 14.5902 15.7831L15.7105 18.7174C15.7957 18.9408 15.5488 19.145 15.3454 19.0192L11.9204 16.9014C11.3563 16.5526 10.6437 16.5526 10.0796 16.9014L6.65459 19.0192C6.45119 19.145 6.20426 18.9408 6.28955 18.7174L7.40981 15.7831C7.70929 14.9986 7.40942 14.1121 6.69526 13.6705L3.92556 11.9578C3.85756 11.9158 3.83085 11.8716 3.81801 11.835C3.80294 11.792 3.79976 11.736 3.81656 11.6769C3.83337 11.6177 3.86553 11.5718 3.90094 11.5432C3.93113 11.5188 3.97709 11.4952 4.05704 11.4952H7.84172C8.56741 11.4952 9.2178 11.0473 9.47663 10.3694L10.7664 6.99093C10.8483 6.77649 11.1517 6.77649 11.2336 6.99093Z" stroke="#0175A2" stroke-width="1.5"/>
+      <path d="M18.7004 8.19161L20.9004 5.21289" stroke="#0175A2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M14.2996 5.61617L17.5996 1" stroke="#0175A2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M6.59889 7.59894L8.79883 4.27637" stroke="#0175A2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+
+      <div class="">
+        <span class="text-[#344054] font-[rubik] text-[1rem] font-medium">Key Skills</span>
+      </div>
+    </div>
+    <div class="align-top align-baseline">
+      <div class="mt-4 flex flex-wrap pl-[2.625rem] space-x-3 space-y-0.5">
+        <div *ngFor="let i of userData.skills" class="flex items-center justify-center [7.25rem] h-[2.5rem] rounded-[0.5rem] px-2  py-2 bg-[#F2F4F7] text-[#475467] font-[jost] font-normal text-[0.9rem]">
+          {{i}}
+        </div>
+      </div>
+    </div>
+    <div class=" mt-6 mx-10 " >
+      <svg width="99%" height="3" viewBox="0 0 99% 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line y1="1.5" x2="99%" y2="1.5" stroke="#EAECF0" stroke-width="3"/>
+        </svg>
+      </div>
+      <div class="pl-[2.625rem] mt-4 flex space-x-1">
+        <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M11.9166 4.49967V2.66634H8.24996V4.49967H11.9166ZM2.74996 7.24967V15.4997C2.74996 16.0038 3.16246 16.4163 3.66663 16.4163H16.5C17.0041 16.4163 17.4166 16.0038 17.4166 15.4997V7.24967C17.4166 6.74551 17.0041 6.33301 16.5 6.33301H3.66663C3.16246 6.33301 2.74996 6.74551 2.74996 7.24967ZM17.4166 4.49967C18.4341 4.49967 19.25 5.31551 19.25 6.33301V16.4163C19.25 17.4338 18.4341 18.2497 17.4166 18.2497H2.74996C1.73246 18.2497 0.916626 17.4338 0.916626 16.4163L0.925793 6.33301C0.925793 5.31551 1.73246 4.49967 2.74996 4.49967H6.41663V2.66634C6.41663 1.64884 7.23246 0.833008 8.24996 0.833008H11.9166C12.9341 0.833008 13.75 1.64884 13.75 2.66634V4.49967H17.4166Z" fill="#0175A2"/>
+          <rect x="13.75" y="11.833" width="7.33333" height="7.33333" rx="3.66667" fill="white"/>
+          <path d="M20.2816 15.8441C20.0525 16.99 19.1885 18.0689 17.9762 18.31C17.3849 18.4277 16.7716 18.3559 16.2235 18.1048C15.6755 17.8537 15.2206 17.4361 14.9237 16.9114C14.6267 16.3867 14.5029 15.7818 14.5698 15.1826C14.6367 14.5835 14.891 14.0207 15.2963 13.5745C16.1277 12.6587 17.5316 12.4066 18.6775 12.865" stroke="#0175A2" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M16.3855 15.3861L17.5313 16.5319L20.2813 13.5527" stroke="#0175A2" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+
+
+          <div class="">
+            <span class="text-[#344054] font-[rubik] text-[1rem] font-medium">Job Preferences</span>
+          </div>
+        </div>
+          <div class="flex space-x-2 pl-[2.625rem] mt-3">
+            <svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15 8.40909C15 13.9773 8 18.75 8 18.75C8 18.75 1 13.9773 1 8.40909C1 6.51038 1.7375 4.68944 3.05025 3.34685C4.36301 2.00426 6.14348 1.25 8 1.25C9.85652 1.25 11.637 2.00426 12.9497 3.34685C14.2625 4.68944 15 6.51038 15 8.40909Z" stroke="#475467" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M7.99996 10.0012C9.28862 10.0012 10.3333 8.93283 10.3333 7.61488C10.3333 6.29693 9.28862 5.22852 7.99996 5.22852C6.71129 5.22852 5.66663 6.29693 5.66663 7.61488C5.66663 8.93283 6.71129 10.0012 7.99996 10.0012Z" stroke="#475467" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <div class="text-[#475467] font-[jost] font-medium text-[0.9rem]">Preferred Location</div>
+          </div>
+
+          <div class="flex pl-[2.625rem] mt-4 space-x-3">
+            <div *ngFor="let i of userData.preferedLocations" class="w-[7.25rem] h-[2.5rem] rounded-[0.5rem] text-center py-2 bg-[#F2F4F7] text-[#475467] font-[jost] font-normal text-[0.9rem]">
+              {{i}}
+            </div>
+        </div>
+        <div class="flex space-x-2 pl-[2.625rem] mt-3">
+          <svg width="21" height="22" viewBox="0 0 21 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11.9942 3.87104C11.9952 2.74557 9.70031 1.83398 6.87262 1.83398C4.04494 1.83398 1.75205 2.74659 1.75 3.87104M1.75 3.87104C1.75 4.99652 4.04289 5.9081 6.87262 5.9081C9.70236 5.9081 11.9952 4.99652 11.9952 3.87104L11.9952 11.7748M1.75 3.87104V16.0933C1.75102 17.2188 4.04391 18.1304 6.87263 18.1304C8.24446 18.1304 9.48311 17.9134 10.4021 17.5641M1.75102 7.94514C1.75102 9.07062 4.04391 9.9822 6.87365 9.9822C9.70339 9.9822 11.9963 9.07062 11.9963 7.94514M10.4636 13.4707C9.53946 13.8323 8.27213 14.0564 6.87263 14.0564C4.04391 14.0564 1.75102 13.1448 1.75102 12.0193M17.8166 12.3432C19.6167 14.1328 19.6167 17.0356 17.8166 18.8252C16.0165 20.6147 13.0966 20.6147 11.2965 18.8252C9.49643 17.0356 9.49643 14.1328 11.2965 12.3432C13.0966 10.5537 16.0165 10.5537 17.8166 12.3432Z" stroke="#0175A2" stroke-width="1.7816" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+
+            <div class="text-[#475467] font-[jost] font-medium text-[0.9rem]">CTC</div>
+        </div>
+        <div class="flex space-x-52 pl-[2.625rem] mt-5">
+            <div class="text-[#475467] font-[jost] font-medium text-[0.9rem]">Current</div>
+            <div class="text-[#475467] font-[jost] font-medium text-[0.9rem]">Expected</div>
+        </div>
+        <div class="flex space-x-[12.5rem] pl-[2.625rem] mt-1">
+          <div class="text-[#475467] font-[jost] font-semibold text-[0.9rem] ">{{userData.currentCTC}}</div>
+          <div class="text-[#475467] font-[jost] font-semibold text-[0.9rem] ">{{userData.expectedCTC}}</div>
+      </div>
+      <div class=" mt-6 mx-10 " >
+        <svg width="99%" height="3" viewBox="0 0 99% 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line y1="1.5" x2="99%" y2="1.5" stroke="#EAECF0" stroke-width="3"/>
+          </svg>
+        </div>
+        <div class="flex space-x-2 pl-[2.625rem] mt-3">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15.8649 14.7555L13.1241 7.09215C12.9316 6.58798 12.5008 6.27632 12.0058 6.27632C11.5108 6.27632 11.0891 6.58798 10.8783 7.11048L8.14661 14.7555C8.01828 15.113 8.20161 15.5071 8.55911 15.6355C8.91661 15.7638 9.31078 15.5805 9.43911 15.223L10.0074 13.6371H13.9949L14.5633 15.223C14.6641 15.5071 14.9299 15.6813 15.2141 15.6813C15.2874 15.6813 15.3699 15.6721 15.4433 15.6446C15.8008 15.5163 15.9841 15.1221 15.8558 14.7646L15.8649 14.7555ZM10.5116 12.253L12.0149 8.04548L13.5183 12.253H10.5116ZM8.17411 4.19548C6.10244 7.46798 4.23244 9.44798 1.95911 10.768C1.84911 10.8321 1.72994 10.8596 1.61994 10.8596C1.38161 10.8596 1.15244 10.7405 1.02411 10.5205C0.831611 10.1905 0.941611 9.76882 1.27161 9.58548C3.1966 8.46715 4.77328 6.86298 6.54244 4.20465H0.776611C0.400778 4.20465 0.0891113 3.89298 0.0891113 3.51715C0.0891113 3.14132 0.400778 2.82965 0.776611 2.82965H4.21411V1.01465C4.21411 0.638815 4.52578 0.327148 4.90161 0.327148C5.27744 0.327148 5.58911 0.638815 5.58911 1.01465V2.82965H9.02661C9.40244 2.82965 9.71411 3.14132 9.71411 3.51715C9.71411 3.89298 9.40244 4.20465 9.02661 4.20465H8.16495L8.17411 4.19548ZM8.21078 10.8596C8.09161 10.8596 7.97245 10.8321 7.86245 10.768C7.26661 10.4196 6.68911 10.0346 6.14827 9.63132C5.84577 9.40215 5.78161 8.97131 6.01078 8.66881C6.23994 8.36631 6.67078 8.30215 6.97328 8.53131C7.46828 8.90715 8.00911 9.25548 8.55911 9.57632C8.88911 9.76882 8.99911 10.1905 8.80661 10.5205C8.67828 10.7405 8.44911 10.8596 8.21078 10.8596Z" fill="#0175A2"/>
+            </svg>
+
+
+            <div class="text-[#475467] font-[jost] font-semibold text-[1rem]">Languages Known</div>
+        </div>
+
+<!-- table -->
+
+
+<div class="relative overflow-x-auto  sm:rounded-lg pl-[2.625rem] mt-3">
+<table class="w-2/3 text-sm text-left text-gray-500 ">
+<thead class="text-xs text-gray-700  bg-gray-50 ">
+<tr>
+    <th scope="col" class="px-6 py-3 text-[#667085] font-medium font-[jost] text-[0.8rem]">
+      Language
+    </th>
+    <th scope="col" class="px-6 py-3  text-[#667085] font-medium font-[jost] text-[0.8rem]">
+      Fluency
+    </th>
+
+</tr>
+</thead>
+<tbody>
+<tr class="bg-white border-b ">
+    <th scope="row" class="px-6 py-4  text-gray-900 whitespace-nowrap  text-[#475467] font-normal font-[jost] text-[0.8rem]">
+      English
+    </th>
+    <td class="px-6 py-4 text-[#344054] font-medium font-[jost] text-[0.8rem] ">
+      Professional
+    </td>
+
+</tr>
+<tr class="border-b bg-gray-50 ">
+    <th scope="row" class="px-6 py-4  text-gray-900 whitespace-nowrap text-[#475467] font-normal font-[jost] text-[0.8rem]">
+      Hindi
+    </th>
+    <td class="px-6 py-4 text-[#344054] font-medium font-[jost] text-[0.8rem]">
+      Intermediate
+    </td>
+
+</tr>
+<tr class="bg-white border-b ">
+    <th scope="row" class="px-6 py-4  text-gray-900 whitespace-nowrap text-[#475467] font-normal font-[jost] text-[0.8rem]">
+      Marathi
+    </th>
+    <td class="px-6 py-4 text-[#344054] font-medium font-[jost] text-[0.8rem]">
+      Beginner
+    </td>
+</tbody>
+</table>
+</div>
+<!--  -->
+
+<div class=" mt-6 mx-10 " >
+<svg width="99%" height="3" viewBox="0 0 99% 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+<line y1="1.5" x2="99%" y2="1.5" stroke="#EAECF0" stroke-width="3"/>
+</svg>
+</div>
+
+<div class="flex space-x-2 pl-[2.625rem] mt-3">
+<svg width="22" height="23" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M18.5287 6.79718V4.46289C18.5287 3.35832 17.6333 2.46289 16.5287 2.46289H4C2.89543 2.46289 2 3.35832 2 4.46289V14.3326C2 15.4372 2.89543 16.3326 4 16.3326H9.13739" stroke="#0175A2" stroke-width="1.8" stroke-linejoin="round"/>
+<path d="M7.86963 6.51172H12.9566" stroke="#0175A2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M5.13037 14.1621H7.08689" stroke="#0175A2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M5.9126 10.5635H12.1735" stroke="#0175A2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M19.2176 11.0121H18.435V10.5621C18.4348 10.3235 18.3522 10.0947 18.2055 9.92597C18.0588 9.75724 17.8599 9.66235 17.6524 9.66211H12.9567C12.7492 9.66235 12.5503 9.75724 12.4036 9.92597C12.2568 10.0947 12.1743 10.3235 12.1741 10.5621V11.0121H11.3915C11.184 11.0123 10.9851 11.1072 10.8383 11.2759C10.6916 11.4446 10.6091 11.6734 10.6089 11.912V13.262C10.6094 13.7392 10.7745 14.1966 11.0679 14.5341C11.3613 14.8715 11.7591 15.0613 12.1741 15.0619H12.3001C12.4632 15.7507 12.7971 16.37 13.2611 16.8442C13.7252 17.3184 14.2992 17.6269 14.9132 17.7321V19.5618H12.9567V20.4617H17.6524V19.5618H15.6958V17.7308C16.3178 17.6424 16.9022 17.3404 17.3726 16.8643C17.8431 16.3882 18.1779 15.7601 18.3332 15.0619H18.435C18.8499 15.0613 19.2478 14.8715 19.5412 14.5341C19.8346 14.1966 19.9997 13.7392 20.0002 13.262V11.912C20 11.6734 19.9175 11.4446 19.7707 11.2759C19.624 11.1072 19.4251 11.0123 19.2176 11.0121ZM12.1741 14.1619C11.9666 14.1617 11.7677 14.0668 11.6209 13.8981C11.4742 13.7294 11.3917 13.5006 11.3915 13.262V11.912H12.1741V14.1619ZM17.6524 14.1619C17.6524 14.5235 17.5892 14.8815 17.4666 15.2144C17.344 15.5474 17.1645 15.8487 16.9387 16.1004C16.713 16.3521 16.4455 16.5491 16.1523 16.6796C15.8591 16.8102 15.546 16.8717 15.2318 16.8605C14.6087 16.8159 14.0246 16.4969 13.6009 15.9697C13.1772 15.4425 12.9464 14.7479 12.9567 14.0301V10.5621H17.6524V14.1619ZM19.2176 13.262C19.2174 13.5006 19.1349 13.7294 18.9881 13.8981C18.8414 14.0668 18.6425 14.1617 18.435 14.1619V11.912H19.2176V13.262Z" fill="#0175A2"/>
+<ellipse cx="4.73837" cy="6.51401" rx="1.17391" ry="1.34995" fill="#0175A2"/>
+</svg>
+
+
+<div class="text-[#475467] font-[jost] font-semibold text-[1rem] ">Certification</div>
+</div>
+<div *ngFor="let i of candidateData"  class="ml-[1.6rem] flex">
+<img style="aspect-ratio: 16/11;" [src]="'https://job-check.s3.ap-south-1.amazonaws.com/' + i.certificate" class="w-[20rem]">
+
+
+</div>
+
+
+
+
+</div>
+
+</div>
+
+
+
+
+
+
+

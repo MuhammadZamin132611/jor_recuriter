@@ -1,0 +1,171 @@
+[
+    {
+        "requirementId": "7f18669a-6753-4c53-97c8-d751ef3c5e8f",
+        "title": "UI/UX designer and Developer",
+        "jobTitle": "UI/UX Developers",
+        "jobDescription": "Full time job",
+        "industry": "Technology / IT",
+        "functionalityArea": "IT & Information Security",
+        "role": "Technology / IT - Other",
+        "salary": {
+          "salaryId": "a76afc05-15bb-4c15-9d36-e62296711b6a",
+          "currency": "INR",
+          "minAnnualCTC": 10000,
+          "maxAnnualCTC": 100000,
+          "showonsalaryonjobpost": true,
+          "variableComponent": false
+        },
+        "empType": "Full Time",
+        "locations": [
+          "Arunachal Pradesh"
+        ],
+        "totalpositions": 5,
+        "jobperks": [
+          "Health Insurance",
+          "Work From Home"
+        ],
+        "briefCandidateDescrition": "doihgfgiogh",
+        "educationalQualifications": [
+          "B.Tech/B.E.",
+          "BAMS"
+        ],
+        "workexperience": {
+          "experienceId": "b89e88f9-ec5b-4b20-a9fb-ab088db9f29c",
+          "min": 0,
+          "max": 2
+        },
+        "musthavekeywords": [
+          "Angular Js",
+          "Html",
+          "Css"
+        ],
+        "optionalKeyWords": "Data",
+        "gender": "Male",
+        "englishFluency": "",
+        "contactPerson": "Vigneshwaran",
+        "companyName": "360 Degree Cloud Technologies",
+        "aboutCompany": "well developed company",
+        "showContactDetails": true,
+        "companytype": "",
+        "phoneNumber": "9874561233",
+        "companyWebsite": "welldeploy.com",
+        "requirementDueDate": "2023-05-31T00:00:00.000+00:00",
+        "openToConsultants": false,
+        "positionsClosed": 0,
+        "requirementStatus": "JOBPOST",
+        "client": {
+          "clientID": "5d4f37e4-f929-4962-879d-9b41fc7cf9a4",
+          "clientName": "You Solutions",
+          "clientToken": null,
+          "aboutUs": "reyre",
+          "clientStatus": null
+        },
+        "recruiterAccounts": [
+          {
+            "accountId": "49494e2e-d434-47d7-b01b-ac4191ead0ab",
+            "imageUrl": "1684416993141_Screenshot (1).png",
+            "fullName": "anilkundae",
+            "organizationMailId": "anil@kundan.com",
+            "mobileNumber": "1112134578"
+          },
+          {
+            "accountId": "7f0894a6-d300-4ab3-bc70-f8a736a655c6",
+            "imageUrl": "1684417049355_Screenshot (3).png",
+            "fullName": "surea",
+            "organizationMailId": "surea@nan.com",
+            "mobileNumber": "7878451241"
+          }
+        ],
+        "statusType": "JOBPOST",
+        "status": "ACTIVE",
+        "bookMark": "FALSE"
+      },
+      {
+        "requirementId": "9f9fe66d-4b0e-45e6-baba-697575de471f",
+        "title": "Software Developer",
+        "jobTitle": "Full Stack Developer",
+        "jobDescription": "A Full-Stack developer is a professional responsible for working on both front-end and back-end development processes",
+        "industry": "Technology / IT",
+        "functionalityArea": "Research & Development",
+        "role": "Wireless Network Engineer",
+        "salary": {
+          "salaryId": "5c0860be-a905-48c0-aa82-cda9905563bf",
+          "currency": "INR",
+          "minAnnualCTC": 400000,
+          "maxAnnualCTC": 700000,
+          "showonsalaryonjobpost": true,
+          "variableComponent": true
+        },
+        "empType": "Full Time",
+        "locations": [
+          "Chennai",
+          "Pondicherry"
+        ],
+        "totalpositions": 100,
+        "jobperks": [
+          "Job Training",
+          "Team Outings"
+        ],
+        "briefCandidateDescrition": "A Full-Stack developer is a professional responsible for working on both front-end and back-end development processes",
+        "educationalQualifications": [
+          "B.Tech/B.E."
+        ],
+        "workexperience": {
+          "experienceId": "9d95259b-98bf-433a-80d7-a215737fd172",
+          "min": 2,
+          "max": 6
+        },
+        "musthavekeywords": [
+          "Spring Boot",
+          "Angular",
+          "Core Java"
+        ],
+        "optionalKeyWords": "web developement",
+        "gender": "Any",
+        "englishFluency": "",
+        "contactPerson": "Surendhar S",
+        "companyName": "Amazon",
+        "aboutCompany": "A Full-Stack developer is a professional responsible for working on both front-end and back-end development processes",
+        "showContactDetails": false,
+        "companytype": "",
+        "phoneNumber": "7358845631",
+        "companyWebsite": "www.zoho.corp.in",
+        "requirementDueDate": "2023-05-24T00:00:00.000+00:00",
+        "openToConsultants": true,
+        "positionsClosed": 0,
+        "requirementStatus": "PUBLISH",
+        "client": {
+          "clientID": "5d4f37e4-f929-4962-879d-9b41fc7cf9a4",
+          "clientName": "You Solutions",
+          "clientToken": null,
+          "aboutUs": "reyre",
+          "clientStatus": null
+        },
+        "recruiterAccounts": [
+          {
+            "accountId": "eb381b3b-4dae-44bd-ad16-5bd59fbd78d2",
+            "imageUrl": "1684401334000_1677244512472_1666178444924_1665985707723_jk1.jfif",
+            "fullName": "Recruiter",
+            "organizationMailId": "recruiters1@gmail.com",
+            "mobileNumber": "7436374374"
+          },
+          {
+            "accountId": "7f0894a6-d300-4ab3-bc70-f8a736a655c6",
+            "imageUrl": "1684417049355_Screenshot (3).png",
+            "fullName": "surea",
+            "organizationMailId": "surea@nan.com",
+            "mobileNumber": "7878451241"
+          },
+          {
+            "accountId": "49494e2e-d434-47d7-b01b-ac4191ead0ab",
+            "imageUrl": "1684416993141_Screenshot (1).png",
+            "fullName": "anilkundae",
+            "organizationMailId": "anil@kundan.com",
+            "mobileNumber": "1112134578"
+          }
+        ],
+        "statusType": "PUBLISH",
+        "status": "ACTIVE",
+        "bookMark": "FALSE"
+      }
+]

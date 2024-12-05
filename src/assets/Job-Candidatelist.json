@@ -1,0 +1,42 @@
+[
+    {
+      "profileId": "28f4def9-dadf-4713-9953-9d72a074087a",
+      "name": "Venkat K",
+      "candidatePhoneNumber": 9703806605,
+      "candidateEmail":"venkat@gmail.com",
+      "status": "OFFERED",
+      "recuiterEmail": "recruitermanager1@gmail.com",
+      "recruiterName": "RecruiterManager",
+      "comment": ""
+    },
+    {
+        "profileId": "57e6e12b-89d2-4559-9cc7-4a3f8149e540",
+        "name": "Jonnala Srikanth Reddy",
+        "candidatePhoneNumber": "28.srikant@gmail.com",
+        "candidateEmail": "9968958845",
+        "status": "Shortlisted",
+        "recuiterEmail": "recruitermanager1@gmail.com",
+        "recruiterName": "RecruiterManager",
+        "comment": ""
+      },
+      {
+        "profileId": "2795ff7d-eb11-457c-8f6c-5dddbd6aa70d",
+        "name": "Ganesan",
+        "candidatePhoneNumber": "tganesanvijay@gmail.com",
+        "candidateEmail": "9426556994",
+        "status": "Sourced",
+        "recuiterEmail": "recruitermanager1@gmail.com",
+        "recruiterName": "RecruiterManager",
+        "comment": ""
+      },
+      {
+        "profileId": "25b189ab-9ab8-400b-adf2-e6decda58f4e",
+        "name": "Aswin Unnikrishnan",
+        "candidatePhoneNumber":"vignesh@gmail.com",
+        "candidateEmail": null,
+        "status": "Selected",
+        "recuiterEmail": "recruitermanager1@gmail.com",
+        "recruiterName": "RecruiterManager",
+        "comment": ""
+      }
+  ]

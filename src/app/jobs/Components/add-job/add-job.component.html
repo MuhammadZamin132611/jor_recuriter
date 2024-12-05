@@ -1,0 +1,1576 @@
+<div class=" fixed w-screen h-screen">
+  <app-side-bar></app-side-bar>
+  <app-header></app-header>
+  <div class="h-full bg-white xl:ml-[9rem] rounded-lg ml-14 w-5/6 mt-20 flex-1 ">
+    <div class="h-1/4 p-2 mt-[5rem] rounded-t-xl mx-10 sticky">
+      <div class="flex justify-between  ">
+        <div class="pt-7">
+          <h3 class="text-2xl rubik font-medium leading-6 text-gray-900">
+            New Requirements
+          </h3>
+          <p class="text-lg  text-gray-600 mt-1">
+            After you complete the requirement,publish it so other recruiters can access it
+            <!-- <span class="xl:inline lg:inline md:block">publish it so other recruiters can access it</span> -->
+          </p>
+        </div>
+
+        <div class=" justify-end mr-4">
+          <div class="flex h-full gap-x-2">
+            <div class="flex items-center justify-between">
+
+              <button (click)="CreateJob('Draft')"
+                class=" flex text-gray-1000 bg-white border border-gray-300 py-2 mx-2 px-3 shadow whitespace-nowrap rounded-lg"
+                type="button">
+                Save as draft
+
+
+              </button>
+
+
+              <button (click)="CreateJob('Publish')" type="button"
+                class=" text-white flex bg-[#0175A2] font-medium rounded-lg   shadow py-2 px-2  ">
+                <svg width="20" class="mr-1 mt-[0.2rem] mx-2" height="20" viewBox="0 0 20 20" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M18.5921 1.21484L9.16067 10.6462M18.5921 1.21484L12.5903 18.3628L9.16067 10.6462M18.5921 1.21484L1.44409 7.21663L9.16067 10.6462"
+                    stroke="white" stroke-width="1.71823" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+
+                <p class="whitespace-nowrap px-2">Post a Job</p>
+
+              </button>
+
+
+            </div>
+            <!-- <div class="flex items-center justify-between" (click)="transferData();"
+            (click)="CreateJob('Publish')">
+            <button type="button" class="text-white bg-[#0175A2] font-medium rounded-lg shadow py-1 px-2">
+              Publish requirement
+            </button>
+          </div> -->
+          </div>
+        </div>
+      </div>
+      <div class="flex font-medium items-start gap-4  text-gray-500 hover:text-[#0175A2] text-sm mt-4">
+        <a class="text-[#0175A2] text-lg border-[#0175A2] py-2 px-1 cursor-pointer" (click)="basics()" [ngClass]="
+            basic == true ? 'text-[#0175A2] border-b-2' : 'text-gray-500'
+          ">Basic Job Details</a>
+
+        <a class="text-gray-500 border-[#0175A2] text-lg hover:text-[#0175A2] py-2 px-1 cursor-pointer" (click)="candidates
+            ()" [ngClass]="
+            candidate == true ? 'text-[#0175A2] border-b-2' : 'text-gray-500'
+          ">Candidate Details</a>
+
+        <a class="text-gray-500 border-[#0175A2] text-lg hover:text-[#0175A2] py-2 px-1 cursor-pointer"
+          (click)="additionals()" [ngClass]="
+            additional == true ? 'text-[#0175A2] border-b-2' : 'text-gray-500'
+          ">Additional Details</a>
+        <a class="text-gray-500 border-[#0175A2] text-lg hover:text-[#0175A2] py-2 px-1 cursor-pointer"
+          (click)="questionnaires()" [ngClass]="
+            questionnaire == true ? 'text-[#0175A2] border-b-2' : 'text-gray-500'
+          ">Questionnaire</a>
+      </div>
+    </div>
+    <div class="  h-2/3 mb-20 mx-[0.9rem] overflow-y-auto ">
+      <div class=" w-full  overflow-y-auto min-h-full ">
+
+        <div class="flex-wrap flex-row">
+          <div class="my-1 mx-2  ">
+            <div class="flex xl:mx-6 my-6 flex-col ">
+
+              <div class="w-full ">
+                <form class="from-group " [formGroup]="NewForm">
+                  <!----------------------------------------------BasicDetails-------------------------------------------------->
+                  <div *ngIf="basic" class="">
+                    <div class=" ">
+                      <div class="flex w-full">
+                        <div class=" w-full">
+                          <!-- BasicDetails -->
+                          <div>
+                            <h3 class="text-lg font-medium leading-6 text-gray-900 ml-[0.2rem] " id="basic">
+                              Basic Details
+                            </h3>
+                          </div>
+
+                          <div class="flex gap-x-16 mt-5">
+                            <div class="w-full">
+                              <label for="company-website" class="block text-sm font-medium text-gray-700"><span
+                                  style="color: red">*</span>Title
+                              </label>
+                              <div class="mt-2 flex w-full rounded-md">
+                                <div class="w-full">
+                                  <input type="text"
+                                    class="w-full h-11 border border-gray-300 text-gray-900 text-md rounded-lg pl-2 shadow focus:outline-none capitalize"
+                                    placeholder="Requirement Title" formControlName="Title" />
+                                </div>
+                              </div>
+                              <div class="text-red-800 mt-2" *ngIf="submitted && f.Title.errors">
+                                <div *ngIf="f.Title.errors.required">
+                                  Please Enter Title
+                                </div>
+                              </div>
+                            </div>
+                            <div class="w-full">
+                              <div class=" ">
+                                <div class="w-full">
+                                  <label for="about" class="text-sm font-medium text-gray-700">
+                                    Prefill from other Requirement
+                                  </label>
+                                </div>
+                                <div class="mt-1 flex w-full rounded-md">
+                                  <div class="w-full">
+                                    <input type="text" id="simple-search"
+                                      class="w-full h-11 border border-gray-300 text-gray-900 text-md rounded-lg pl-2  shadow focus:outline-none capitalize"
+                                      placeholder="Choose existing Requirement" />
+                                  </div>
+                                  <div class="sticky overflow-hidden grid place-items-end mb-2 -ml-10" style="
+                                position: relative;
+                                left: -10px;
+                                top: -3px;
+                              ">
+                                    <!-- <svg class="w-5 h-5 text-gray-500 " fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                  d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                                  clip-rule="evenodd"></path>
+                              </svg> -->
+                                  </div>
+                                </div>
+                                <div class="mt-2">
+                                  <p class="text-sm text-gray-500">
+                                    This will overwrite below values
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class=" ">
+                        <div class="flex w-full">
+                          <div class="mt-4 w-full">
+                            <div>
+                              <h3 class="text-lg font-medium leading-6 text-gray-900 ml-[0.2rem] " id="jobDetails">
+                                Job Details
+                              </h3>
+                            </div>
+                            <div class="flex gap-x-16 mt-5">
+                              <div class="w-full">
+                                <label for="company-website" class="block text-sm font-medium text-gray-700"><span
+                                    style="color: red">*</span>Job Title
+                                </label>
+                                <div class="mt-2 flex w-full rounded-md">
+                                  <div class="w-full">
+                                    <input type="text"
+                                      class="w-full h-11 border border-gray-300 text-gray-900 text-md rounded-lg pl-2  shadow focus:outline-none capitalize"
+                                      placeholder="Eg: Software Developer" formControlName="JobTitle" />
+                                  </div>
+                                </div>
+                                <div class="text-red-800 mt-2" *ngIf="submitted && f.JobTitle.errors">
+                                  <div *ngIf="f.JobTitle.errors.required">
+                                    Please Enter Job Title
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="w-full">
+                                <div class=" ">
+                                  <div class="w-full">
+                                    <label for="about" class="text-sm font-medium text-gray-700">
+                                      <span style="color: red">*</span>Job
+                                      Locations</label>
+                                  </div>
+                                  <div class="mt-1 flex w-full rounded-md">
+                                    <div class="w-full" *ngIf="locations$ | async as locationlist">
+                                      <ng-select [items]="locationlist" [multiple]="true"
+                                        class="form-control rounded-full shadow w-full " [maxSelectedItems]="4"
+                                        (paste)="(false)" (paste)="(false)" placeholder=" Eg.Bengaluru"
+                                        formControlName="JobLocation">
+                                      </ng-select>
+                                    </div>
+                                  </div>
+                                  <div class="text-red-800 ml-1 mt-2" *ngIf="submitted && f.JobLocation.errors">
+                                    <div *ngIf="f.JobLocation.errors.required">
+                                      Please Select Job Location
+                                    </div>
+                                  </div>
+                                  <!-- <div class="-mt-4 flex flex-wrap w-full">
+                          <a class="group inline-flex items-center h-9 rounded-full text-sm font-medium   px-3 focus:outline-none focus:ring-2 bg-gray-100 text-[0.9rem] mt-8 text-[#0175A2] font-[jost]">Bangalore, KA  </a>
+                            <a class="ml-2 group inline-flex items-center h-9 rounded-full text-sm font-medium whitespace-nowrap px-3 focus:outline-none focus:ring-2 bg-gray-100 text-[0.9rem] text-[#0175A2] mt-8 font-[jost]">Mumbai,MH</a>
+                            <a class="ml-2 group inline-flex items-center h-9 rounded-full text-sm font-medium whitespace-nowrap px-3 focus:outline-none focus:ring-2 bg-gray-100 text-[0.9rem] text-[#0175A2] mt-8 font-[jost]">Pune,MH</a>
+                          
+                          </div> -->
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class=" ">
+                        <div class="flex w-full">
+                          <div class="mt-4 w-full">
+                            <!-- JobDetails -->
+
+                            <div class="flex gap-x-16 mt-5">
+                              <div class="w-full">
+                                <div class="w-full">
+                                  <label for="about" class="text-sm font-medium text-gray-700">
+                                    <span style="color: red">*</span>Employment
+                                    Type
+                                  </label>
+                                </div>
+                                <div class="mt-1 flex w-full rounded-md">
+                                  <div class="w-full" *ngIf="
+                                EmploymentType$ | async as EmploymentType
+                              ">
+                                    <ng-select [items]="EmploymentType" [multiple]="false"
+                                      class="form-control rounded-full shadow w-full hide-while-Scroll"
+                                      (paste)="(false)" (paste)="(false)" formControlName="EmploymentType"
+                                      placeholder="Employment Type" [searchable]="false">
+                                    </ng-select>
+                                  </div>
+                                </div>
+                                <div class="text-red-800 ml-1 mt-2" *ngIf="submitted && f.EmploymentType.errors">
+                                  <div *ngIf="f.EmploymentType.errors.required">
+                                    Please Select Employment Type
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="w-full">
+                                <div class=" ">
+                                  <div class="w-full">
+                                    <label for="about" class="font-medium font-[jost] text-gray-700">
+                                      <span class="" style="color: red">*</span>Industry
+                                    </label>
+                                  </div>
+                                  <div class="mt-1 flex w-full rounded-md">
+                                    <div class="w-full" *ngIf="industry$ | async as industry">
+                                      <ng-select [items]="industry" [multiple]="false"
+                                        class="form-control rounded-full shadow" (paste)="(false)" (paste)="(false)"
+                                        formControlName="Industry" placeholder="Industry" [searchable]="true">
+                                      </ng-select>
+                                    </div>
+                                  </div>
+
+                                  <div class="text-red-800 ml-1 mt-2" *ngIf="submitted && f.Industry.errors">
+                                    <div *ngIf="f.Industry.errors.required">
+                                      Please Select Industry
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- description -->
+                    <div class="grid mt-6">
+                      <div class="col-span-6 sm:col-span-3">
+                        <label for="message" class="form-label inline-block text-gray-3 text-sm font-medium"><span
+                            style="color: red">*</span>Description</label>
+                        <textarea type="text" id="message" rows="5" formControlName="Description"
+                          class="block p-2.5 mt-1 w-2/3 text-md text-gray-900 bg-white-50 rounded-lg border border-gray-300  shadow focus:outline-none"
+                          placeholder="Job description will appear on your job post" maxlength="275">
+                  </textarea>
+
+                        <div class="text-red-800 ml-1 mt-2" *ngIf="submitted && f.Description.errors">
+                          <div *ngIf="f.Description.errors.required">
+                            Please Enter Description
+                          </div>
+                        </div>
+                        <div class="mt-1.5 text-sm text-gray-500">
+                          {{ 275 - f.Description.value.length }} Characters left
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Functional  & role -->
+                    <div>
+                      <div class="flex w-full">
+                        <div class="mt-4 w-full">
+                          <div class="flex gap-x-16 mt-5">
+                            <div class="w-full">
+                              <div class="w-full">
+                                <label for="about" class="text-sm font-medium text-gray-700">
+                                  <span style="color: red">*</span>Functional
+                                  Area
+                                </label>
+                              </div>
+                              <div class="mt-1 flex w-full rounded-md">
+                                <div class="w-full" *ngIf="
+                              Functional_Area$ | async as Functional_Area
+                            ">
+                                  <ng-select [items]="Functional_Area" [multiple]="false"
+                                    class="form-control mt-1 rounded-full w-full shadow " placeholder="Human Resources"
+                                    (paste)="(false)" (paste)="(false)" formControlName="Functional_Area"
+                                    placeholder="Functional Area">
+                                  </ng-select>
+                                </div>
+                              </div>
+                              <div class="text-red-800 ml-1 mt-2" *ngIf="submitted && f.Functional_Area.errors">
+                                <div *ngIf="f.Functional_Area.errors.required">
+                                  Please Select Functional Area
+                                </div>
+                              </div>
+                            </div>
+                            <div class="w-full">
+                              <div class=" ">
+                                <div class="w-full">
+                                  <label for="about" class="text-sm font-medium text-gray-700">
+                                    <span style="color: red">*</span>Role
+                                  </label>
+                                </div>
+                                <div class="mt-1 flex w-full rounded-md">
+                                  <div class="w-full" *ngIf="roles$ | async as rolesList">
+                                    <ng-select [items]="rolesList" [multiple]="false"
+                                      class="form-control mt-1 rounded-full shadow w-full hide-while-Scroll"
+                                      placeholder="HR Operations" (paste)="(false)" (paste)="(false)"
+                                      formControlName="Role" placeholder="Role">
+                                    </ng-select>
+                                  </div>
+                                </div>
+                                <div class="text-red-800 ml-1 mt-2" *ngIf="submitted && f.Role.errors">
+                                  <div *ngIf="f.Role.errors.required">
+                                    Please Select Role
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!--  currency-->
+                    <div>
+                      <div class="flex justify-between mt-5 w-5/6 gap-x-6">
+                        <!--  -->
+                        <div class="">
+                          <label for="country" class="block text-sm font-medium text-gray-600">Currency</label>
+                          <select id="country" name="country" autocomplete="country-name" formControlName="Currency"
+                            class="mt-1.5 code block h-11 pl-2 border border-gray-300 bg-gray-100 rounded-md shadow focus:outline-none  text-gray-600 place-content-center">
+                            <option value="INR">INR</option>
+
+                          </select>
+                        </div>
+                        <div class="w-full">
+                          <label for="first-name" class="block text-sm font-medium text-gray-700v"><span
+                              style="color: red">*</span>Minimum
+                            Salary</label>
+                          <input style="max-width: 250px;"
+                            class="w-full h-11 mt-1.5 px-3 mb-2 text-base text-gray-700 border rounded-lg border-gray-300 focus:border-gray-500 outline-none shadow capitalize"
+                            type="text" placeholder="Minimum" autocomplete="off" formControlName="MinSal" maxlength="9"
+                            (input)="changeToCurrency('MinSal')" (keypress)="keyPressNumbers($event)" />
+
+                          <div class="text-red-800 ml-1" *ngIf="submitted && f.MinSal.errors">
+                            <div *ngIf="f.MinSal.errors.required">
+                              Please Enter Minimum Salary
+                            </div>
+                          </div>
+
+                          <div class="text-red-800 ml-1" *ngIf="
+                        submitted &&
+                        NewForm.value.MinSal.replaceAll(',', '') - 0 >=
+                          NewForm.value.MixSal.replaceAll(',', '') - 0 &&
+                        !f.MinSal.errors
+                      ">
+                            Please Enter Minimum Salary correctly
+                          </div>
+                        </div>
+                        <!--  -->
+                        <div class="w-full">
+                          <label for="first-name" class="block text-sm font-medium text-gray-700"><span
+                              style="color: red">*</span>Maximum
+                            Salary</label>
+                          <input style="max-width: 250px;"
+                            class="w-full h-11 mt-1.5 px-3 mb-2 text-base text-gray-700 border-gray-300 border rounded-lg focus:outline-none shadow capitalize"
+                            type="text" placeholder="Maximum" autocomplete="off" formControlName="MixSal"
+                            (keypress)="keyPressNumbers($event)" (input)="changeToCurrency('MixSal')" maxlength="9" />
+
+                          <div class="text-red-800 ml-1" *ngIf="submitted && f.MixSal.errors">
+                            <div *ngIf="f.MixSal.errors.required">
+                              Please Enter Maximum Salary
+                            </div>
+                            <div *ngIf="f.MixSal.errors.greaterThan">
+                              Please Enter Correct Maximum Salary
+                            </div>
+                          </div>
+                          <div class="text-red-800 ml-1" *ngIf="
+                        submitted &&
+                        NewForm.value.MixSal.replaceAll(',', '') - 0 <=
+                          NewForm.value.MinSal.replaceAll(',', '') - 0 &&
+                        !f.MixSal.errors
+                      ">
+                            Please Enter Maximum Salary correctly
+                          </div>
+                        </div>
+                        <!--  -->
+                        <div class="w-full">
+                          <label for="first-name" class="block text-sm font-medium text-gray-700"><span
+                              style="color: red">*</span>Vacancies
+                            Available</label>
+                          <input style="max-width: 250px;" maxlength="3"
+                            class="w-full h-11 px-3 mt-1.5 text-base text-gray-700 border border-gray-300 rounded-lg  shadow outline-none "
+                            type="tel" placeholder="1" formControlName="VacanciesAvailable"
+                            (keypress)="keyPressNumbers($event)" />
+                          <div class="text-red-800 ml-1 mt-2" *ngIf="submitted && f.VacanciesAvailable.errors">
+                            <div *ngIf="f.VacanciesAvailable.errors.required">
+                              Please Enter Vacancies Available
+                            </div>
+                            <div *ngIf="NewForm.controls['VacanciesAvailable'].hasError('pattern')">
+                              Please Enter Valid Vacancies
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- -->
+                    <div class="mb-[4rem]">
+                      <div class="flex mt-5 gap-x-16">
+                        <div class="w-full">
+                          <div class="flex items-start">
+                            <div class="flex items-center h-5">
+                              <input id="commentschange" name="comments" type="checkbox" formControlName="ShowSalary"
+                                class="focus:outline-none h-4 w-4 text-indigo-600 border-gray-300 rounded capitalize" />
+                            </div>
+                            <div class="ml-3 text-sm">
+                              <label for="commentschange" class="font-medium text-gray-700">Show on job post</label>
+                              <p class="text-gray-500">
+                                Candidates will be able to see the CTC
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="w-full">
+                          <div class="flex">
+                            <div class="flex items-center h-5">
+                              <input id="commentsvar" name="comments" type="checkbox" formControlName="ShowVariable"
+                                class="focus:outline-none h-4 w-4 text-indigo-600 border-gray-300 rounded capitalize" />
+                            </div>
+                            <div class="ml-3 text-sm">
+                              <label for="commentsvar" class="font-medium text-gray-700">Variable Component</label>
+                              <p class="text-gray-500">
+                                Salary can be changed based on incentives
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="mt-3">
+                        <label for="exampleInputName"
+                          class="form-label text-sm inline-block text-gray-3 font-medium"><span
+                            style="color: red">*</span>Job Perks
+                          <small>(Max 4)</small></label>
+                        <div class="w-1/2 pr-8" *ngIf="Perks$ | async as Perks">
+                          <ng-select [items]="Perks" [multiple]="true"
+                            class="form-control mt-1 rounded-full shadow-md hide-while-Scroll" [maxSelectedItems]="4"
+                            (paste)="(false)" (paste)="(false)" formControlName="JobPerks" placeholder="Job Perks">
+                          </ng-select>
+                        </div>
+                        <div class="text-red-800 ml-1 mt-2" *ngIf="submitted && f.JobPerks.errors">
+                          <div *ngIf="f.JobPerks.errors.required">
+                            Please Select Job Perks
+                          </div>
+                        </div>
+                      </div>
+                      <div class="flex float-right mb-[3rem] mt-[3rem]">
+
+                        <button class=" flex text-white bg-[#0175A2] border border-gray-300 py-1 px-2 shadow rounded-lg"
+                          type="button" (click)="candidates()">
+                          Candidate Details
+
+                          <svg width="6" class="mt-[0.4rem] ml-1" height="12" viewBox="0 0 7 13" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 11.7529L6 6.75293L1 1.75293" stroke="white" stroke-width="2"
+                              stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+
+                        </button>
+
+
+                      </div>
+                    </div>
+                  </div>
+                  <!-------------------------Candidate Details----------------------------------------->
+
+                  <div *ngIf="candidate" class="">
+
+                    <div class="grid">
+                      <div class="col-span-6 sm:col-span-3">
+                        <label for="message"
+                          class="block text-sm font-medium text-gray-900 dark:text-gray-700 mt-2">Brief Candidate
+                          Description</label>
+                        <textarea id="message" rows="5"
+                          class="p-2.5 mt-1 w-2/3 text-md text-gray-900 bg-white-50 rounded-lg border border-gray-300 focus:outline-none shadow"
+                          placeholder="Helps the algorithm recommend suitable candidates for the requirement"
+                          formControlName="CandidateDescription" maxlength="275"></textarea>
+                        <div class="mt-1.5 text-sm text-gray-500">
+                          {{
+                          275 - f.CandidateDescription.value.length
+                          }}
+                          Characters left
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Educational Qualifications -->
+                    <div class="w-full flex mt-8 gap-x-16">
+                      <div class="w-full">
+                        <div class="w-full">
+                          <label for="about" class="text-sm font-medium text-gray-700">
+                            <span style="color: red">*</span>Educational
+                            Qualifications
+                          </label>
+                        </div>
+                        <div class="mt-1 flex w-full rounded-md">
+                          <div class="w-full" *ngIf="
+                          EduacationalQualifications$
+                            | async as EduacationalQualifications
+                        ">
+                            <ng-select [items]="EduacationalQualifications" [multiple]="true"
+                              class="form-control rounded-full shadow w-full " [maxSelectedItems]="4" (paste)="(false)"
+                              (paste)="(false)" formControlName="EduacationalQualifications" placeholder="Educational
+              Qualifications">
+                            </ng-select>
+                          </div>
+                        </div>
+                        <div class="text-red-800 ml-1 mt-2" *ngIf="
+                        submitted && f.EduacationalQualifications.errors
+                      ">
+                          <div *ngIf="
+                          f.EduacationalQualifications.errors.required
+                        ">
+                            Please Select Educational Qualification
+                          </div>
+                        </div>
+                      </div>
+                      <div class="w-full">
+                        <label for="first-name" class="block text-sm font-medium text-gray-700">
+                          <span style="color: red">*</span>Work
+                          Experience</label>
+                        <div class="relative mt-1">
+                          <div class="flex justify-between gap-x-4">
+                            <div class="w-full">
+                              <input
+                                class="w-full h-11 block py-2 px-3 mt-1 border border-gray-300 bg-white rounded-md focus:outline-none text-md shadow capitalize"
+                                type="tel" placeholder="Minimum" formControlName="WorkExperienceMin"
+                                (keypress)="keyPressNumbers($event)" maxlength="2" />
+
+                              <div class="text-red-800 ml-1 mt-2" *ngIf="
+                              submitted && f.WorkExperienceMin.errors
+                            ">
+                                <div *ngIf="f.WorkExperienceMin.errors.required">
+                                  Please Enter Minimum Work Experience
+                                </div>
+                                <div *ngIf="
+                                f.WorkExperienceMin.errors.lesserThan
+                              ">
+                                  Please Enter Correct Minimum Expe
+                                </div>
+                              </div>
+                              <div class="text-red-800 ml-1 mt-2 w-full" *ngIf="
+                              submitted &&
+                              NewForm.value.WorkExperienceMin >=
+                                NewForm.value.WorkExperienceMax &&
+                              !f.WorkExperienceMin.errors
+                            ">
+                                Please Enter Minimum Exp correctly
+                              </div>
+                            </div>
+
+                            <div class="w-full">
+                              <input
+                                class="w-full h-11 block py-2 px-3 mt-1 border border-gray-300 bg-white rounded-md  focus:outline-none  text-md shadow capitalize"
+                                type="tel" placeholder="Maximum" (keypress)="keyPressNumbers($event)"
+                                formControlName="WorkExperienceMax" maxlength="2" />
+                              <div class="text-red-800 ml-1 mt-2" *ngIf="
+                              submitted && f.WorkExperienceMax.errors
+                            ">
+                                <div *ngIf="f.WorkExperienceMax.errors.required">
+                                  Please Enter Maximum Work Experience
+                                </div>
+                                <div *ngIf="
+                                f.WorkExperienceMax.errors
+                                  .invalidMaxSalary
+                              ">
+                                  Please Enter Correct Maximum Exps
+                                </div>
+                              </div>
+                              <div *ngIf="
+                              NewForm.get('WorkExperienceMax')?.hasError(
+                                'invalidMaxSalary'
+                              )
+                            ">
+                                Maximum Salary cannot be less than or equal to
+                                Minimum Salary.
+                              </div>
+                              <div class="text-red-800 ml-1 mt-2 w-full" *ngIf="
+                              submitted &&
+                              NewForm.value.WorkExperienceMax <=
+                                NewForm.value.WorkExperienceMin &&
+                              !f.WorkExperienceMax.errors
+                            ">
+                                Please Enter Maximum Exp correctly
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- <div class="-mt-4 flex">
+                <a class="group inline-flex items-center h-9 rounded-full text-sm font-medium   px-3 focus:outline-none focus:ring-2 bg-gray-100 text-[0.9rem] mt-8 text-[#0175A2] font-[jost]">B.Tech</a>
+                  <a class="ml-2 group inline-flex items-center h-9 rounded-full text-sm font-medium whitespace-nowrap px-3 focus:outline-none focus:ring-2 bg-gray-100 text-[0.9rem] text-[#0175A2] mt-8 font-[jost]">M.Tech</a>
+                  <a class="ml-2 group inline-flex items-center h-9 rounded-full text-sm font-medium whitespace-nowrap px-3 focus:outline-none focus:ring-2 bg-gray-100 text-[0.9rem] text-[#0175A2]  mt-8 font-[jost]">MBA</a> 
+                </div> -->
+
+                    <!--Optional Keywords  & Must-Have Keywords -->
+                    <div id="basic" class="mt-8">
+                      <div class="flex w-full">
+                        <div class="w-full">
+                          <div class="flex gap-x-16">
+                            <div class="w-full">
+                              <div class="w-full">
+                                <label for="about" class="text-sm font-medium text-gray-700">
+                                  <span style="color: red">*</span>Must-Have keyword
+                                </label>
+                              </div>
+                              <div class="mt-1 flex w-full rounded-md">
+                                <div class="w-full" *ngIf="skillList$ | async as skillList">
+                                  <ng-select [items]="skillList" [multiple]="true"
+                                    class="form-control w-full rounded-full shadow hide-while-Scroll"
+                                    [maxSelectedItems]="4" (paste)="(false)" (paste)="(false)"
+                                    placeholder="Must include keyword" [dropdownPosition]="'bottom'"
+                                    formControlName="Musthavekeyword">
+                                  </ng-select>
+                                </div>
+                              </div>
+                              <div class="text-red-800 ml-1 mt-2" *ngIf="submitted && f.Musthavekeyword.errors">
+                                <div *ngIf="f.Musthavekeyword.errors.required">
+                                  Please Select Must-Have keyword
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="flex w-full pl-3 mt-1">
+                              <div class="col-span-6 sm:col-span-3 w-full">
+                                <label for="country" class="block text-sm font-medium text-gray-700">Gender</label>
+                                <div class="flex mt-2 space-x-2">
+                                  <div class="flex items-center bg-gray-100 py-2 pr-9 pl-2 rounded-lg">
+                                    <input id="push-everything" formControlName="Gender" name="push-notifications"
+                                      type="radio" value="Male"
+                                      class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 capitalize" />
+                                    <label for="push-everything" class="ml-2 block text-sm font-medium text-gray-700">
+                                      Male
+                                    </label>
+                                  </div>
+                                  <div class="flex items-center bg-gray-100 py-2 pr-9 rounded-lg">
+                                    <input id="push-email" value="Female" formControlName="Gender"
+                                      name="push-notifications" type="radio"
+                                      class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 ml-6 capitalize" />
+                                    <label for="push-email" class="ml-2 block text-sm font-medium text-gray-700">
+                                      Female
+                                    </label>
+                                  </div>
+                                  <div class="flex items-center bg-gray-100 py-2 pr-9 rounded-lg">
+                                    <input id="push-nothing" value="Any" formControlName="Gender"
+                                      name="push-notifications" type="radio"
+                                      class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 ml-6 capitalize" />
+                                    <label for="push-nothing" class="ml-2 block text-sm font-medium text-gray-700">
+                                      Any
+                                    </label>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- <div class="-mt-4 flex">
+                <a class="group inline-flex items-center h-9 rounded-full text-sm font-medium   px-3 focus:outline-none focus:ring-2 bg-gray-100 text-[0.9rem] mt-8 text-[#0175A2] font-[jost]">Java </a>
+                  <a class="ml-2 group inline-flex items-center h-9 rounded-full text-sm font-medium whitespace-nowrap px-3 focus:outline-none focus:ring-2 bg-gray-100 text-[0.9rem] text-[#0175A2] mt-8 font-[jost]">Micro-services</a>
+                  
+                </div> -->
+                    <!--Gender  -->
+                    <div class=" flex w-full gap-x-16 ">
+                      <!-- <div class="w-full">
+                        <label for="company-website" class="block text-sm font-medium text-gray-700"><span
+                            style="color: red">*</span>Work From Home
+                        </label>
+                        <div class="mt-2 flex w-full rounded-md">
+                          <div class="w-full">
+                            <input type="text"
+                              class="w-[47%] h-11 border border-gray-300 text-gray-900 text-md rounded-lg pl-2 focus:border-gray-500 shadow outline-none capitalize"
+                              placeholder="Eg: Java Developer Sample Questionnaire" formControlName="JobTitle" />
+                          </div>
+                          <select class="w-[47.3%] h-11 border border-gray-300 text-gray-900 text-md rounded-lg pl-2 focus:border-gray-500 shadow outline-none">
+                            <option>Yes</option>
+                            <option>No</option>
+                            
+                          </select>
+                        </div>
+
+                      </div> -->
+                      <!-- <div class="col-span-6 -ml-[34.7rem] -mt-[0.5rem] sm:col-span-3">
+                        <label for="country" class="block text-sm font-medium text-gray-700 mt-8">Gender</label>
+                        <div class="flex mt-2">
+                          <div class="flex items-center">
+                            <input id="push-everything" formControlName="Gender" name="push-notifications" type="radio"
+                              value="Male"
+                              class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 capitalize" />
+                            <label for="push-everything" class="ml-2 block text-sm font-medium text-gray-700">
+                              Male
+                            </label>
+                          </div>
+                          <div class="flex items-center">
+                            <input id="push-email" value="Female" formControlName="Gender" name="push-notifications"
+                              type="radio"
+                              class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 ml-6 capitalize" />
+                            <label for="push-email" class="ml-2 block text-sm font-medium text-gray-700">
+                              Female
+                            </label>
+                          </div>
+                          <div class="flex items-center">
+                            <input id="push-nothing" value="Any" formControlName="Gender" name="push-notifications"
+                              type="radio"
+                              class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 ml-6 capitalize" />
+                            <label for="push-nothing" class="ml-2 block text-sm font-medium text-gray-700">
+                              Any
+                            </label>
+                          </div>
+                        </div>
+                      </div> -->
+                    </div>
+                    <div class="flex mt-[2rem] mb-20 float-left">
+
+                      <button (click)="basics()"
+                        class=" flex text-[#0175A2] border-[#0175A2] border-2  py-1 px-2 shadow rounded-lg"
+                        type="button">
+                        <svg width="7" height="13" class="mr-1 mt-[0.3rem]" viewBox="0 0 7 13" fill="none"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <path d="M6 1.5L1 6.5L6 11.5" stroke="#0175A2" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        </svg>
+
+                        Basic Job Details
+                      </button>
+                    </div>
+                    <div class="flex mt-[2rem] mb-20 float-right">
+
+                      <button (click)="additionals()"
+                        class=" flex text-white bg-[#0175A2] border border-gray-300 py-1 px-2 shadow rounded-lg"
+                        type="button">
+                        Additional Details
+                        <svg width="6" class="mt-[0.4rem] ml-1" height="12" viewBox="0 0 7 13" fill="none"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <path d="M1 11.7529L6 6.75293L1 1.75293" stroke="white" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+
+                      </button>
+
+
+                    </div>
+                    <!-- create new -->
+                    <!-- <div *ngIf="create1" class="relative z-10" aria-labelledby="modal-title" role="dialog"
+          aria-modal="true">
+          <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+          <div class="fixed inset-0 z-10 overflow-y-auto">
+            <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+              <div
+                class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all ">
+                <div class="relative p-4 w-full max-w-md h-60 md:h-auto">
+                  <div class="relative bg-white rounded-lg shadow ">
+                    <div class="p-6 text-center">
+                      <svg class="mx-auto" width="56" height="56" class="ml-36 mb-2" viewBox="0 0 56 56"
+                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="4" y="4" width="48" height="48" rx="24" fill="#F4EBFF" />
+                        <path d="M29 18L19 30H28L27 38L37 26H28L29 18Z" stroke="#7F56D9" stroke-width="2"
+                          stroke-linecap="round" stroke-linejoin="round" />
+                        <rect x="4" y="4" width="48" height="48" rx="24" stroke="#F9F5FF" stroke-width="8" />
+                      </svg>
+                      <p class=" text-lg font-medium leading-6 text-gray-900 mt-3 ">Create New</p>
+                      <input #task type="text" placeholder="Enter Your"
+                        class="p-2 mt-3 h-8 text-gray-600 bg-gray-100 w-96 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500 shadow">
+                      <div>
+                        <button
+                          class=" text-gray-700 shadow bg-white border border-gray-300 focus:outline-none font-medium rounded-lg text-md px-6 py-2.5 mt-8"
+                          type="button" data-modal-toggle="popup-modal" (click)="createNew()">Cancel
+                        </button>
+                        <span (click)="createNew()">
+                          <button (click)="addtask(task.value)"
+                            class="shadow text-white bg-purple-700 border border-gray-300 focus:outline-none  font-medium rounded-lg text-md px-6 py-2.5 ml-3 mt-8"
+                            type="button" data-modal-toggle="popup-modal">
+                            Save
+                          </button>
+                        </span>
+                      </div>
+
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div> -->
+                  </div>
+
+                  <!----------------------------------------------------------Additional Details------------------------------------------------------->
+                  <div *ngIf="additional" class="">
+                    <div class="flex w-full">
+                      <div class=" w-full">
+
+
+                        <legend class="sr-only">By Email</legend>
+                        <div class="flex gap-x-16 mt-1">
+                          <div class="w-full">
+                            <label for="first-name" class="block text-sm font-medium text-gray-900 mt-4">Contact
+                              Person</label>
+                            <input
+                              class="w-full h-11 px-3 mb-2 text-base text-gray-700 placeholder-gray-400 border border-gray-300 rounded-md  mt-1.5 shadow outline-none capitalize"
+                              type="text" placeholder="Point of Contact" formControlName="ContactPerson"
+                              (keypress)="keyPressChars($event)" />
+                          </div>
+                          <div class="w-full mt-4">
+                            <div class=" ">
+                              <div class="w-full">
+                                <label for="about" class="text-sm font-medium text-gray-700">
+                                  <span style="color: red">*</span>Company
+                                  Name
+                                </label>
+                              </div>
+                              <div class="mt-1 flex w-full rounded-md">
+                                <div class="w-full" *ngIf="
+                                  CompanyName$ | async as CompanyName
+                                ">
+                                  <ng-select [items]="CompanyName" [multiple]="false"
+                                    class="form-control rounded-full focus:shadow-outline shadow hide-while-Scroll"
+                                    (paste)="(false)" formControlName="CompanyName" placeholder="Choose Client">
+                                  </ng-select>
+                                </div>
+                              </div>
+                              <div class="text-red-800 mt-2" *ngIf="submitted && f.CompanyName.errors">
+                                <div *ngIf="f.CompanyName.errors.required">
+                                  Please Select Company Name
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="mt-4 ">
+                          <div class="col-span-6 sm:col-span-3 ">
+                            <label for="message" class="form-label inline-block text-gray-3 text-sm font-medium">About
+                              Company</label>
+                            <textarea type="text" id="message" rows="5" formControlName="AboutCompany"
+                              class="block p-2.5 mt-1 w-2/3 text-md text-gray-900 bg-white-50 rounded-lg border border-gray-300 focus:outline-none"
+                              placeholder="A brief description about the company" maxlength="275">
+                          </textarea>
+
+                            <div class="mt-1.5 text-sm text-gray-500">
+                              {{ 275 - f.AboutCompany.value.length }}
+                              Characters left
+                            </div>
+                          </div>
+
+                        </div>
+                        <!-- phone number -->
+                        <div id="basic">
+                          <div class="flex w-full">
+                            <div class="mt-4 w-full">
+                              <div class="flex gap-x-16 mt-5">
+                                <div class="w-full">
+                                  <div class="w-full">
+                                    <label for="about" class="text-sm font-medium text-gray-700">
+                                      <span style="color: red">*</span>Phone
+                                      Number
+                                    </label>
+                                  </div>
+                                  <div class="mt-1 flex w-full rounded-md">
+                                    <span
+                                      class="column-2 bg-gray-100 flex items-center px-3 py-2 text-base text-gray-600 rounded-l-md border border-solid border-gray-300 shadow outline-none">
+                                      IN
+                                      <!-- <svg class=" ml-3 text-gray-600" width="12" height="8" viewBox="0 0 12 8"
+                                      fill="none" xmlns="http://www.w3.org/2000/svg">
+                                      <path d="M1 1.5L6 6.5L11 1.5" stroke="#667085" stroke-width="1.66667"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg> -->
+                                    </span>
+
+                                    <div class="w-full">
+                                      <input type="phoneNumber" formControlName="PhoneNumber" id="website-admin"
+                                        class="w-full peer form-control block p-2.5 text-base font-normal text-gray-3 bg-white bg-clip-padding border border-solid border-gray-300 rounded-tr-md rounded-br-md focus:text-gray-4 focus:bg-white focus:outline-none shadow capitalize"
+                                        id="exampleInputPhone" (keypress)="keyPressNumbers($event)"
+                                        (keydown)="restrictZero($event)" placeholder="Eg-7866315655" required
+                                        minlength="10" maxlength="10s" (paste)="(false)" />
+                                    </div>
+                                  </div>
+                                  <div class="text-red-800 ml-1 mt-2" *ngIf="
+                                    submitted && f.PhoneNumber.errors
+                                  ">
+                                    <div *ngIf="f.PhoneNumber.errors.required">
+                                      Please Enter Phone Number
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="w-full">
+                                  <div class=" ">
+                                    <div class="w-full">
+                                      <label for="about" class="text-sm font-medium text-gray-700">
+                                        <span style="color: red">*</span>Company Website
+                                      </label>
+                                    </div>
+                                    <div class="mt-1 flex w-full rounded-md">
+                                      <span
+                                        class="column-2 bg-gray-100 flex items-center px-3 py-2 text-base text-gray-500 rounded-l-md border border-solid border-gray-300 shadow outline-none">
+                                        https://
+                                      </span>
+                                      <div class="w-full">
+                                        <input type="phoneNumber" formControlName="CompanyWebsite" id="website-admin"
+                                          class="peer form-control w-full block p-2.5 text-base font-normal text-gray-3 bg-white bg-clip-padding border border-solid border-gray-300 rounded-tr-md rounded-br-md shadow outline-none"
+                                          placeholder="www.companyname.com" required />
+                                      </div>
+                                    </div>
+                                    <div class="text-red-800 ml-1 mt-2" *ngIf="
+                                      submitted && f.CompanyWebsite.errors
+                                    ">
+                                      <div *ngIf="
+                                        f.CompanyWebsite.errors.required
+                                      ">
+                                        Please Enter Company Website
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!--  -->
+                        <div class="col-span-6 sm:col-span-3 mt-4">
+                          <div class="flex items-start">
+                            <div class="flex items-center h-5">
+                              <input id="commentspost" name="comments" type="checkbox" formControlName="ShowContact"
+                                class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded capitalize" />
+                            </div>
+                            <div class="ml-3 text-sm">
+                              <label for="commentspost" class="font-medium text-gray-700">Show on job post</label>
+                              <p class="text-gray-500">
+                                Candidates will be able to see the contact
+                                details
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <!--  -->
+                        <div class="mt-4 w-full">
+
+
+                          <div>
+                            <div class="flex gap-x-16 mt-1">
+                              <div class="w-full mt-4">
+                                <div class=" ">
+                                  <div class="w-full">
+                                    <label for="about" class="text-sm font-medium text-gray-700">
+                                      Assigned Recruiter
+                                      Name
+                                    </label>
+                                  </div>
+                                  <div class="mt-1 flex w-full rounded-md">
+                                    <div class="w-full">
+                                      <ng-select [items]="recruitersLists" [multiple]="true" bindLabel="firstName"
+                                        bindValue="userId"
+                                        class="form-control rounded-full focus:shadow-outline shadow hide-while-Scroll"
+                                        (paste)="(false)" formControlName="Recruiter"
+                                        placeholder="Search and select recruiter">
+                                      </ng-select>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="w-full mt-4">
+                                <div class=" ">
+                                  <div class="w-full">
+                                    <label for="about" class="text-sm font-medium text-gray-700">
+                                      <span style="color: red">*</span>Requirement Due Date
+                                    </label>
+                                  </div>
+                                  <div class="mt-1 flex w-full rounded-md">
+                                    <div class="w-full">
+                                      <input type="date" id="simple-search" formControlName="Requiredduedate"
+                                        style="text-transform: uppercase" class="border chnage border-gray-300  text-gray-500 focus:outline-none
+                                     text-md rounded-lg block w-full h-11 pl-5 p-2.5 mt-1.5 shadow capitalize" placeholder="Enter date">
+                                    </div>
+                                  </div>
+                                  <div class="text-red-800 mt-2" *ngIf="submitted && f.Requiredduedate.errors">
+                                    <div *ngIf="f.Requiredduedate.errors.required">
+                                      Please Enter Requirement Due Date
+                                    </div>
+                                    <div *ngIf="
+                                          f.Requiredduedate.errors.invalidRange
+                                        ">
+                                      Please Enter correct Requirement Due Date
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- Open to con -->
+                        <div class="flex gap-x-16 mt-1">
+                          <div class="w-full"></div>
+                          <div class="w-full mt-5">
+                            <div class="flex ">
+                              <div class="flex items-center h-5">
+                                <input id="commentscons" name="comments" type="checkbox"
+                                  formControlName="OpenToConselants"
+                                  class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded capitalize" />
+                              </div>
+                              <div class="ml-3 text-sm">
+                                <label for="commentscons" class="font-medium text-gray-700">Open To Consultants</label>
+                                <p class="text-gray-500">
+                                  Consultants can request to source
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="justify-between">
+
+
+                          <div class="justify-between">
+                            <div class="flex mt-[3rem] mb-[3.5rem] float-left">
+                              <button (click)="candidates()"
+                                class="flex text-[#0175A2] border-[#0175A2] border-2 py-1 px-2 shadow rounded-lg"
+                                type="button">
+                                <svg width="7" height="13" class="mt-[0.3rem] mr-1" viewBox="0 0 7 13" fill="none"
+                                  xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M6 1.5L1 6.5L6 11.5" stroke="#0175A2" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                </svg>
+
+                                Candidate Details
+                              </button>
+                            </div>
+                            <div class="flex mt-[3rem] mb-[3.5rem] ml-[20rem] float-right">
+                              <button (click)="questionnaires()"
+                                class="flex text-white bg-[#0175A2] border border-gray-300 py-1 px-2 shadow rounded-lg"
+                                type="button">
+                                Questionnaire
+                                <svg width="6" class="mt-[0.4rem] ml-1" height="12" viewBox="0 0 7 13" fill="none"
+                                  xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M1 11.7529L6 6.75293L1 1.75293" stroke="white" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- Questionnaire -->
+
+                        <!-- <div class="w-full"> -->
+
+                        <!-- <div class="w-full mt-5 ">
+                          <div class="flex mr-40 float-right">
+                            <div class="flex items-center h-5">
+                              <input id="commentscons" name="comments" type="checkbox"
+                                formControlName="OpenToConselants"
+                                class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded capitalize" />
+                            </div>
+                            <div class="ml-3 text-sm">
+                              <label for="commentscons" class="font-medium text-gray-700">Open To Consultants</label>
+                              <p class="text-gray-500">
+                                Consultants can request to source
+                              </p>
+                            </div>
+                          </div>
+                        </div> -->
+
+                      </div>
+                    </div>
+
+                  </div>
+
+                </form>
+                <!-- <button  (click)="saveData()">
+                  click
+                </button> -->
+                <!-- Questionnaire -->
+                <div *ngIf="questionnaire" class=" -mt-4 ">
+
+                  <div class="flex justify-between">
+                    <div class="text-[#101828] text-xl font-medium" id="questionnaireDetails">Questionnaire</div>
+
+                    <!-- 2 -->
+
+                    <div class="flex">
+
+                      <div class="mr-2">
+                        <div class="flex gap-2 p-2 border border-[#0175A2] rounded-lg ">
+
+                          <svg width="25" height="25" viewBox="0 0 29 29" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M8.30439 4.25586H10.6515V25.38H8.30439V4.25586ZM4.78369 4.25586H7.13082V25.38H4.78369V4.25586ZM11.8251 4.25586H14.1722V25.38H11.8251V4.25586ZM22.4599 25.1359L15.1568 5.31441L17.3596 4.50231L24.6627 24.3238L22.4599 25.1359Z"
+                              fill="#0175A2" />
+                          </svg>
+
+
+                          <div class="">
+                            <button class="text-[#0175A2] text-sm font-medium py-0.5 px-3" (click)="Qpop()">Question
+                              Templates</button>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="flex gap-2 p-2 border border-[#0175A2] rounded-lg ">
+                        <div>
+                          <svg width="24" height="25" viewBox="0 0 24 25" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <rect y="0.375" width="24" height="24" rx="12" fill="#F0F9FF" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M13 7.375C13 7.10978 12.8946 6.85543 12.7071 6.66789C12.5196 6.48036 12.2652 6.375 12 6.375C11.7348 6.375 11.4804 6.48036 11.2929 6.66789C11.1054 6.85543 11 7.10978 11 7.375V11.375H7C6.73478 11.375 6.48043 11.4804 6.29289 11.6679C6.10536 11.8554 6 12.1098 6 12.375C6 12.6402 6.10536 12.8946 6.29289 13.0821C6.48043 13.2696 6.73478 13.375 7 13.375H11V17.375C11 17.6402 11.1054 17.8946 11.2929 18.0821C11.4804 18.2696 11.7348 18.375 12 18.375C12.2652 18.375 12.5196 18.2696 12.7071 18.0821C12.8946 17.8946 13 17.6402 13 17.375V13.375H17C17.2652 13.375 17.5196 13.2696 17.7071 13.0821C17.8946 12.8946 18 12.6402 18 12.375C18 12.1098 17.8946 11.8554 17.7071 11.6679C17.5196 11.4804 17.2652 11.375 17 11.375H13V7.375Z"
+                              fill="#0175A2" />
+                          </svg>
+                        </div>
+                        <div class="">
+                          <button class="text-[#0175A2] text-sm font-medium py-0.5 px-3" (click)="addQuestion()">Add New
+                            Question</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <h6>({{questions.length}}/10)</h6>
+                  <div class="border border-gray-300 rounded-lg my-2" *ngFor="let question of questions; let i = index">
+                    <div class="w-full mt-2 px-4">
+                      <div class="flex  w-full">
+                        <div clas="w-full " style="width:100%;margin-right: 20px;">
+                          <input type="text" [value]="value"
+                            class="outline-none text-[#1D2939] text-base font-normal w-full border-b-2 border-gray-400 mt-3 ml-2 "
+                            placeholder="Enter a question " (click)="title()" [(ngModel)]="question.questionName"
+                            (input)="hello1()">
+                        </div>
+                        <div class="flex gap-2 p-2 rounded-lg border border-gray-400 " style="white-space: nowrap;">
+                          <div class="mt-1 flex">
+                            <svg class="mr-2 mt-1" width="14" height="7" viewBox="0 0 14 7" fill="none"
+                              xmlns="http://www.w3.org/2000/svg" *ngIf="question.label === 'Short Answer'">
+                              <rect y="0.375" width="14" height="2" rx="1" fill="#1D2939" />
+                              <rect y="4.375" width="8" height="2" rx="1" fill="#1D2939" />
+                            </svg>
+
+                            <svg class="mr-2 " width="16" height="16" viewBox="0 0 16 16" fill="none"
+                              xmlns="http://www.w3.org/2000/svg" *ngIf="question.label === 'Multiple Choice'">
+                              <path
+                                d="M8 15C4.14 15 1 11.86 1 8C1 4.14 4.14 1 8 1C11.86 1 15 4.14 15 8C15 11.86 11.86 15 8 15ZM8 2C4.69 2 2 4.69 2 8C2 11.31 4.69 14 8 14C11.31 14 14 11.31 14 8C14 4.69 11.31 2 8 2Z"
+                                fill="#1D2939" />
+                              <path
+                                d="M8 12C10.2091 12 12 10.2091 12 8C12 5.79086 10.2091 4 8 4C5.79086 4 4 5.79086 4 8C4 10.2091 5.79086 12 8 12Z"
+                                fill="#1D2939" />
+                            </svg>
+
+                            <svg class="mr-2" width="12" height="12" viewBox="0 0 12 12" fill="none"
+                              xmlns="http://www.w3.org/2000/svg" *ngIf="question.label === 'Checkboxes'">
+                              <path
+                                d="M10.6667 0H1.33333C0.979711 0 0.640573 0.140476 0.390524 0.390524C0.140476 0.640573 0 0.979711 0 1.33333V10.6667C0 11.0203 0.140476 11.3594 0.390524 11.6095C0.640573 11.8595 0.979711 12 1.33333 12H10.6667C11.0203 12 11.3594 11.8595 11.6095 11.6095C11.8595 11.3594 12 11.0203 12 10.6667V1.33333C12 0.979711 11.8595 0.640573 11.6095 0.390524C11.3594 0.140476 11.0203 0 10.6667 0ZM10.6667 1.33333V10.6667H1.33333V1.33333H10.6667ZM4.66667 9.33333L2 6.66667L2.94 5.72L4.66667 7.44667L9.06 3.05333L10 4"
+                                fill="#1D2939" />
+                            </svg>
+
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                              xmlns="http://www.w3.org/2000/svg" *ngIf="question.label === 'Dropdown'">
+                              <path
+                                d="M7.00065 1.66732C9.94065 1.66732 12.334 4.06065 12.334 7.00065C12.334 9.94065 9.94065 12.334 7.00065 12.334C4.06065 12.334 1.66732 9.94065 1.66732 7.00065C1.66732 4.06065 4.06065 1.66732 7.00065 1.66732ZM7.00065 0.333984C3.32065 0.333984 0.333984 3.32065 0.333984 7.00065C0.333984 10.6807 3.32065 13.6673 7.00065 13.6673C10.6807 13.6673 13.6673 10.6807 13.6673 7.00065C13.6673 3.32065 10.6807 0.333984 7.00065 0.333984ZM7.00065 9.00065L4.33398 6.33398H9.66732L7.00065 9.00065Z"
+                                fill="#1D2939" />
+                            </svg>
+
+                          </div>
+                          <div>
+                            <label>{{question.label}}</label>
+                          </div>
+                          <div>
+                            <button>
+                              <svg class="ml-3" width="24" height="25" viewBox="0 0 24 25" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" (click)="label2(i)">
+                                <path
+                                  d="M6.53082 16.8457C6.38865 16.7132 6.2006 16.6411 6.0063 16.6445C5.812 16.6479 5.62661 16.7266 5.4892 16.864C5.35179 17.0015 5.27308 17.1868 5.26965 17.3811C5.26622 17.5754 5.33834 17.7635 5.47082 17.9057L7.47082 19.9057C7.61145 20.0461 7.80207 20.125 8.00082 20.125C8.19957 20.125 8.3902 20.0461 8.53082 19.9057L10.5308 17.9057C10.6045 17.837 10.6636 17.7542 10.7046 17.6622C10.7456 17.5702 10.7676 17.4709 10.7694 17.3702C10.7712 17.2695 10.7527 17.1695 10.7149 17.0761C10.6772 16.9827 10.6211 16.8978 10.5499 16.8266C10.4786 16.7554 10.3938 16.6993 10.3004 16.6615C10.207 16.6238 10.107 16.6053 10.0063 16.6071C9.9056 16.6088 9.80628 16.6309 9.71428 16.6719C9.62229 16.7129 9.53949 16.772 9.47082 16.8457L8.75082 17.5657L8.75082 7.37566C8.75082 7.17675 8.6718 6.98598 8.53115 6.84533C8.3905 6.70468 8.19974 6.62566 8.00082 6.62566C7.80191 6.62566 7.61115 6.70468 7.47049 6.84533C7.32984 6.98598 7.25082 7.17675 7.25082 7.37566L7.25082 17.5657L6.53082 16.8457ZM13.4708 7.90566C13.6114 8.04611 13.8021 8.125 14.0008 8.125C14.1996 8.125 14.3902 8.04611 14.5308 7.90566L15.2508 7.18566L15.2508 17.3757C15.2508 17.5746 15.3298 17.7653 15.4705 17.906C15.6111 18.0466 15.8019 18.1257 16.0008 18.1257C16.1997 18.1257 16.3905 18.0466 16.5312 17.906C16.6718 17.7653 16.7508 17.5746 16.7508 17.3757V7.18566L17.4708 7.90566C17.5395 7.97935 17.6223 8.03845 17.7143 8.07944C17.8063 8.12043 17.9056 8.14247 18.0063 8.14425C18.107 8.14603 18.207 8.1275 18.3004 8.08978C18.3938 8.05206 18.4786 7.99592 18.5499 7.9247C18.6211 7.85348 18.6772 7.76865 18.7149 7.67526C18.7527 7.58187 18.7712 7.48184 18.7694 7.38114C18.7676 7.28043 18.7456 7.18112 18.7046 7.08912C18.6636 6.99712 18.6045 6.91432 18.5308 6.84566L16.5308 4.84566C16.3902 4.70521 16.1996 4.62632 16.0008 4.62632C15.8021 4.62632 15.6114 4.70521 15.4708 4.84566L13.4708 6.84566C13.3304 6.98628 13.2515 7.17691 13.2515 7.37566C13.2515 7.57441 13.3304 7.76504 13.4708 7.90566Z"
+                                  fill="black" />
+                              </svg>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="w-full px-4">
+                      <div class="flex gap-4 justify-between ">
+                        <div class="w-9/12">
+                          <div class="mt-2" *ngFor="let option of question.options; let j = index">
+                            <div *ngIf="question.label=='Short Answer' && j<2 || question.label!='Short answers' && j<6"
+                              class="flex gap-2">
+                              <div>
+                                <input [type]="question.text">
+                              </div>
+                              <div class="flex gap-2 w-[80rem] -mt-2">
+                                <div class="w-full">
+                                  <input type="text"
+                                    class="mt-[0.4rem] outline-none text-[#1D2939] text-base font-normal border-b-2 border-gray-300"
+                                    placeholder="{{question.label == 'Short Answer' ? 'Short-answer Text' : 'Option ' + (j + 1) }}"
+                                    [class]="question.label== 'Short Answer'?'w-3/4':'w-full'"
+                                    [(ngModel)]="option.text">
+                                </div>
+                                <div *ngIf="question.label != 'Short Answer'" class="cursor-pointer"
+                                  (click)="deleteOption(i, j)">
+                                  <svg class="mt-2" width="15" height="16" viewBox="0 0 15 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                      d="M11.7814 4.53141C11.8349 4.47803 11.8773 4.41464 11.9062 4.34487C11.9352 4.2751 11.9501 4.20031 11.9501 4.12477C11.9502 4.04923 11.9354 3.97442 11.9065 3.90461C11.8776 3.8348 11.8353 3.77136 11.7819 3.71791C11.7285 3.66446 11.6651 3.62205 11.5954 3.5931C11.5256 3.56415 11.4508 3.54923 11.3753 3.54918C11.2997 3.54914 11.2249 3.56397 11.1551 3.59283C11.0853 3.6217 11.0219 3.66403 10.9684 3.71741L7.49941 7.18641L4.03141 3.71741C3.92347 3.60947 3.77707 3.54883 3.62441 3.54883C3.47176 3.54883 3.32536 3.60947 3.21741 3.71741C3.10947 3.82536 3.04883 3.97176 3.04883 4.12441C3.04883 4.27707 3.10947 4.42347 3.21741 4.53141L6.68641 7.99941L3.21741 11.4674C3.16396 11.5209 3.12157 11.5843 3.09264 11.6541C3.06372 11.724 3.04883 11.7988 3.04883 11.8744C3.04883 11.95 3.06372 12.0248 3.09264 12.0947C3.12157 12.1645 3.16396 12.228 3.21741 12.2814C3.32536 12.3894 3.47176 12.45 3.62441 12.45C3.7 12.45 3.77485 12.4351 3.84468 12.4062C3.91451 12.3773 3.97797 12.3349 4.03141 12.2814L7.49941 8.81241L10.9684 12.2814C11.0764 12.3892 11.2227 12.4497 11.3753 12.4496C11.5278 12.4496 11.6741 12.3889 11.7819 12.2809C11.8897 12.173 11.9502 12.0266 11.9501 11.8741C11.9501 11.7215 11.8894 11.5752 11.7814 11.4674L8.31241 7.99941L11.7814 4.53141Z"
+                                      fill="#1D2939" />
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div>
+                          <div class="  grid place-content-end mt-2" *ngIf="addbutton"><button
+                              class="border border-gray-500 px-3 py-1.5 rounded-lg text-[#1D2939] text-sm"
+                              (click)="addOption(i)">Add
+                              Option</button></div>
+                          <div class="flex gap-2 p-2 mt-4">
+                            <div class="mt-1">
+                              <label class="relative inline-flex items-center cursor-pointer">
+                                <input type="checkbox" value="" class="sr-only peer" id=""
+                                  (click)="toggleRequired(question)">
+                                <div class="w-11 h-6 bg-[#F2F4F7] peer-focus:outline-none peer-checked:bg-[#0175A2] border border-[#F2F4F7] rounded-full
+                                  peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-['']
+                                  after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-[#F2F4F7]
+                                  after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:after:bg-white
+                                   peer-checked:border-[#F2F4F7]">
+                                </div>
+                              </label>
+                            </div>
+                            <div class="mt-1">
+                              <button>Required</button>
+                            </div>
+                            <div class="cursor-pointer" (click)="deleteQuestion(i)"><svg width="24" height="25"
+                                viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                  d="M6 19.375C6 19.9054 6.21071 20.4141 6.58579 20.7892C6.96086 21.1643 7.46957 21.375 8 21.375H16C16.5304 21.375 17.0391 21.1643 17.4142 20.7892C17.7893 20.4141 18 19.9054 18 19.375V7.375H6V19.375ZM8 9.375H16V19.375H8V9.375ZM15.5 4.375L14.5 3.375H9.5L8.5 4.375H5V6.375H19V4.375H15.5Z"
+                                  fill="#475467" />
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- <div
+                      class="float-right mt-[13rem]"
+                      (click)="CreateJob('Publish')"
+                    >
+                      <button
+                        type="button"
+                        class="text-white flex bg-[#0175A2] font-medium rounded-lg shadow py-2 px-2"
+                      >
+                        <svg
+                          width="20"
+                          class="mr-1 mt-[0.3rem]"
+                          height="20"
+                          viewBox="0 0 20 20"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M18.5921 1.21484L9.16067 10.6462M18.5921 1.21484L12.5903 18.3628L9.16067 10.6462M18.5921 1.21484L1.44409 7.21663L9.16067 10.6462"
+                            stroke="white"
+                            stroke-width="1.71823"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+
+                        Post a Job
+                      </button>
+                    </div> -->
+                  </div>
+
+
+                  <div class="flex mt-[3rem] mb-[1rem] float-left">
+                    <button (click)="showAdditionaldetails()"
+                      class="flex text-[#0175A2]  border-[#0175A2] border-2 py-1 px-2 shadow rounded-lg" type="button">
+                      <svg width="7" height="13" class="mt-[0.3rem] mr-1" viewBox="0 0 7 13" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 1.5L1 6.5L6 11.5" stroke="#0175A2" stroke-width="2" stroke-linecap="round"
+                          stroke-linejoin="round" />
+                      </svg>
+                      Additional Details
+                    </button>
+                  </div>
+                  <!-- popup -->
+
+                  <!-- Main modal -->
+                  <div *ngIf="Questionarie" id="defaultModal" tabindex="-1" aria-hidden="true"
+                    class="fixed   z-50  w-2/5 p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                    <div class="relative w-full max-w-2xl max-h-full">
+                      <div class="fixed py-5 flex justify-center inset-0 bg-gray-500 bg-opacity-75 transition-opacity">
+
+                        <!-- Modal content -->
+                        <div style="height: fit-content;"
+                          class="relative  mt-[8rem] bg-white rounded-lg shadow  w-[34rem]">
+                          <!-- Modal header -->
+                          <div class="flex items-start justify-between p-4 rounded-t dark:border-gray-600">
+                            <h3 class="text-xl font-semibold text-gray-600  ml-4">
+                              Question Templates
+                            </h3>
+                            <button (click)="Qpop()" type="button"
+                              class="mr-4 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center "
+                              data-modal-hide="defaultModal">
+                              <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                  clip-rule="evenodd"></path>
+                              </svg>
+                              <span class="sr-only">Close modal</span>
+                            </button>
+
+                          </div>
+                          <input [(ngModel)]="searchedTemlpate"
+                            class="appearance-none block ml-8 w-[30rem] text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                            placeholder="eg: How many year of experience you have?">
+                          <div class="font-semibold text-[#0175A2] ml-8">Suggestions</div>
+                          <!-- 1 -->
+                          <div style="height: 300px;overflow-y: scroll;">
+                            <div *ngFor="let i of quesionList" class="mt-1">
+                              <div *ngIf="i.toLowerCase().includes(searchedTemlpate.toLowerCase())" class="flex">
+                                <input (click)="con(i)" type="checkbox"
+                                  class="ml-8 mt-2 focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded capitalize" />
+                                <div class="mt-1 ml-3 text-gray-600">
+                                  {{i}}
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- 2 -->
+
+                          <!--  -->
+
+
+                          <!-- Modal footer -->
+                          <div class="flex items-center p-6 space-x-2  rounded-b justify-center mr-[3rem]">
+                            <button (click)="importQuestion();Qpop()" data-modal-hide="defaultModal" type="button"
+                              class="text-white  focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-md text-sm px-5 py-2.5 text-center dark:bg-blue-600 bg-[#0175A2]">Import
+                              Questions</button>
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+
+
+                  <!--  -->
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="bg-white h-10 w-4/5 absolute bottom-0 mr-20"></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- <div *ngIf="publishModel" id="publishModel" tabindex="-1" aria-hidden="true"
+  class="fixed   z-50  w-2/5 p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+  <div class="relative w-full max-w-2xl max-h-full">
+    <div class="fixed py-5 flex justify-center inset-0 bg-gray-500 bg-opacity-75 transition-opacity">
+
+      
+      <div style="height: fit-content;" class="relative  mt-[8rem] bg-white rounded-lg shadow dark:bg-gray-700">
+        <div style="flex-direction: column;"
+          class="flex items-start justify-between p-4 rounded-t dark:border-gray-600">
+
+          <div class="flex justify-between">
+            <h3 class="text-xl font-semibold text-gray-600 dark:text-white ml-4">
+              Publish Requirement ?
+
+            </h3>
+            <button (click)="publishModel=false" type="button"
+              class="mr-4 text-gray-400 ml-1 px-2 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-lg p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
+              data-modal-hide="defaultModal">x
+            </button>
+          </div> <br><br><br>
+
+          <div class="flex justify-center w-full">
+            <button (click)="PublishOrSave('Publish')" (click)="publishModel=false" data-modal-hide="publishModel"
+              type="button"
+              class="text-white  focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-md text-sm px-5 py-2.5 text-center dark:bg-blue-600 bg-[#0175A2]">
+              Publish</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div> -->
+
+<div *ngIf="publishModel" id="publishModel" tabindex="-1" aria-hidden="true"
+  class="fixed   z-50  w-2/5 p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+  <div class="relative w-full max-w-2xl max-h-full">
+    <div class="fixed py-5  flex justify-center inset-0 bg-gray-500 bg-opacity-75 transition-opacity">
+
+      <!-- Modal content -->
+      <div style="height: fit-content;" class="relative  mt-[8rem] py-4 px-8 bg-white rounded-lg shadow ">
+        <!-- div 11 -->
+        <div class="grid grid-cols-1 place-items-center">
+
+          <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="4" width="48" height="48" rx="24" fill="#F6FEF9" />
+            <path
+              d="M31.1883 35.3837V20.2336C31.1883 19.7314 30.9949 19.2497 30.6507 18.8945C30.3065 18.5394 29.8396 18.3398 29.3528 18.3398H25.6818C25.195 18.3398 24.7282 18.5394 24.3839 18.8945C24.0397 19.2497 23.8463 19.7314 23.8463 20.2336V35.3837M20.1753 22.1274H34.8593C35.873 22.1274 36.6948 22.9752 36.6948 24.0211V33.49C36.6948 34.5359 35.873 35.3837 34.8593 35.3837H20.1753C19.1616 35.3837 18.3398 34.5359 18.3398 33.49V24.0211C18.3398 22.9752 19.1616 22.1274 20.1753 22.1274Z"
+              stroke="#1880A9" stroke-width="1.63884" stroke-linecap="round" stroke-linejoin="round" />
+            <rect x="4" y="4" width="48" height="48" rx="24" stroke="#ECFAFF" stroke-width="8" />
+          </svg>
+
+
+        </div>
+        <!-- div 22 -->
+        <div class="grid  grid-cols-1 content-center">
+          <h3 class="text-lg font-semibold text-gray-600 text-center mt-1">
+            Post as Job
+          </h3>
+          <p class="text-gray-500 text-center text-sm mt-2">Do you want to post this as a job</p>
+        </div>
+        <div class="flex justify-center gap-4 w-full mt-3  px-4 ">
+          <button (click)="publishModel=false" data-modal-hide="publishModel" type="button"
+            class="text-white   focus:outline-none  font-medium rounded-md text-sm w-28 py-2.5 text-center bg-[#0175A2]">
+            Cancel </button>
+          <button (click)="PublishOrSave('Publish')" (click)="publishModel=false" data-modal-hide="publishModel"
+            type="button"
+            class="text-white  focus:outline-none font-medium rounded-md text-sm  w-28 py-2.5 text-center bg-[#0175A2]">
+            Post</button>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div *ngIf="saveModel" id="savehModel" tabindex="-1" aria-hidden="true"
+  class="fixed   z-50  w-2/5 p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+  <div class="relative w-full max-w-2xl max-h-full">
+    <div class="fixed py-5 flex justify-center inset-0 bg-gray-500 bg-opacity-75 transition-opacity">
+
+      
+      <div style="height: fit-content;" class="relative  mt-[8rem] bg-white rounded-lg shadow dark:bg-gray-700">
+        <div style="flex-direction: column;"
+          class="flex items-start justify-between p-4 rounded-t dark:border-gray-600">
+
+          <div class="flex justify-between">
+            <h3 class="text-xl font-semibold text-gray-600 dark:text-white ml-4">
+              Save as draft ?
+            </h3>
+            <div class="flex justify-center  w-full">
+              <button (click)="saveModel=false" type="button"
+                class="mr-4 text-gray-400 ml-1 px-2 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-lg p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                data-modal-hide="defaultModal">x
+              </button>
+            </div>
+          </div>
+          <br><br><br>
+
+          <div class="flex justify-center w-full">
+            <button (click)="PublishOrSave('Save')" (click)="saveModel=false" data-modal-hide="saveModel" type="button"
+              class="text-white  focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-md text-sm px-5 py-2.5 text-center dark:bg-blue-600 bg-[#0175A2]">
+              save</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div> -->
+
+<div *ngIf="saveModel" id="savehModel" tabindex="-1" aria-hidden="true"
+  class="fixed   z-50  w-2/5 p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+  <div class="relative w-full max-w-2xl max-h-full">
+    <div class="fixed py-5  flex justify-center inset-0 bg-gray-500 bg-opacity-75 transition-opacity">
+
+      <!-- Modal content -->
+      <div style="height: fit-content;" class="relative  mt-[8rem] py-4 px-8 bg-white rounded-lg shadow ">
+        <!-- div 11 -->
+        <div class="grid grid-cols-1 place-items-center">
+
+          <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="4" width="48" height="48" rx="24" fill="#F6FEF9" />
+            <path
+              d="M31.1883 35.3837V20.2336C31.1883 19.7314 30.9949 19.2497 30.6507 18.8945C30.3065 18.5394 29.8396 18.3398 29.3528 18.3398H25.6818C25.195 18.3398 24.7282 18.5394 24.3839 18.8945C24.0397 19.2497 23.8463 19.7314 23.8463 20.2336V35.3837M20.1753 22.1274H34.8593C35.873 22.1274 36.6948 22.9752 36.6948 24.0211V33.49C36.6948 34.5359 35.873 35.3837 34.8593 35.3837H20.1753C19.1616 35.3837 18.3398 34.5359 18.3398 33.49V24.0211C18.3398 22.9752 19.1616 22.1274 20.1753 22.1274Z"
+              stroke="#1880A9" stroke-width="1.63884" stroke-linecap="round" stroke-linejoin="round" />
+            <rect x="4" y="4" width="48" height="48" rx="24" stroke="#ECFAFF" stroke-width="8" />
+          </svg>
+
+
+        </div>
+        <!-- div 22 -->
+        <div class="grid  grid-cols-1 content-center">
+          <h3 class="text-lg font-semibold text-gray-600 text-center mt-1">
+            Save as draft
+          </h3>
+          <p class="text-gray-500 text-center text-sm mt-2">Do you want to save this as a draft</p>
+        </div>
+        <div class="flex justify-center gap-4 w-full mt-3  px-4 ">
+          <button (click)="saveModel=false" data-modal-hide="publishModel" type="button"
+            class="text-white   focus:outline-none  font-medium rounded-md text-sm w-28 py-2.5 text-center bg-[#0175A2]">
+            Cancel </button>
+          <button (click)="PublishOrSave('Save')" (click)="saveModel=false" data-modal-hide="publishModel" type="button"
+            class="text-white  focus:outline-none font-medium rounded-md text-sm  w-28 py-2.5 text-center bg-[#0175A2]">
+            Save</button>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div *ngIf="errorPop" id="savehModel" tabindex="-1" aria-hidden="true"
+  class="fixed   z-50  w-2/5 p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+  <div class="relative w-full max-w-2xl max-h-full">
+    <div class="fixed py-5 flex justify-center inset-0 bg-gray-500 bg-opacity-75 transition-opacity">
+
+      <!-- Modal content -->
+      <div style="height: fit-content;" class="relative  mt-[8rem] bg-white rounded-lg shadow dark:bg-gray-700">
+        <div style="flex-direction: column;"
+          class="flex items-start justify-between p-4 rounded-t dark:border-gray-600">
+
+          <div class="flex justify-between">
+            <h3 class="text-xl font-semibold text-gray-600 dark:text-white ml-4">
+              Please fill all required fields !!!
+            </h3>
+
+          </div>
+          <br><br><br>
+
+          <div class="flex justify-center w-full">
+            <button (click)="errorPop=false" data-modal-hide="saveModel" type="button"
+              class="text-white  focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-md text-sm px-5 py-2.5 text-center dark:bg-blue-600 bg-[#0175A2]">
+              Ok</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

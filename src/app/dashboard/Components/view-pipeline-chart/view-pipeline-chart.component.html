@@ -1,0 +1,91 @@
+<div class="mt-7  w-full 2xl:text-2xl  bg-white  rounded-lg shadow-md px-2 py-3 ">
+  <div class=" text-[0.876rem] text-[#101828] font-medium mx-2">Pipeline Engaged</div>
+  <div class="flex content-center justify-center mt-2">
+
+  </div>
+  <div class="flex w-full justify-between space-x-4 mt-2 xl:pb-4 lg:pb-4">
+
+    <div
+      class=" left-0 top-0 2xl:w-[200px] xl:w-[20%] xl:h-[20%] 2xl:h-full lg:w-40 lg:h-40   md:w-[140px] md:h-[200px]  text-center text-[12.5045px]">
+      <div class="font-medium text-[#101828]">Today</div>
+      <canvas id="today"></canvas>
+    </div>
+    <div
+      class=" inset-x-0 top-0 2xl:w-[200px] xl:w-[20%] xl:h-[20%] 2xl:h-full lg:w-40 lg:h-40  md:w-[140px] md:h-[200px] text-center text-[12.5045px]">
+      <div class="font-medium text-[#101828]">Last 7 Days</div>
+      <canvas id="7daysChart"></canvas>
+    </div>
+    <div
+      class="  top-0 right-0 2xl:w-[200px] xl:w-[20%] xl:h-[20%] 2xl:h-full lg:w-40 lg:h-40  md:w-[140px] md:h-[200px] text-center text-[12.5045px]">
+      <div class="font-medium text-[#101828]">Last 30 Days</div>
+      <canvas id="30daysChart"></canvas>
+    </div>
+  </div>
+
+<div class="mx-2">
+
+  <table class="w-full h-36  text-black   font-medium xl:mt-2 mt-6">
+    <thead class=" bg-green-100">
+      <tr>
+        <td></td>
+        <td>
+          <div class="grid place-items-center">
+            <div class="flex space-x-1 text-center ">
+              <div class="w-2 h-2 bg-amber-400 rounded-full 2xl:mt-[0.8rem]  mt-[0.4rem]"></div><span
+                class="text-[12.5045px] text-[#101828]">Sourced</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div class="grid place-items-center">
+            <div class="flex space-x-1 text-center">
+              <div class="w-2 h-2 bg-blue-400 rounded-full 2xl:mt-[0.8rem]  mt-[0.4rem]"></div><span
+                class="text-[12.5045px] text-[#101828] ">Applied</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div class="grid place-items-center">
+            <div class="flex space-x-1 text-center">
+              <div class="w-2 h-2 bg-red-400 rounded-full 2xl:mt-[0.8rem]  mt-[0.4rem]"></div><span
+                class="text-[12.5045px] text-[#101828]">Shortlisted</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div class="grid place-items-center">
+            <div class="flex space-x-1 text-center">
+              <div class="w-2 h-2 bg-[#dbdbf7] rounded-full 2xl:mt-[0.8rem] mt-[0.4rem] "></div><span
+                class="text-[12.5045px] text-[#101828]">Closed</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </thead>
+    <tbody class="pt-10 2xl:pt-30">
+      <tr>
+        <td class="text-[12.5045px] text-[#101828]">Today</td>
+        <td class="text-center text-[12.5045px] text-[#101828]">{{pipelineEngagemet.candidatesSourcedToday}}</td>
+        <td class="text-center text-[12.5045px] text-[#101828]">{{pipelineEngagemet.candidatesAppliedToday}}</td>
+        <td class="text-center text-[12.5045px] text-[#101828]">{{pipelineEngagemet.candidatesShortListedToday}}</td>
+        <td class="text-center text-[12.5045px] text-[#101828]">{{pipelineEngagemet.candidatesOfferedToday}}</td>
+      </tr>
+      <tr>
+        <td class="text-[12.5045px] text-[#101828]">Last 7 Days</td>
+        <td class="text-center text-[12.5045px] text-[#101828] ">{{pipelineEngagemet.candidatesSourcedLast7Days}}</td>
+        <td class="text-center text-[12.5045px] text-[#101828]">{{pipelineEngagemet.candidatesAppliedLast7Days}}</td>
+        <td class="text-center text-[12.5045px] text-[#101828]">{{pipelineEngagemet.candidatesShortListedLast7Days}}</td>
+        <td class="text-center text-[12.5045px] text-[#101828]">{{pipelineEngagemet.candidatesOfferedLast7Days}}</td>
+      </tr>
+      <tr>
+        <td class="text-[12.5045px] text-[#101828]">Last 30 Days</td>
+        <td class="text-center text-[12.5045px] text-[#101828]">{{pipelineEngagemet.candidatesSourcedLast30Days}}</td>
+        <td class="text-center text-[12.5045px] text-[#101828]">{{pipelineEngagemet.candidatesAppliedLast30Days}}</td>
+        <td class="text-center text-[12.5045px] text-[#101828]">{{pipelineEngagemet.candidatesShortListedLast30Days}}</td>
+        <td class="text-center text-[12.5045px] text-[#101828]">{{pipelineEngagemet.candidatesOfferedLast30Days}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</div>

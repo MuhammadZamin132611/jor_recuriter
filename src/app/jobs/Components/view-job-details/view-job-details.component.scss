@@ -1,0 +1,62 @@
+@media screen and (max-width: 600px) and (min-width: 100px) {
+    // .res-1{
+
+
+    // }
+
+    .aside {
+        margin-left: 180px;
+        padding-right: 80%;
+    }
+}
+
+
+// laptop
+@media screen and (min-width: 1024px) {
+    .aside {
+        // margin-right:150px;
+    }
+}
+
+::-webkit-scrollbar {
+
+
+
+
+    width: 5px;
+
+
+
+}
+
+
+
+/*Track*/
+
+
+
+::-webkit-scrollbar-track {
+
+
+
+    visibility: hidden;
+
+
+
+}
+
+
+
+/* Handle */
+
+
+
+::-webkit-scrollbar-thumb {
+
+
+
+    visibility: hidden;
+
+
+
+}

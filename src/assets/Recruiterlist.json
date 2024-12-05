@@ -1,0 +1,46 @@
+[
+    {
+      "recruiterId": "eb381b3b-4dae-44bd-ad16-5bd59fbd78d2",
+      "fullName": "Recruiter",
+      "organizationMailId": "recruiters1@gmail.com",
+      "mobileNumber": "7436374374",
+      "imageurl": "1684401334000_1677244512472_1666178444924_1665985707723_jk1.jfif",
+      "role": "RECRUITER",
+      "permission": "RECRUITER",
+      "status": "ACTIVE",
+      "recruiterToken": null
+    },
+    {
+      "recruiterId": "49494e2e-d434-47d7-b01b-ac4191ead0ab",
+      "fullName": "anilkundae",
+      "organizationMailId": "anil@kundan.com",
+      "mobileNumber": "1112134578",
+      "imageurl": "1684416993141_Screenshot (1).png",
+      "role": "RECRUITER",
+      "permission": "RECRUITER",
+      "status": "ACTIVE",
+      "recruiterToken": null
+    },
+    {
+      "recruiterId": "ee331f41-9ac5-49f3-aeb5-f922e4930c10",
+      "fullName": "mani",
+      "organizationMailId": "mani@kuni.com",
+      "mobileNumber": "7845124152",
+      "imageurl": "1684417088224_Screenshot (2).png",
+      "role": "RECRUITER",
+      "permission": "RECRUITER",
+      "status": "ACTIVE",
+      "recruiterToken": null
+    },
+    {
+      "recruiterId": "7f0894a6-d300-4ab3-bc70-f8a736a655c6",
+      "fullName": "surea",
+      "organizationMailId": "surea@nan.com",
+      "mobileNumber": "7878451241",
+      "imageurl": "1684417049355_Screenshot (3).png",
+      "role": "RECRUITER",
+      "permission": "RECRUITER",
+      "status": "ACTIVE",
+      "recruiterToken": null
+    }
+  ]

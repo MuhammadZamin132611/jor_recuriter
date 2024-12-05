@@ -1,0 +1,11 @@
+<div class="w-full mx-4 py-4 h-full">
+    <div class=" max-w-full mx-4 space-y-6">
+
+<div  *ngFor="let i of userData ; let index = index" class="space-y-2">
+    <p class="text-gray-600">{{index + 1}}.{{i.question}}</p>
+    <p class="text-black font-medium text-[0.9rem]">{{i.answers}}</p>
+</div>
+
+</div>
+
+</div>

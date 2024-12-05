@@ -1,0 +1,535 @@
+<div class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true" *ngIf="!bulk">
+    <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+    <div class="fixed inset-0 z-10 overflow-y-auto">
+        <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+            <div class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all ">
+                <div class=" flex w-full   max-h-full shadow-lg rounded-lg" [ngClass]="SMS?'max-w-lg':'max-w-5xl'">
+                    <div class="">
+                        <div class="ml-6 mr-6 mt-6 ">
+                            <div class="flex">
+                                <div class="">
+                                    <svg width="56" height="56" viewBox="0 0 56 56" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="4" y="4" width="48" height="48" rx="24" fill="#F4EBFF" />
+                                        <path
+                                            d="M38 22C38 20.9 37.1 20 36 20H20C18.9 20 18 20.9 18 22M38 22V34C38 35.1 37.1 36 36 36H20C18.9 36 18 35.1 18 34V22M38 22L28 29L18 22"
+                                            stroke="#0175A2" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <rect x="4" y="4" width="48" height="48" rx="24" stroke="#F9F5FF"
+                                            stroke-width="8" />
+                                    </svg>
+                                </div>
+                                <p class="text-lg ml-5 mt-4" *ngIf="!SMS">
+                                    Email Candidate
+                                </p>
+                                <p class="text-lg ml-5 mt-4" *ngIf="SMS">
+                                    Message Candidate
+                                </p>
+                            </div>
+                            <p class="text-md text-gray-500 ml-10" *ngIf="!SMS">
+                                The following candidate will receive the Email:
+                            </p>
+                            <p class="text-md text-gray-500 m-10" *ngIf="SMS">
+                                The following candidate will receive the Message:
+                            </p>
+                            <div class="">
+                                <div class="ml-10 mr-6 mt-2">
+                                    <form action="" [formGroup]="MessageForm">
+                                        <select name="" id="" (change)="chooseMessage($event.target)"
+                                            class=" border border-gray-300 text-gray-900 text-sm rounded-lg   block mt-2 w-80 pl-10 p-2.5  ">
+                                            <option value="Email" [selected]="!SMS">Email Candidate</option>
+                                            <option value="SMS" [selected]="SMS">SMS Candidate</option>
+                                        </select>
+                                        <div class="relative">
+                                            <div
+                                                class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+                                                <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400"
+                                                    fill="currentColor" *ngIf="!SMS" viewBox="0 0 20 20"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z">
+                                                    </path>
+                                                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z">
+                                                    </path>
+                                                </svg>
+                                                <svg *ngIf="SMS" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                    class="w-5 h-5">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+                                                </svg>
+                                            </div>
+                                            <input type="text" id="email-address-icon" formControlName="email" readonly
+                                                class=" border border-gray-300 text-gray-900 text-sm rounded-lg mb-2   block mt-2 w-80 pl-10 p-2.5  "
+                                                placeholder="email@address.com " *ngIf="!SMS">
+                                            <input type="text" id="email-address-icon" formControlName="number" readonly
+                                                class=" border border-gray-300 text-gray-900 text-sm rounded-lg   block mt-2 w-80 pl-10 p-2.5  "
+                                                placeholder="email@address.com" *ngIf="SMS">
+                                        </div>
+                                        <div class="mt-6" *ngIf="SMS">
+                                            <textarea
+                                                class="border  border-solid border-gray px-2.5 rounded-md w-96 h-42 text-gray-3 focus:none"
+                                                formControlName="message" placeholder="Type your message here...">
+                                  </textarea>
+                                        </div>
+                                        <div class="NgxEditor__Wrapper  min-w-full  max-w-screen-sm " *ngIf="!SMS">
+                                            <ng-container *ngIf="true">
+                                                <ngx-editor-menu [editor]="editor" [toolbar]="toolbar">
+                                                </ngx-editor-menu>
+
+                                            </ng-container>
+                                            <div class="h-56 overflow-y-auto   ">
+                                                <ngx-editor [editor]="editor" [placeholder]="'Type here...'"
+                                                    formControlName="mailMessage"></ngx-editor>
+                                            </div>
+
+                                        </div>
+                                        <div class="mt-2 bottom-4 h-16" *ngIf="!SMS">
+                                            <div class="flex ">
+
+                                                <div class=" ">
+                                                    <svg (click)="fileInput.click()" xmlns="http://www.w3.org/2000/svg"
+                                                        fill="none" stroke-width="1.5" stroke="currentColor"
+                                                        class="w-10 h-10">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M18.375 12.739l-7.693 7.693a4.5 4.5 0 01-6.364-6.364l10.94-10.94A3 3 0 1119.5 7.372L8.552 18.32m.009-.01l-.01.01m5.699-9.941l-7.81 7.81a1.5 1.5 0 002.112 2.13" />
+                                                    </svg>
+                                                    <div class="absolute">
+                                          
+                                                    <div *ngIf="error" class="text-red-800 w-full">
+                                                        * Max file size 25Mb
+                                                    </div>
+                                                    <input type="file" class="invisible" #fileInput
+                                                        (change)="selectFile($event)" name="seleceteFile" id=""
+                                                        multiple="multiple" max="5" max-size="1048576"
+                                                        max-total-size="5242880">
+                                                                      
+                                                    </div>
+                                                </div>
+                                                <div class="flex gap-3 h-16 overflow-y-auto ">
+
+                                                    <div *ngFor="let files of listOfFiles;let i=index"
+                                                        class="bg-blue-200  justify-center items-center rounded-lg w-30 h-6 flex">
+
+
+
+                                                        <p class="" [ngClass]="files.name.length>18?'truncate':''">
+                                                            {{files.name}}
+
+                                                        </p>
+                                                        <p *ngIf="files.name.length>18">{{files.name.split('.').pop()}}
+                                                        </p>
+
+                                                        <button (click)="removeSelectedFiles(i)"><svg
+                                                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                                                fill="currentColor" class="w-5 h-5">
+                                                                <path
+                                                                    d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
+                                                            </svg>
+
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+
+                                        </div>
+                                        <div class="grid place-items-center w-full">
+                                            <div class="flex space-x-8 mt-4 mb-4">
+                                                <div>
+                                                    <button
+                                                        class="bg-white border border-gray-300 text-base font-medium text-gray-700 w-40 rounded-md h-11 "
+                                                        (click)="cancel()">Cancel</button>
+                                                </div>
+                                                <div>
+                                                    <button (click)="sendMail()" *ngIf="!SMS"
+                                                        class="bg-[#0175A2] text-base font-medium text-white w-40 rounded-md h-11 disabled:bg-opacity-25" [disabled]="MessageForm.value.mailMessage==null">Send
+                                                        Email</button>
+                                                    <button (click)="sendSmsToCandidates()" *ngIf="SMS"
+                                                        class="bg-[#0175A2] text-base font-medium text-white w-40 rounded-md h-11 disabled:bg-opacity-25" [disabled]="MessageForm.value.message==null">Send
+                                                        Message</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="relative z-8" aria-labelledby="modal-title" role="dialog" aria-modal="true" *ngIf="bulk">
+    <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+    <div class="fixed inset-0 z-10">
+        <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+            <div class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all ">
+                <div class=" flex w-full max-w-5xl  max-h-full shadow-lg rounded-lg  ">
+                    <div class="">
+                        <div class="flex  my-4 w-full ">
+                            <div class="mx-10 space-y-4 w-4/6">
+
+
+                                <div class="  flex">
+                                    <div class="">
+                                        <svg width="56" height="56" viewBox="0 0 56 56" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <rect x="4" y="4" width="48" height="48" rx="24" fill="#F4EBFF" />
+                                            <path
+                                                d="M38 22C38 20.9 37.1 20 36 20H20C18.9 20 18 20.9 18 22M38 22V34C38 35.1 37.1 36 36 36H20C18.9 36 18 35.1 18 34V22M38 22L28 29L18 22"
+                                                stroke="#0175A2" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <rect x="4" y="4" width="48" height="48" rx="24" stroke="#F9F5FF"
+                                                stroke-width="8" />
+                                        </svg>
+                                    </div>
+                                    <p class="text-lg ml-5 mt-4 " *ngIf="!SMS">
+                                        Email Candidates
+                                    </p>
+                                    <p class="text-lg ml-5 mt-4" *ngIf="SMS">
+                                        Message Candidates
+                                    </p>
+                                </div>
+                                <div *ngIf="!SMS">
+                                    The following candidates will receive the Email:
+                                </div>
+                                <div *ngIf="SMS">
+                                    The following candidates will receive the Message:
+                                </div>
+                                <div class="overflow-y-auto   mt-2 " [ngClass]="SMS?'h-40':'h-[19rem]'">
+                                    <div *ngFor="let data of Candidates | slice:0:10 ">
+                                        <div class="flex relative space-y-3 mx-2">
+                                            <div class="w-12 mt-4">
+                                                <img class="w-10 h-10  border-white shadow-lg rounded-full"
+                                                    src="https://job-check.s3.ap-south-1.amazonaws.com/{{data.profilePictureUrl}}"
+                                                    alt="" srcset="" *ngIf="data.profilePictureUrl!=null">
+                                                <div *ngIf="data.profilePictureUrl==null"
+                                                    class="w-10 h-10  border-white shadow-lg rounded-full">
+
+                                                    <p
+                                                        class=" flex items-center justify-center bg-white  w-10 h-10 rounded-full">
+                                                        {{data.fullName==null?'':data.fullName[0]|titlecase}}
+
+                                                    </p>
+                                                </div>
+
+                                            </div>
+                                            <div class=" text-clip ml-4">
+                                                <div>
+                                                    {{data.fullName|titlecase}}
+                                                </div>
+                                                <p class="text-gray-400 text-clip " *ngIf="!SMS">
+                                                    {{data.email}}
+
+                                                </p>
+                                                <p class="text-gray-400 text-clip " *ngIf="SMS">
+                                                    {{data.mobileNumber}}
+                                                </p>
+
+
+                                            </div>
+                                            <div class="mt-4 absolute top-0 right-0">
+                                                <button class="text-red-600 " (click)="removeCandidtaes(data)">
+                                                    Remove
+
+                                                </button>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div *ngIf="Candidates.length > 10" class="font-lg text-center mt-4">
+                                        Maximum 10 candidate(s) can be selected.
+                                      </div>
+                                    <div *ngIf="Candidates.length==0" class="font-lg text-center "
+                                        [ngClass]="SMS?'mt-14':'mt-32'">
+                                        No Candidates Selected
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="vertical-line" class=" mb-16 bg-gray-200 "></div>
+
+                            <div class="mx-10 min-w-sm max-w-sm">
+                                <!-- <div class=" "> -->
+
+                                <form action="  " class="space-y-2 mt-14 " [formGroup]="MessageForm">
+
+
+                                    <select name="" id="" (change)="chooseMessage($event.target)"
+                                        class=" border border-gray-300 text-gray-900 text-sm rounded-lg   block w-80 pl-10 p-2.5  ">
+                                        <option value="Email" [selected]="!SMS">
+                                            Email Candidates
+                                        </option>
+                                        <option class="" value="SMS" [selected]="SMS">SMS Candidates</option>
+
+
+                                    </select>
+                                    <div *ngIf="SMS">
+                                        <textarea formControlName="message"
+                                            class="  border  border-solid border-gray px-2 py-2 rounded-md w-full h-42 text-gray-3 focus:none"
+                                            placeholder="Type your message here...">
+                    </textarea>
+                                    </div>
+                                    <div class="NgxEditor__Wrapper  w-full" *ngIf="!SMS">
+                                        <ngx-editor-menu [editor]="editor" [toolbar]="toolbar">
+                                        </ngx-editor-menu>
+                                        <div class="overflow-y-auto h-60 ">
+                                            <ngx-editor [editor]="editor" [placeholder]="'Type here...'"
+                                                formControlName="mailMessage"></ngx-editor>
+                                        </div>
+
+                                    </div>
+                                    <div class="      h-14 ">
+                                        <div class="grid grid-cols-6 ">
+
+                                            <div class="col-span-1 ">
+                                                <svg *ngIf="!SMS" (click)="fileInput.click()"
+                                                    xmlns="http://www.w3.org/2000/svg" fill="none" stroke-width="1.5"
+                                                    stroke="currentColor" class="w-10 h-10">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M18.375 12.739l-7.693 7.693a4.5 4.5 0 01-6.364-6.364l10.94-10.94A3 3 0 1119.5 7.372L8.552 18.32m.009-.01l-.01.01m5.699-9.941l-7.81 7.81a1.5 1.5 0 002.112 2.13" />
+                                                </svg>
+
+                                                <input type="file" class="invisible" #fileInput
+                                                    (change)="selectFile($event)" name="seleceteFile" id=""
+                                                    multiple="multiple">
+                                            </div>
+                                            <div *ngIf="!SMS"
+                                                class="col-span-5  grid grid-cols-3 gap-2 h-16 overflow-y-auto ">
+
+                                                <div *ngFor="let files of listOfFiles;let i=index"
+                                                    class="bg-blue-200  justify-center items-center rounded-lg w-30 h-6 flex">
+
+
+
+                                                    <p class="" [ngClass]="files.name.length>12?'truncate':''">
+                                                        {{files.name}}
+
+                                                    </p>
+                                                    <p *ngIf="files.name.length>12">{{files.name.split('.').pop()}}</p>
+
+                                                    <button (click)="removeSelectedFiles(i)"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                                            fill="currentColor" class="w-5 h-5">
+                                                            <path
+                                                                d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
+                                                        </svg>
+
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div *ngIf="error && !SMS"  class="text-red-800 -mt-10 w-full">
+                                        * Max file size 25Mb
+                                    </div>
+                                    <div class=" flex space-x-2 mt-1 mb-4">
+
+
+                                        <button
+                                            class="bg-white border border-gray-300 text-base font-medium text-gray-700 w-full  rounded-md h-11 "
+                                            (click)="cancel()">Cancel</button>
+
+                                        <button *ngIf="!SMS" (click)="bulkmail()" [disabled]="Candidates.length==0 || MessageForm.value.mailMessage==null"
+                                            class="bg-[#0175A2] text-base font-medium text-white w-full  rounded-md h-11 disabled:bg-opacity-25">Send
+                                            Email</button>
+                                        <button (click)="bulkSms()" [disabled]="Candidates.length==0 || MessageForm.value.message==null"
+                                            class="bg-[#0175A2] text-base font-medium text-white w-full rounded-md h-11 disabled:bg-opacity-25"
+                                            *ngIf="SMS">Send Message</button>
+
+
+
+                                    </div>
+                                </form>
+                            </div>
+
+                            <!-- </div> -->
+                        </div>
+
+                        <!-- <div class="ml-6 mr-6 mt-6 ">
+                            <div class="flex">
+                                <div class="">
+                                    <svg width="56" height="56" viewBox="0 0 56 56" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="4" y="4" width="48" height="48" rx="24" fill="#F4EBFF" />
+                                        <path
+                                            d="M38 22C38 20.9 37.1 20 36 20H20C18.9 20 18 20.9 18 22M38 22V34C38 35.1 37.1 36 36 36H20C18.9 36 18 35.1 18 34V22M38 22L28 29L18 22"
+                                            stroke="#0175A2" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <rect x="4" y="4" width="48" height="48" rx="24" stroke="#F9F5FF"
+                                            stroke-width="8" />
+                                    </svg>
+                                </div>
+                                <p class="text-lg ml-5 mt-4 " *ngIf="!SMS">
+                                    Email Candidate
+                                </p>
+                                <p class="text-lg ml-5 mt-4" *ngIf="SMS">
+                                    Message Candidate
+                                </p>
+                            </div>
+                            <p class="text-md text-gray-500 mt-6 ml-16" *ngIf="!SMS">
+                                The following candidate will receive the Email:
+                            </p>
+                            <p class="text-lg text-gray-500 mt-6 mx-8" *ngIf="SMS">
+                                The following candidate will receive the Message:
+                            </p>
+                            <div class="grid grid-cols-2">
+                                <div class="overflow-y-auto  mt-[3.5rem] bg-gray-100 " [ngClass]="SMS?'h-32':'h-[19rem]'">
+                                    <div *ngFor="let data of Candidates ">
+                          <div class="flex relative space-y-3 mx-2">
+                          <div class="w-12 mt-4">
+                            <img class="w-10 h-10  border-white shadow-lg rounded-full"
+                              src="https://job-check.s3.ap-south-1.amazonaws.com/{{data.profilePictureUrl}}" alt=""
+                              srcset="" *ngIf="data.profilePictureUrl!=null">
+                            <div *ngIf="data.profilePictureUrl==null"
+                              class="w-10 h-10  border-white shadow-lg rounded-full">
+    
+                              <p class=" flex items-center justify-center bg-white  w-10 h-10 rounded-full">
+                                {{data.fullName[0]|titlecase}}
+    
+                              </p>
+                            </div>
+    
+                          </div>
+                          <div class=" text-clip ml-4">
+                            <div>
+                              {{data.fullName|titlecase}}
+                            </div>
+                            <p class="text-gray-400 text-clip " *ngIf="!SMS">
+                              {{data.email}}
+    
+                            </p>
+                            <p class="text-gray-400 text-clip "  *ngIf="SMS">
+                              {{data.mobileNumber}}
+                            </p>
+    
+    
+                          </div>
+                          <div class="mt-4 absolute top-0 right-0">
+                            <button class="text-red-600 " (click)="removeCandidtaes(data)">
+                              Remove
+    
+                            </button>
+    
+                          </div>
+                        </div>
+                      </div>
+                    <div class="text-center justify-center font-semibold text-lg " [ngClass]="SMS?'mt-14':'mt-36'" *ngIf="Candidates.length==0">
+                                        No candidates selected
+                                    </div>
+                                </div>
+                                <div class="">
+                                    <div class="ml-10 mr-6 mb-8">
+                                        <form action="" [formGroup]="MessageForm">
+                                            <div class="relative">
+                                                <select name="" id="" (change)="chooseMessage($event.target)"
+                                                    class=" border border-gray-300 text-gray-900 text-sm rounded-lg   block w-80 pl-10 p-2.5  ">
+                                                    <option value="Email" [selected]="!SMS">
+                                                        Email Candidate
+                                                    </option>
+                                                    <option class="" value="SMS" [selected]="SMS">SMS Candidate</option>
+
+
+                                                </select>
+
+                                            </div>
+                                            <div class="mt-4 ">
+                                                <div>
+                                                    <textarea  formControlName="message" 
+                                                        class="  border  border-solid border-gray rounded-md w-full h-32 text-gray-3 focus:none"
+                                                        placeholder="Type your message here..." *ngIf="SMS">
+                    </textarea>
+                    
+                                                </div>
+
+
+                                                <div class="NgxEditor__Wrapper w-full " *ngIf="!SMS">
+                                                    <ngx-editor-menu [editor]="editor" [toolbar]="toolbar">
+                                                    </ngx-editor-menu>
+                                                    <div class="overflow-y-auto h-60">
+                                                        <ngx-editor [editor]="editor"
+                                                            [placeholder]="'Type here...'" formControlName="mailMessage"></ngx-editor>
+                                                    </div>
+
+                                                </div>
+                                                <div class="   bottom-4   h-16">
+                                                    <div class="grid grid-cols-6 ">
+        
+                                                    <div class="col-span-1 ">
+                                                        <svg *ngIf="!SMS" (click)="fileInput.click()"
+                                                            xmlns="http://www.w3.org/2000/svg" fill="none" stroke-width="1.5"
+                                                            stroke="currentColor" class="w-10 h-10">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                d="M18.375 12.739l-7.693 7.693a4.5 4.5 0 01-6.364-6.364l10.94-10.94A3 3 0 1119.5 7.372L8.552 18.32m.009-.01l-.01.01m5.699-9.941l-7.81 7.81a1.5 1.5 0 002.112 2.13" />
+                                                        </svg>
+                                                       
+                                                        <input type="file" class="invisible" #fileInput
+                                                            (change)="selectFile($event)" name="seleceteFile" id=""
+                                                            multiple="multiple" >
+                                                    </div>
+                                                    <div *ngIf="!SMS" class="col-span-5  grid grid-cols-3 gap-2 h-16 overflow-y-auto ">
+        
+                                                        <div *ngFor="let files of listOfFiles;let i=index"
+                                                            class="bg-blue-200  justify-center items-center rounded-lg w-30 h-6 flex">
+                                                            
+                                       
+        
+                                                            <p class="" [ngClass]="files.name.length>12?'truncate':''">
+                                                                {{files.name}}
+                                                               
+                                                            </p>
+                                                            <p *ngIf="files.name.length>12">{{files.name.split('.').pop()}}</p>
+                                  
+                                                            <button (click)="removeSelectedFiles(i)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                                                                <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
+                                                              </svg>
+                                                              
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+        
+                                           
+        
+                                                </div>
+                             
+
+
+                                            </div>
+                                            <div *ngIf="error" class="text-red-800 -mt-10 w-full">
+                                                * Max file size 25Mb
+                                            </div>
+                                            <div class=" flex space-x-2 mt-1 mb-4">
+
+
+                                                <button
+                                                    class="bg-white border border-gray-300 text-base font-medium text-gray-700 w-full  rounded-md h-11 "
+                                                    (click)="cancel()">Cancel</button>
+
+                                                <button *ngIf="!SMS" (click)="bulkmail()" [disabled]="Candidates.length==0"
+                                                    class="bg-[#0175A2] text-base font-medium text-white w-full  rounded-md h-11 ">Send
+                                                    Email</button>
+                                                <button (click)="bulkSms()" [disabled]="Candidates.length==0"
+                                                    class="bg-[#0175A2] text-base font-medium text-white w-full rounded-md h-11 "
+                                                    *ngIf="SMS">Send Message</button>
+
+
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div> -->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

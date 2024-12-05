@@ -1,0 +1,36 @@
+<div class="mx-8 h-fit  ">
+
+    <div class="relative flex py-2 h-10  w-full  rounded-t-xl">
+        <div class="absolute flex space-x-6 inset-y-2 right-8">
+
+            <svg (click)="openResume()"  width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"
+                class="mt-0.5 cursor-pointer">
+                <path d="M13 1H19M19 1V7M19 1L12 8M7 19H1M1 19V13M1 19L8 12" stroke="#667085" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <svg (click)="downloadResume()" class="cursor-pointer" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M1.5 9.2511V15.0844C1.5 15.5265 1.67559 15.9504 1.98816 16.2629C2.30072 16.5755 2.72464 16.7511 3.16667 16.7511H14.8333C15.2754 16.7511 15.6993 16.5755 16.0118 16.2629C16.3244 15.9504 16.5 15.5265 16.5 15.0844V9.2511"
+                    stroke="#667085" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M5.58203 9.25146L8.9987 12.5848L12.4154 9.25146" stroke="#667085" stroke-width="1.83333"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M8.99805 1.25146V10.8348" stroke="#667085" stroke-width="1.83333" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+        </div>
+        <div *ngIf="userData.length == 0" class="text-center mt-5 p-2">
+            Not Available
+          </div>
+
+
+    </div>
+
+
+    <div class="h-fit bg-white">
+        <pdf-viewer [src]="pdfSrc"
+        [render-text]="true"
+        [original-size]="true"
+        style="width: 100%; height: 120vh"
+></pdf-viewer>
+    </div>
+</div>

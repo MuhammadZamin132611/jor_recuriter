@@ -1,0 +1,94 @@
+[
+    {
+        "requirementId": "7f18669a-6753-4c53-97c8-d751ef3c5e8f",
+        "title": "UI/UX designer and Developer",
+        "status": "ACTIVE",
+        "lastModified": "2023-05-19T09:45:12.295+00:00",
+        "positionsClosed": 0,
+        "totalpositions": 5,
+        "statusType": "JOBPOST",
+        "bookMark": "FALSE",
+        "recruiterAccounts": [
+          {
+            "accountId": "eb381b3b-4dae-44bd-ad16-5bd59fbd78d2",
+            "imageUrl": "1684401334000_1677244512472_1666178444924_1665985707723_jk1.jfif",
+            "fullName": "Recruiter",
+            "organizationMailId": "recruiters1@gmail.com",
+            "mobileNumber": "7436374374"
+          },
+          {
+            "accountId": "49494e2e-d434-47d7-b01b-ac4191ead0ab",
+            "imageUrl": "1684416993141_Screenshot (1).png",
+            "fullName": "anilkundae",
+            "organizationMailId": "anil@kundan.com",
+            "mobileNumber": "1112134578"
+          },
+          {
+            "accountId": "ee331f41-9ac5-49f3-aeb5-f922e4930c10",
+            "imageUrl": "1684417088224_Screenshot (2).png",
+            "fullName": "mani",
+            "organizationMailId": "mani@kuni.com",
+            "mobileNumber": "7845124152"
+          },
+          {
+            "accountId": "7f0894a6-d300-4ab3-bc70-f8a736a655c6",
+            "imageUrl": "1684417049355_Screenshot (3).png",
+            "fullName": "surea",
+            "organizationMailId": "surea@nan.com",
+            "mobileNumber": "7878451241"
+          }
+        ],
+        "statuses": [
+          {
+            "requirementStatusId": "c89e6a02-43c8-4a50-ac80-53f899d79412",
+            "modifiedDate": "2023-05-19",
+            "reasons": "Many Job openings are there",
+            "comments": null,
+            "modifiedBy": "RecruiterManager",
+            "remarkStatus": "INACTIVE"
+          },
+          {
+            "requirementStatusId": "c473271e-ace3-42bc-b758-11b8d231d63d",
+            "modifiedDate": "2023-05-19",
+            "reasons": "Many Job openings are there",
+            "comments": null,
+            "modifiedBy": "RecruiterManager",
+            "remarkStatus": "ACTIVE"
+          }
+        ]
+      },
+      {
+        "requirementId": "9f9fe66d-4b0e-45e6-baba-697575de471f",
+        "title": "Software Developer",
+        "status": "ACTIVE",
+        "lastModified": "2023-05-19T10:05:11.875+00:00",
+        "positionsClosed": 0,
+        "totalpositions": 100,
+        "statusType": "PUBLISH",
+        "bookMark": "FALSE",
+        "recruiterAccounts": [
+          {
+            "accountId": "eb381b3b-4dae-44bd-ad16-5bd59fbd78d2",
+            "imageUrl": "1684401334000_1677244512472_1666178444924_1665985707723_jk1.jfif",
+            "fullName": "Recruiter",
+            "organizationMailId": "recruiters1@gmail.com",
+            "mobileNumber": "7436374374"
+          },
+          {
+            "accountId": "7f0894a6-d300-4ab3-bc70-f8a736a655c6",
+            "imageUrl": "1684417049355_Screenshot (3).png",
+            "fullName": "surea",
+            "organizationMailId": "surea@nan.com",
+            "mobileNumber": "7878451241"
+          },
+          {
+            "accountId": "49494e2e-d434-47d7-b01b-ac4191ead0ab",
+            "imageUrl": "1684416993141_Screenshot (1).png",
+            "fullName": "anilkundae",
+            "organizationMailId": "anil@kundan.com",
+            "mobileNumber": "1112134578"
+          }
+        ],
+        "statuses": []
+      }
+]

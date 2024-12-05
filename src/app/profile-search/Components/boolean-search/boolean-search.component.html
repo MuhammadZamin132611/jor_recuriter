@@ -1,0 +1,92 @@
+
+<div class=" bg-[#F9FAFB] mx-2 pl-[4rem] w-full rounded-lg  overflow-hidden">
+  <div class="h-[{{height-60}}px] overflow-y-auto ">
+
+  <div class="relative flex bg-white  px-4  w-full">
+    <!-- <p class="text-[16px]  font-normal text-gray-500">
+      Boolean Search
+    </p> -->
+    <div class="lg:hidden absolute right-6 inset-y-0 mt-4 ml-2" (click)="closePops()"> 
+
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </div>
+
+  </div>
+  <div class="px-4 xl:px-6 w-full mb-[1rem] pt-[0.875rem]">
+    <label for="company-website" class="block  font-medium text-gray-700 text-[0.9rem] font-[rubik] ">Job Titles
+    </label>
+    <p class="text-[11px] font-normal text-gray-500">OR (At least include one of them)</p>
+    <div class="mt-1  flex rounded-md  ">
+      <input type="text"
+        class="w-11/12 h-11 px-3 mb-2 text-base text-gray-700  border border-gray-300 rounded-lg focus:shadow-outline outline-none  mt-1.5 "
+        placeholder="eg. Junior Developer, Tech Support Engineer" readonly>
+    </div>
+
+    <label for="company-website" class="block font-medium text-gray-700  text-[0.9rem] font-[rubik]  ">Skills
+    </label>
+    <p class="text-[11px] font-normal text-gray-500">AND (Include all of them)</p>
+    <div class="mt-1 flex rounded-md">
+      <input type="text"
+        class="w-11/12  h-11 px-3 mb-2 text-base text-gray-700  border border-gray-300  rounded-lg focus:shadow-outline outline-none  mt-1.5 "
+        placeholder="eg.Java, Python" readonly>
+    </div>
+
+    <p class="text-[11px] font-normal text-gray-500">OR (At least include one of them)</p>
+    <div class="mt-1 flex rounded-md">
+      <input type="text"
+        class="w-11/12  h-11 px-3 mb-2 text-base text-gray-700  border rounded-lg focus:shadow-outline outline-none  mt-1.5 "
+        placeholder="eg.Junior Developer, Tech Support Engineer" readonly>
+    </div>
+
+    <p class="text-[11px] text-gray-500 font-normal">NOT (Exclude)</p>
+    <div class="mt-1 flex rounded-md">
+      <input type="text"
+        class="w-11/12  h-11 px-3 mb-2 text-base text-gray-700  border border-gray-300  rounded-lg focus:shadow-outline outline-none  mt-1.5 "
+        placeholder="eg.Ruby" readonly>
+    </div>
+
+    <label for="company-website" class="block font-medium text-gray-700  text-[0.9rem] font-[rubik]    mt-6 ">Location
+    </label>
+    <p class="text-[11px] font-normal text-gray-500">OR (Atleast include one of them)</p>
+    <div class="mt-1 flex rounded-md">
+      <input type="text"
+        class="w-11/12  h-11 px-3 mb-2 text-base text-gray-700 border-gray-300  border rounded-lg focus:shadow-outline outline-none  mt-1.5 "
+        placeholder="eg. Java, Python" readonly>
+    </div>
+
+    <label for="company-website" class="block font-medium text-gray-700  text-[0.9rem] font-[rubik]    mt-6 ">Generated Boolean
+    </label>
+    <div class="mt-1 flex rounded-md">
+      <input type="text"
+        class="w-11/12  h-11 px-3 mb-2 text-base text-gray-700  border border-gray-300  rounded-lg focus:shadow-outline outline-none  mt-1.5 "
+        placeholder="eg. Java, Python" readonly>
+    </div>
+  </div>
+</div>
+
+<div class="mt-1 sticky bottom-0 text-center bg-[#F9FAFB]">
+  <!-- <div class="py-1">
+
+  <button
+    class="bg-[#0175A2] text-white font-semibold py-0.5 h-9 w-28 border border-gray-400 text-md rounded-md shadow mt-2 mb-2"
+    disabled>Generate</button>
+  </div> -->
+  <div class="w-full flex px-10 py-4 gap-x-4 -ml-[2.6rem] -mb-[1.4rem] bg-gray-50 justify-center">
+      
+    <button
+      class="bg-[white] text-base font-normal text-[#0175A2] w-[10.4rem] border-gray-300 border rounded-md h-9"
+      
+    >
+      Clear
+    </button>
+    <button
+      class="bg-[#0175A2] text-base font-normal text-white w-[10.4rem] rounded-md h-9"
+ 
+    >
+      Generate Boolean
+    </button>
+  </div>
+</div>
+</div>

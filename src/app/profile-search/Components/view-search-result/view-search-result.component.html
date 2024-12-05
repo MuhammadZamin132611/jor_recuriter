@@ -1,0 +1,61 @@
+
+<div >
+  <app-header></app-header>
+
+</div>
+<app-side-bar></app-side-bar>
+
+<div class=" h-screen bg-[#F9FAFB] overflow-hidden">
+  <div class="absolute inset-x-0 top-[3rem]" >
+      <div class=" bg-#F9FAFB ml-[4.6rem]  mr-[2rem] ">
+    <div class="group lg:ml-6 md:ml-4 ">
+      <div class="flex ml-2 mt-2">      
+        <svg class="mt-[1.346rem]" width="15" height="17" viewBox="0 0 15 17" fill="none" xmlns="http://www.w3.org/2000/svg"  routerLink="/dashboard">
+          <path d="M5.26161 15.9293V8.49298H9.72342V15.9293M0.799805 6.26208L7.49251 1.05664L14.1852 6.26208V14.4421C14.1852 14.8365 14.0285 15.2148 13.7496 15.4937C13.4707 15.7726 13.0924 15.9293 12.698 15.9293H2.28707C1.89263 15.9293 1.51433 15.7726 1.23542 15.4937C0.956499 15.2148 0.799805 14.8365 0.799805 14.4421V6.26208Z" stroke="#667085" stroke-width="1.48727" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>          
+        <svg class=" mt-[1.7rem] ml-[1.143rem]" width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 9L5 5L1 1" stroke="#D0D5DD" stroke-width="1.33333" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+        <span class="text-[#0175A2] font-semibold cursor-pointer  mt-[1.346rem] ml-[0.781rem]" routerLink="/profilesearch">Profile Search</span>
+      </div>
+      <h2 class="text-gray-700 font-medium lg:text-2xl lg:mt-2 md:mb-1 xl:text-3xl md:text-lg" *ngIf="!booleanList">Profile Search</h2>
+      <p class="lg:text-md md:text-sm xl:text-lg text text-gray-500 mt-1" *ngIf="!booleanList">Search from over <span class="font-medium">100,000+</span> profiles to find your perfect candidate</p>
+      <!-- <div class=" flex space-x-[0.893rem] mb-[0.5rem]" *ngIf="!booleanList ">
+        <ng-select [items]="skillList" [multiple]="true" *ngIf="skillList$|async as skillList"
+          class=" form-control rounded-md2 w-1/2 hide-while-Scroll" 
+            placeholder="Must include keywords"[(ngModel)]="selectedSkills">
+        </ng-select>
+        <button
+          class=" border bg-[#0175A2] w-[8.366rem] h-11 items-center justify-center text-white text-base font-medium rounded-md " type="submit"
+          (click)="searchCandidates()">
+          Search
+        </button>
+      </div> -->
+
+      
+<div class=" space-x-2" *ngIf="!booleanList">
+        <button *ngFor="let skill of selectedSkills"
+          class=" bg-gray-100 cursor-pointer font-medium rounded-full text-gray-700 p-1 px-2.5 mb-1 ">{{skill}}
+          
+        </button>
+      </div>
+      <div class=" flex ml-40">
+      
+      </div>
+    </div>
+    
+  </div>
+  <div class="mt-8">
+
+        <app-view-candidates [candidatesList]="candidatesList" [filteredCandidates]="candidatesList"></app-view-candidates>
+      </div>
+
+  </div>
+
+  </div>
+
+
+
+
+

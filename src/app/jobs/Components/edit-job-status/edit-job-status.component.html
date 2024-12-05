@@ -1,0 +1,132 @@
+
+
+<div *ngIf="openActivePop"
+class=" overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex ">
+<div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+<div class="relative bg-white rounded-lg shadow ">
+  <div class="max-w-sm rounded overflow-hidden shadow-lg ">
+    <div class="p-6 ">
+      <div class="grid place-items-center">
+        <svg class="" width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="4" y="4" width="48" height="48" rx="24" fill="#F4EBFF" />
+          <path d="M29 18L19 30H28L27 38L37 26H28L29 18Z" stroke="#0175A2" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" />
+          <rect x="4" y="4" width="48" height="48" rx="24" stroke="#F9F5FF" stroke-width="8" />
+        </svg>
+      </div>
+      <h3 class=" text-lg font-medium text-center leading-6 text-gray-900 mt-5 ">Activate the Requirement</h3>
+      <h3 class=" text-lg font-normal text-center text-gray-500  mt-2">This is an {{requirementDetails.status|titlecase}} requirement, do you want to activate it?
+      </h3>
+      <div class="grid place-items-center">
+        <div class="flex">
+          <button (click)="statusOpen()" class=" text-gray-700 shadow-xs bg-white border border-gray-300 focus:outline-none  
+                    font-medium rounded-lg text-md px-6 py-2.5 mt-8" type="button" data-modal-toggle="popup-modal"
+            >
+            Cancel
+          </button>
+          <button (click)="changeStatus()"
+            class=" text-white bg-[#0175A2] border border-gray-300 focus:outline-none  font-medium rounded-lg text-md px-6 py-2.5 ml-3 mt-8"
+            type="button" data-modal-toggle="popup-modal">
+         Activate
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+
+<div class=" overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex " *ngIf="statusPop" >
+  <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+  <div class="fixed inset-0 z-10 overflow-y-auto">
+    <div class="flex min-h-full items-end justify-center  p-4 text-center sm:items-center sm:p-0">
+      <div class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all ">
+        <div class="relative p-6 w-full max-w-md h-60 md:h-auto">
+  
+          <div class="flex flex-row mt-5 ml-4 ">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M6.5 6.5H6.51M20.09 12.91L12.92 20.08C12.7343 20.266 12.5137 20.4135 12.2709 20.5141C12.0281 20.6148 11.7678 20.6666 11.505 20.6666C11.2422 20.6666 10.9819 20.6148 10.7391 20.5141C10.4963 20.4135 10.2757 20.266 10.09 20.08L1.5 11.5V1.5H11.5L20.09 10.09C20.4625 10.4647 20.6716 10.9716 20.6716 11.5C20.6716 12.0284 20.4625 12.5353 20.09 12.91Z"
+                stroke="#0175A2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <p class=" text-lg font-medium leading-6 text-gray-900 ml-2 ">Add Comments to this requirement  </p>
+            <img class="mt-1 cursor-pointer ml-2 w-4"  (mouseover)="eyepop()" (mouseleave)="eyepop()"
+              src="../../../assets/images/info (3).svg" alt="info">
+  
+  
+            <!-- Show tooltip on bottom -->
+            <div id="tooltip-default" role="tooltip"   *ngIf="eyepopp"
+              class="absolute z-10  px-3 py-2 text-xs font-normal text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-50 grid place-items-end top-20 right-1 ml-32 ">
+              This comments will help Recruiter/Recruiter Manger about the Status of the requirement
+              <div class="tooltip-arrow" data-popper-arrow></div>
+            </div>
+          </div>
+  
+  
+  
+          <div>
+            <form action="" [formGroup]="RequirementStatus">
+            <p class=" text-lg font-medium leading-6 text-gray-900 mt-2">Status
+              <small style="color: red;">*</small>
+            </p>
+  
+            <select ng-readonly="statusVisible" class="outline-membership bg-gray-200 border-r-2" name="text" id="text" formControlName="status" >
+              <option value="" hidden>{{requirementDetails.remarkStatus|titlecase}}</option>
+              <option class="text-green-500  rounded-full" value="ACTIVE">Active</option>
+              <option class="text-red-500  rounded-full" value="INACTIVE" [hidden]="statusVisible">InActive </option>
+              <option class="text-gray-500  rounded-full" value="CLOSED" [hidden]="statusVisible">Closed</option>
+            </select>
+            <div class="text-red-800 ml-1" *ngIf="submitted && form.status.errors">
+              <div *ngIf="form.status.errors.required">Please select the status</div>
+            </div>
+            <div>
+              <p class=" text-lg font-medium leading-6 text-gray-900 mt-2">Reason
+                <small style="color: red;">*</small>
+  
+              </p>
+              <div *ngIf="reasons$ | async as reasonList">
+
+              <ng-select [items]="reasonList"  [multiple]="false" formControlName="reason" appendTo="body" class="custom"
+                placeholder="Reason " bindLabel="name" bindValue="name">
+              </ng-select>
+          </div>
+
+              <div class="text-red-800 ml-1" *ngIf="submitted && form.reason.errors">
+                <div *ngIf="form.reason.errors.required">Please select the reason</div>
+              </div>
+            </div>
+  
+  
+  
+            <div class="relative w-full ">
+              <div class="mt-5">
+                <p class=" text-lg font-medium leading-6 text-gray-900 mt-2">Comments (Optional)</p>
+                <textarea class="outline-none bg-gray-100 rounded m-1 p-2" id="" name="popup" formControlName="comment" rows="3" cols="47" 
+                  placeholder="Description"></textarea>
+  
+              </div>
+  
+            </div>
+          </form>
+          </div>
+          <div class="grid  ">
+            <div class="flex">
+              <button  (click)="statusOpen()"
+                class=" text-gray-700 shadow-xs bg-white border border-gray-300 focus:outline-none font-medium rounded-lg text-md px-16 py-2.5 mt-8"
+                type="button" data-modal-toggle="popup-modal"  >Cancel
+              </button>
+              <button (click)="changeReqStatus()"
+                class="ml-6 text-white bg-[#0175A2] border border-gray-300 focus:outline-none  font-medium rounded-lg text-md px-16 py-2.5 ml-3 mt-8"
+                type="button" data-modal-toggle="popup-modal"  >
+                Save
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+

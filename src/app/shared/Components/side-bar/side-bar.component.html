@@ -1,0 +1,133 @@
+<div *ngIf="sidebar">
+
+    <div id="logo-sidebar" [ngClass]="show?'w-64':'w-[4rem]'"
+        class="fixed top-0 left-0 z-40 w-64 md:h-screen lg:h-screen pt-20 transition-transform -translate-x-full bg-white  border-gray-200 translate-x-0 text-[#475467]"
+        aria-label="Sidebar" (mouseenter)="mobile?show:show=!show" (mouseleave)="mobile?show:show=!show">
+        <div class="h-screen px-2 pb-4 overflow-y-auto bg-white text-[#475467]">
+            <ul class="space-y-2 ">
+                <li >
+                    <div [class]="currentRoute=='dashboard' &&show?'bg-[#F2F4F7] border-l-4  border-[#0175A2] ':''" class=" all flex cursor-pointer  hover:bg-[#F2F4F7] transition duration-300 ease-in-out hover:scale-110 mx-auto  active:bg-[#F2F4F7]  " 
+                        routerLink="/dashboard" [ngClass]="show?'mx-3.5 ':''"    >
+                        <svg  [class]="currentRoute=='dashboard'&&!show?' rounded-[0.375rem] bg-[#F2F4F7] ':''"  width="48" height="40" viewBox="0 0 48 40" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <rect width="48" height="40" rx="6" />
+                            <path d=" M21 30V20H27V30M15 17L24 10L33 17V28C33 28.5304 32.7893 29.0391 32.4142 29.4142C32.0391 29.7893 31.5304 30
+                    31 30H17C16.4696 30 15.9609 29.7893 15.5858 29.4142C15.2107 29.0391 15 28.5304 15 28V17Z"
+                    [class]="currentRoute=='dashboard'?'stroke-[#0175A2] ':''"  stroke="gray" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <div class="absloute " *ngIf="show">
+                            <a class="flex items-center p-2 text-base font-normal  rounded-lg ">
+                                <button class="    text-gyay-600" routerLink="/dashboard"
+                                    [class]="currentRoute=='dashboard'?'text-[#0175A2] ':''">Home</button>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div  [class]="currentRoute=='profilesearch'&&show?'bg-[#F2F4F7] border-l-4 border-[#0175A2] ':''" class=" all flex cursor-pointer hover:bg-[#F2F4F7] transition duration-300 ease-in-out hover:scale-110 mx-auto  active:bg-[#F2F4F7]  "
+                        routerLink="/profilesearch/search" [ngClass]="show?'mx-3.5 ':''">
+                        <svg [class]="currentRoute=='profilesearch'&&!show?' rounded-[0.375rem] bg-[#F2F4F7] ':''" width="48" height="40" viewBox="0 0 48 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="48" height="40" rx="6" />
+                            <path
+                              d="M33 29L28.65 24.65M31 19C31 23.4183 27.4183 27 23 27C18.5817 27 15 23.4183 15 19C15 14.5817 18.5817 11 23 11C27.4183 11 31 14.5817 31 19Z"
+                              stroke="gray" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                              [class]="currentRoute=='profilesearch'?'stroke-[#0175A2]':''" />
+                          </svg>
+
+                        <div class="absloute " *ngIf="show">
+                            <a class="flex items-center p-2 text-base font-normal  rounded-lg "  >
+                                <button class="   "routerLink="/profilesearch/search"
+                                [class]="currentRoute=='profilesearch'?'text-[#0175A2]':''">Profile
+                                Search</button>
+                            </a>
+                        </div>
+                    </div>
+                </li >
+                <li  >
+                    <div [class]="currentRoute=='jobs'&&show?'bg-[#F2F4F7] border-l-4 border-[#0175A2]':''" class=" all flex cursor-pointer hover:bg-[#F2F4F7] transition duration-300 ease-in-out hover:scale-110 mx-auto  active:bg-[#F2F4F7]" routerLink="/jobs/view-all-jobs"
+                      [ngClass]="show?'mx-3.5 ':''">
+           
+                    <svg [class]="currentRoute=='jobs'&&!show?' rounded-[0.375rem] bg-[#F2F4F7] ':''" width="48" height="40" viewBox="0 0 48 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="48" height="40" rx="6" />
+                        <path
+                            d="M21 19L24 22L34 12M33 20V27C33 27.5304 32.7893 28.0391 32.4142 28.4142C32.0391 28.7893 31.5304 29 31 29H17C16.4696 29 15.9609 28.7893 15.5858 28.4142C15.2107 28.0391 15 27.5304 15 27V13C15 12.4696 15.2107 11.9609 15.5858 11.5858C15.9609 11.2107 16.4696 11 17 11H28"
+                            [class]="currentRoute=='jobs'?'stroke-[#0175A2]':''" stroke="gray" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    
+                        <div class="absloute " *ngIf="show">
+                            <a class="flex items-center p-2 text-base font-normal  rounded-lg "  >
+                                <button class="    text-gyay-600" routerLink="/jobs/view-all-jobs"
+                                [class]="currentRoute=='jobs'?'text-[#0175A2]':''">Requirements</button>
+                            </a>
+                        </div>
+                    
+                    </div>
+        
+                </li>      
+                <li>
+                    <!-- <div [class]="currentRoute=='' &&show?'bg-[#F2F4F7] border-l-4 border-[#0175A2]':''" class=" all flex cursor-pointer hover:bg-[#F2F4F7] transition duration-300 ease-in-out hover:scale-110 mx-auto  active:bg-[#F2F4F7]  "  
+                        routerLink=" " [ngClass]="show?'mx-3.5 ':''">
+                        <svg [class]="currentRoute==''&&!show?'bg-[#F2F4F7] rounded-[0.375rem]    hover:bg-[#F2F4F7]':''"  width="48" height="40" viewBox="0 0 48 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="48" height="40" rx="6" />
+                            <path d="M30 28V18M24 28V12M18 28V22" stroke="gray" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        <div class="absloute " *ngIf="show">
+                            <a class="flex items-center p-2 text-base font-normal  rounded-lg  ">
+
+                                <button class=" text-gyay-600 " [class]="currentRoute==''?'text-[#0175A2]':''" 
+                                 *ngIf="show">Analytics</button>
+                            </a>
+                        </div>
+                    </div> -->
+              </li>
+                <li class="absolute inset-x-0 space-y-2 bottom-5 mb-14 ml-2 mr-2">
+                    <!-- <div class=" all flex cursor-pointer  hover:bg-[#F2F4F7] transition duration-300 ease-in-out hover:scale-110 mx-auto  active:bg-[#F2F4F7]"
+                        [ngClass]="show?'mx-3.5 ':''">
+                        <div class="">
+                            <svg width="48" height="40" viewBox="0 0 48 40" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect width="48" height="40" rx="6" />
+                                <path
+                                    d="M24 23C25.6569 23 27 21.6569 27 20C27 18.3431 25.6569 17 24 17C22.3431 17 21 18.3431 21 20C21 21.6569 22.3431 23 24 23Z"
+                                    stroke="gray" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path
+                                    d="M31.4 23C31.2669 23.3016 31.2272 23.6362 31.286 23.9606C31.3448 24.285 31.4995 24.5843 31.73 24.82L31.79 24.88C31.976 25.0657 32.1235 25.2863 32.2241 25.5291C32.3248 25.7719 32.3766 26.0322 32.3766 26.295C32.3766 26.5578 32.3248 26.8181 32.2241 27.0609C32.1235 27.3037 31.976 27.5243 31.79 27.71C31.6043 27.896 31.3837 28.0435 31.1409 28.1441C30.8981 28.2448 30.6378 28.2966 30.375 28.2966C30.1122 28.2966 29.8519 28.2448 29.6091 28.1441C29.3663 28.0435 29.1457 27.896 28.96 27.71L28.9 27.65C28.6643 27.4195 28.365 27.2648 28.0406 27.206C27.7162 27.1472 27.3816 27.1869 27.08 27.32C26.7842 27.4468 26.532 27.6572 26.3543 27.9255C26.1766 28.1938 26.0813 28.5082 26.08 28.83V29C26.08 29.5304 25.8693 30.0391 25.4942 30.4142C25.1191 30.7893 24.6104 31 24.08 31C23.5496 31 23.0409 30.7893 22.6658 30.4142C22.2907 30.0391 22.08 29.5304 22.08 29V28.91C22.0723 28.579 21.9651 28.258 21.7725 27.9887C21.5799 27.7194 21.3107 27.5143 21 27.4C20.6984 27.2669 20.3638 27.2272 20.0394 27.286C19.715 27.3448 19.4157 27.4995 19.18 27.73L19.12 27.79C18.9343 27.976 18.7137 28.1235 18.4709 28.2241C18.2281 28.3248 17.9678 28.3766 17.705 28.3766C17.4422 28.3766 17.1819 28.3248 16.9391 28.2241C16.6963 28.1235 16.4757 27.976 16.29 27.79C16.104 27.6043 15.9565 27.3837 15.8559 27.1409C15.7552 26.8981 15.7034 26.6378 15.7034 26.375C15.7034 26.1122 15.7552 25.8519 15.8559 25.6091C15.9565 25.3663 16.104 25.1457 16.29 24.96L16.35 24.9C16.5805 24.6643 16.7352 24.365 16.794 24.0406C16.8528 23.7162 16.8131 23.3816 16.68 23.08C16.5532 22.7842 16.3428 22.532 16.0745 22.3543C15.8062 22.1766 15.4918 22.0813 15.17 22.08H15C14.4696 22.08 13.9609 21.8693 13.5858 21.4942C13.2107 21.1191 13 20.6104 13 20.08C13 19.5496 13.2107 19.0409 13.5858 18.6658C13.9609 18.2907 14.4696 18.08 15 18.08H15.09C15.421 18.0723 15.742 17.9651 16.0113 17.7725C16.2806 17.5799 16.4857 17.3107 16.6 17C16.7331 16.6984 16.7728 16.3638 16.714 16.0394C16.6552 15.715 16.5005 15.4157 16.27 15.18L16.21 15.12C16.024 14.9343 15.8765 14.7137 15.7759 14.4709C15.6752 14.2281 15.6234 13.9678 15.6234 13.705C15.6234 13.4422 15.6752 13.1819 15.7759 12.9391C15.8765 12.6963 16.024 12.4757 16.21 12.29C16.3957 12.104 16.6163 11.9565 16.8591 11.8559C17.1019 11.7552 17.3622 11.7034 17.625 11.7034C17.8878 11.7034 18.1481 11.7552 18.3909 11.8559C18.6337 11.9565 18.8543 12.104 19.04 12.29L19.1 12.35C19.3357 12.5805 19.635 12.7352 19.9594 12.794C20.2838 12.8528 20.6184 12.8131 20.92 12.68H21C21.2958 12.5532 21.548 12.3428 21.7257 12.0745C21.9034 11.8062 21.9987 11.4918 22 11.17V11C22 10.4696 22.2107 9.96086 22.5858 9.58579C22.9609 9.21071 23.4696 9 24 9C24.5304 9 25.0391 9.21071 25.4142 9.58579C25.7893 9.96086 26 10.4696 26 11V11.09C26.0013 11.4118 26.0966 11.7262 26.2743 11.9945C26.452 12.2628 26.7042 12.4732 27 12.6C27.3016 12.7331 27.6362 12.7728 27.9606 12.714C28.285 12.6552 28.5843 12.5005 28.82 12.27L28.88 12.21C29.0657 12.024 29.2863 11.8765 29.5291 11.7759C29.7719 11.6752 30.0322 11.6234 30.295 11.6234C30.5578 11.6234 30.8181 11.6752 31.0609 11.7759C31.3037 11.8765 31.5243 12.024 31.71 12.21C31.896 12.3957 32.0435 12.6163 32.1441 12.8591C32.2448 13.1019 32.2966 13.3622 32.2966 13.625C32.2966 13.8878 32.2448 14.1481 32.1441 14.3909C32.0435 14.6337 31.896 14.8543 31.71 15.04L31.65 15.1C31.4195 15.3357 31.2648 15.635 31.206 15.9594C31.1472 16.2838 31.1869 16.6184 31.32 16.92V17C31.4468 17.2958 31.6572 17.548 31.9255 17.7257C32.1938 17.9034 32.5082 17.9987 32.83 18H33C33.5304 18 34.0391 18.2107 34.4142 18.5858C34.7893 18.9609 35 19.4696 35 20C35 20.5304 34.7893 21.0391 34.4142 21.4142C34.0391 21.7893 33.5304 22 33 22H32.91C32.5882 22.0013 32.2738 22.0966 32.0055 22.2743C31.7372 22.452 31.5268 22.7042 31.4 23Z"
+                                    stroke="gray" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <div class="absloute ">
+                            <a
+                                class=" flex items-center p-2 text-base font-normal  rounded-lg absloute bottom-0">
+
+                                <button class=" text-gyay-600 " *ngIf="show">Settings</button>
+                            </a>
+                        </div>
+                    </div> -->
+
+                    <div class="all flex cursor-pointer  hover:bg-[#F2F4F7] transition duration-300 ease-in-out hover:scale-110 mx-auto  active:bg-[#F2F4F7] "
+                    [ngClass]="show?'mx-3.5 ':''" (click)="signout()">
+                    <div class="">
+                        <svg class="hover:text-violet-500  " width="48" height="40" viewBox="0 0 48 40" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <rect width="48" height="40" rx="6" />
+                        <path
+                            d="M21 29H17C16.4696 29 15.9609 28.7893 15.5858 28.4142C15.2107 28.0391 15 27.5304 15 27V13C15 12.4696 15.2107 11.9609 15.5858 11.5858C15.9609 11.2107 16.4696 11 17 11H21M28 25L33 20M33 20L28 15M33 20H21"
+                            stroke="#F04438" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    </div>
+                    <div class="absloute ">
+                        <a
+                            class=" flex items-center p-2 text-base  font-normal text-gray-900 rounded-lg absloute bottom-0">
+
+                            <button class="  " *ngIf="show">Logout</button>
+                        </a>
+                    </div>
+                </div>
+
+                  
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,150 @@
+<div *ngIf="openResumeModel"
+  class=" overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex ">
+  <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+  <div class="relative bg-white rounded-lg shadow ">
+    <div class="max-w-sm rounded overflow-hidden shadow-lg ">
+      <div class="p-6 ">
+        <div class="grid place-items-center">
+          <svg class="" width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="4" width="48" height="48" rx="24" fill="#F4EBFF" />
+            <path d="M29 18L19 30H28L27 38L37 26H28L29 18Z" stroke="#0175A2" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <rect x="4" y="4" width="48" height="48" rx="24" stroke="#F9F5FF" stroke-width="8" />
+          </svg>
+        </div>
+        <h3 class=" text-lg font-medium text-center leading-6 text-gray-900 mt-5 ">Download Profile</h3>
+        <h3 class=" text-lg font-normal text-center text-gray-500  mt-2"
+          *ngIf="candidatesNotResume.length==0 || signleResume">No resume
+          available for this candidate,Do you want download profile?
+        </h3>
+        <h3 class=" text-lg font-normal text-center text-gray-500  mt-2"
+          *ngIf="candidatesNotResume.length!=0  && !signleResume">No Resume
+          availabe for the below candidates,Do you want download profile</h3>
+        <div *ngIf="candidatesNotResume.length!=0 && !signleResume">
+          <p *ngFor="let candidate of candidatesNotResume">{{candidate.fullName}}</p>
+        </div>
+        <div class="grid place-items-center">
+          <div class="flex">
+            <button (click)="closeModel()" class=" text-gray-700 shadow-xs bg-white border border-gray-300 focus:outline-none  
+                    font-medium rounded-lg text-md px-6 py-2.5 mt-8" type="button" data-modal-toggle="popup-modal">
+              Cancel
+            </button>
+            <button (click)="getFullDetails(candidateId)" *ngIf="candidatesNotResume.length==0 || signleResume"
+              class=" text-white bg-[#0175A2] border border-gray-300 focus:outline-none  font-medium rounded-lg text-md px-6 py-2.5 ml-3 mt-8"
+              type="button" data-modal-toggle="popup-modal">
+              Download
+            </button>
+            <button (click)="downloadAllResume()" *ngIf="candidatesNotResume.length!=0 && !signleResume"
+              class=" text-white bg-[#0175A2] border border-gray-300 focus:outline-none  font-medium rounded-lg text-md px-6 py-2.5 ml-3 mt-8"
+              type="button" data-modal-toggle="popup-modal">
+              Download All
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<div class=" overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex "
+  *ngIf="reportCandidate">
+  <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+  <div class="absolute bg-white rounded-lg shadow ">
+    <div class="max-w-sm rounded overflow-hidden shadow-lg ">
+      <div class="p-6 ">
+        <div class="flex m-1 ">
+          <div
+            class="flex border-none rounded-full bg-purple-500 h-12 w-12 text-5xl text-gray-600 align-center item-center place-items-center ">
+            <img class="rounded-full mx-auto "
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4PES5kH4dY080EEQDTOler8oINZmFGor_Aw&usqp=CAU">
+          </div>
+          <div class="grid ml-3">
+            <p class="text-base font-medium  text-gray-700">{{reportCandidateDetails.fullName}}</p>
+            <p class="text-sm font-normal text-gray-500">Product Designer at Youcompany</p>
+          </div>
+        </div>
+
+        <div class="mt-5">
+          <label class="text-sm text-gray-700 font-medium">Reason</label>
+          <select
+            class="mt-1 mb-3 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md focus:outline-none focus:border-gray-500 sm:text-sm ">
+            <option class="selected hidden text-gray-100">Select Reason</option>
+            <option>Nothing</option>
+            <option>just...</option>
+            <option>Any</option>
+          </select>
+
+          <label class="text-sm text-gray-700 font-medium ">Remark</label>
+          <textarea placeholder="Enter a description..."
+            class="mt-1 block p-3 w-full border border-gray-300 bg-white rounded-md focus:outline-none focus:border-gray-500 sm:text-sm "
+            cols="20" rows="5"></textarea>
+        </div>
+
+        <div class="flex">
+          <button
+            class="w-full text-gray-700 shadow-xs bg-white border border-gray-300 focus:outline-none font-medium rounded-lg text-md px-6 py-2.5 mt-8"
+            type="button" data-modal-toggle="popup-modal" (click)="closeModel()">
+            Cancel
+          </button>
+          <button
+            class="w-full text-white bg-red-500 border border-gray-300 focus:outline-none  font-medium rounded-lg text-md px-6 py-2.5 ml-3 mt-8"
+            type="button" data-modal-toggle="popup-modal" (click)="closeModel()">
+            Report
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true" *ngIf="Closesourced">
+  <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+  <div class="fixed inset-0 z-10">
+    <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+      <div class=" ">
+        <div class="relative p-4 w-full max-w-md h-60 md:h-auto">
+          <div class="relative bg-white p-7 rounded-lg shadow ">
+            <p class=" text-lg font-medium leading-6 text-gray-900 mb-3">Source the Candidate</p>
+            <p>Active Requirements</p>
+            <div class="p-6 ">
+              <div class="relative h-60 overflow-x-auto sm:rounded-lg">
+                <table class="w-full border text-sm text-left text-gray-500 overflow-y-scroll">
+                  <tbody class="border-r-2">
+                    <tr class="bg-grey-100 hover:bg-gray-50" *ngFor="let data of activeRequirements">
+                      <th scope="row" class="px-2 py-1 font-medium text-gray-900 whitespace-nowrap ">
+                        {{data.jobTitle}}
+                      </th>
+                      <td class="px-6 py-4 text-right">
+                        <input [checked]="activeRequSelect.includes(data.requirementId)" type="checkbox" (change)="selectActivereq($event,data.requirementId)">
+                      </td>
+                    </tr>
+                    <tr class="" *ngIf="activeRequirements.length==0">
+                      <p class="text-black">
+                        No Active Requirements found
+                      </p>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="block p-4 bg-white flex space-x-2">
+              <button
+                class=" text-gray-700 shadow-xs bg-white border border-gray-300 focus:outline-none font-medium rounded-lg text-md px-6 py-2.5 w-full"
+                type="button" data-modal-toggle="popup-modal" (click)="closeModel()">Cancel
+              </button>
+              <button
+                class=" text-white bg-[#0175A2] border border-gray-300 focus:outline-none  font-medium rounded-lg text-md px-6 py-2.5 w-full "
+                type="button" data-modal-toggle="popup-modal" (click)="sourceAllrequirements()">
+                Source
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
